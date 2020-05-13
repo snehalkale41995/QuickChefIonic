@@ -10,7 +10,8 @@ import { LandingModule } from '../landing/landing.module';
 import { HotelDetailModule } from '../hotel-detail/hotel-detail.module';
 import { RestaurantDetailModule } from '../restaurant-detail/restaurant-detail.module';
 import { RestaurantListModule } from '../restaurant-list/restaurant-list.module';
-
+import { MealDetailPageModule } from '../meal-detail/meal-detail.module'
+import { MealDetailPage } from '../meal-detail/meal-detail.page';
 @NgModule({
   imports: [
     AboutModule,
@@ -18,6 +19,7 @@ import { RestaurantListModule } from '../restaurant-list/restaurant-list.module'
     IonicModule,
     LandingModule,
     HotelDetailModule,
+    MealDetailPageModule,
     RestaurantDetailModule,
     RestaurantListModule,
     TabsPageRoutingModule
