@@ -53,7 +53,7 @@
     </ion-segment>
 
     <ion-grid *ngIf="restaurantList">
-    <ion-row *ngFor="let item of restaurantList" class="restCategories">
+    <ion-row *ngFor="let item of restaurantList" class="restCategories" routerLink="/app/tabs/restaurants/hotel-details/{{item.$key}}">
       <ion-col size="12" class="gridCol">
         <img src="{{item.thumb}}" />
         <p class="text-over-img">

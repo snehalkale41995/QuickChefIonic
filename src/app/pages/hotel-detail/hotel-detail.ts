@@ -11,6 +11,7 @@ import { ActionSheetController } from '@ionic/angular';
 export class HotelDetailPage {
   hotel: any;
   menuList : any;
+  defaultHref = ''
   ratings : any;
   constructor(
     private dataProvider: DeliveryData,
