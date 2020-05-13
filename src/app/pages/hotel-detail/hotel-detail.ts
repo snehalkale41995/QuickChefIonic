@@ -10,7 +10,7 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class HotelDetailPage {
   hotel: any;
-  cafeList : any;
+  menuList : any;
   ratings : any;
   constructor(
     private dataProvider: DeliveryData,
@@ -22,12 +22,12 @@ export class HotelDetailPage {
   ionViewWillEnter() {
     this.dataProvider.load().subscribe((data: any) => {
       const hotelId = this.route.snapshot.paramMap.get('hotelId');
-     
       if (data && data.restaurantList) {
         for (const item of data.restaurantList) {
           if (item && item.$key === hotelId) {
             this.hotel = item;
             this.ratings = Array(item.user_rating);
+            this.menuList = item.menuList
             break;
           }
         }
