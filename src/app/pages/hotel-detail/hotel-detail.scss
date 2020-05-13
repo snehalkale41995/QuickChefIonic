@@ -107,11 +107,11 @@ ion-toolbar ion-menu-button {
 
 .likeColor{
   color : red;
-  font-size : 20px
+  font-size : 30px
 }
 
 .dislike{
-    font-size : 20px
+    font-size : 30px
 }
 
 .rating{
@@ -124,6 +124,15 @@ ion-toolbar ion-menu-button {
 }
 
 .nameClass{
-  font-size: 14px;
+  font-size: 18px;
   color: white;
+}
+
+.statusCol{
+  text-align: end;
+}
+
+.addressClass{
+  font-size: 14px;
+  color: rgb(133, 129, 129);
 }

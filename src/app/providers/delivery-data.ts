@@ -19,7 +19,7 @@ export class DeliveryData {
     } else {
       return this.http
         .get('assets/data/data.json')
-        .pipe(map(this.processData, this));
+        //.pipe(map(this.processData, this));
     }
   }
 

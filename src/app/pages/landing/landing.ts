@@ -61,10 +61,5 @@ export class LandingPage implements OnInit {
 
       this.landingList.closeSlidingItems();
     }
-
-    this.deliveryData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.shownSessions = data.shownSessions;
-      this.groups = data.groups;
-    });
   } 
 }

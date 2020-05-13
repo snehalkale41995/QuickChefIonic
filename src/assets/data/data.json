@@ -226,11 +226,37 @@
       "type": "pizza",
       "locality" : "pune",
       "price_range": "500 Rs",
-      "user_rating" : "5",
+      "user_rating" : 5,
       "reviews" : 340,
       "timings" : "12:00 - 18:00",
       "foodTypes" : ".pizza .burger .coffee",
-       "like" : true
+       "like" : true,
+       "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     },
     {
       "$key": "6630fb89c48d80b888t2",
@@ -240,11 +266,37 @@
       "type": "pizza",
       "locality" : "mumbai",
       "price_range": "200 Rs",
-      "user_rating" : "2",
+      "user_rating" : 3,
       "reviews" : 150,
       "timings" : "10:00 - 20:00",
       "foodTypes" : ".pizza .burger .salad",
-      "like" : false
+      "like" : false,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     },
     {
       "$key": "6630fb89c48d80b888t2",
@@ -255,11 +307,37 @@
       "type": "coffee",
       "locality" : "delhi",
       "price_range": "100 Rs",
-      "user_rating" : "2.5",
+      "user_rating" : 4,
       "reviews" : 40,
       "timings" : "11:00 - 19:00",
       "foodTypes" : ".drinks .salad",
-      "like" : true
+      "like" : true,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     },
     {
       "$key": "6630fb89c48d80b888t3",
@@ -269,11 +347,37 @@
        "type": "coffee",
       "locality" : "pune",
       "price_range": "550 Rs",
-      "user_rating" : "3.5",
+      "user_rating" : 2,
       "reviews" : 150,
       "timings" : "08:00 - 20:00",
       "foodTypes" : ".pizza .burger .sides",
-      "like" : true
+      "like" : true,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     },
     {
       "$key": "6630fb89c48d80b888t2",
@@ -283,11 +387,37 @@
       "type": "ice-cream",
       "locality" : "indore",
       "price_range": "200 Rs",
-      "user_rating" : "2",
+      "user_rating" : 1,
       "reviews" : 150,
       "timings" : "10:00 - 20:00",
       "foodTypes" : ".biryani .tea .coffee",
-      "like" : false
+      "like" : false,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     },
     {
       "$key": "6630fb89c48d80b888t2",
@@ -297,11 +427,37 @@
       "type": "ice-cream",
       "locality" : "nasik",
       "price_range": "400 Rs",
-      "user_rating" : "4.5",
+      "user_rating" : 4,
       "reviews" : 10,
       "timings" : "11:00 - 20:00",
       "foodTypes" : ".chat .main-course ",
-      "like" : true
+      "like" : true,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     },
     {
       "$key": "6630fb89c48d80b888t2",
@@ -311,11 +467,37 @@
       "type": "wine",
       "locality" : "pune",
       "price_range": "350 Rs",
-      "user_rating" : "5",
+      "user_rating" : 4,
       "reviews" : "170",
       "timings" : "12:00 - 21:00",
       "foodTypes" : ".pizza .ice-cream .coffee",
-      "like" : false
+      "like" : false,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza"
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza"
+        }
+       ]
     }
   ]
 }

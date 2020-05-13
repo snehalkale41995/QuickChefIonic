@@ -11,6 +11,7 @@ import { ActionSheetController } from '@ionic/angular';
 export class HotelDetailPage {
   hotel: any;
   cafeList : any;
+  ratings : any;
   constructor(
     private dataProvider: DeliveryData,
     private route: ActivatedRoute,
@@ -26,11 +27,12 @@ export class HotelDetailPage {
         for (const item of data.restaurantList) {
           if (item && item.$key === hotelId) {
             this.hotel = item;
+            this.ratings = Array(item.user_rating);
             break;
           }
         }
       }
-      console.log("hotellll", this.hotel)
+      console.log("hotellll", Array(5))
     });
   }
 
