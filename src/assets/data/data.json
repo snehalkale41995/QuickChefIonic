@@ -278,7 +278,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
@@ -286,7 +292,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "3",
@@ -294,7 +306,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     },
@@ -319,7 +337,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
@@ -327,7 +351,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "3",
@@ -335,7 +365,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     },
@@ -359,7 +395,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
@@ -367,7 +409,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "3",
@@ -375,7 +423,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     },
@@ -399,7 +453,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
@@ -407,7 +467,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "3",
@@ -415,7 +481,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     },
@@ -439,7 +511,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
@@ -447,7 +525,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "3",
@@ -455,7 +539,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     },
@@ -479,7 +569,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
@@ -487,7 +583,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "3",
@@ -495,7 +597,13 @@
           "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
           "title": "pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     }
