@@ -1,0 +1,40 @@
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DeliveryData } from '../../providers/delivery-data';
+import { ActionSheetController } from '@ionic/angular';
+
+@Component({
+  selector: 'page-restaurant-detail',
+  templateUrl: 'restaurant-detail.html',
+  styleUrls: ['./restaurant-detail.scss'],
+})
+export class RestaurantDetailPage {
+  restaurant: any;
+  cafeList : any;
+  constructor(
+    private dataProvider: DeliveryData,
+    private route: ActivatedRoute,
+    public actionSheetCtrl: ActionSheetController,
+    public confData: DeliveryData,
+  ) {}
+
+  ionViewWillEnter() {
+    this.dataProvider.load().subscribe((data: any) => {
+      const mealId = this.route.snapshot.paramMap.get('restaurantId');
+     
+      if(data && data.restaurantList){
+        console.log("data.restaurantList", data.restaurantList)
+        this.cafeList = data.restaurantList;
+      }
+      if (data && data.foodItemList) {
+        for (const foodItem of data.foodItemList) {
+          if (foodItem && foodItem.$key === mealId) {
+            this.restaurant = foodItem;
+            break;
+          }
+        }
+      }
+    });
+  }
+
+}

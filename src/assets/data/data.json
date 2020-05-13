@@ -1,0 +1,321 @@
+{
+
+  "restaurants": [
+    {
+      "name": "Burt Bear",
+      "profilePic": "/assets/img/restaurants/bear.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Burt is a Bear. Burt's interests include poetry, dashing space heroes, and lions.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "burt@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "1"
+    },
+    {
+      "name": "Charlie Cheetah",
+      "profilePic": "/assets/img/restaurants/cheetah.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Charlie is a Cheetah. Charlie's interests include country music, plush animals, pyrotechnics, and skeletons.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "charlie@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "2"
+    },
+    {
+      "name": "Donald Duck",
+      "profilePic": "/assets/img/restaurants/duck.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Donald is a Duck. Donald's interests include carpentry, superheroes, merpeople, and glam rock.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "donald@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "3"
+    },
+    {
+      "name": "Eva Eagle",
+      "profilePic": "/assets/img/restaurants/eagle.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Eva is an Eagle. Eva's interests include ants, seashells, and cupcakes.",
+      "title": "Developer Advocate",
+      "location": "Everywhere",
+      "email": "eva@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "4"
+    },
+    {
+      "name": "Ellie Elephant",
+      "profilePic": "/assets/img/restaurants/elephant.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Ellie is an Elephant. Ellie's interests include pocket watches, pool, hand fans, and ninjas.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "ellie@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "5"
+    },
+    {
+      "name": "Gino Giraffe",
+      "profilePic": "/assets/img/restaurants/giraffe.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Gino is a Giraffe. Gino's interests include candy-making, unicorns, and birdhouses.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "gino@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "6"
+    },
+    {
+      "name": "Isabella Iguana",
+      "profilePic": "/assets/img/restaurants/iguana.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Isabella is an Iguana. Isabella's interests include crystals, architecture, and candle-making.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "isabella@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "7"
+    },
+    {
+      "name": "Karl Kitten",
+      "profilePic": "/assets/img/restaurants/kitten.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Karl is a Kitten. Karl's interests include skiing, jewelry, and needlepoint.",
+      "title": "Developer Advocate",
+      "location": "Everywhere",
+      "email": "karl@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "8"
+    },
+    {
+      "name": "Lionel Lion",
+      "profilePic": "/assets/img/restaurants/lion.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Lionel is a Lion. Lionel's interests include lizards and mathematics.",
+      "title": "Developer Advocate",
+      "location": "Everywhere",
+      "email": "lionel@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "9"
+    },
+    {
+      "name": "Molly Mouse",
+      "profilePic": "/assets/img/restaurants/mouse.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Molly is a Mouse. Molly's interests include werewolves and magic.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "molly@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "10"
+    },
+    {
+      "name": "Paul Puppy",
+      "profilePic": "/assets/img/restaurants/puppy.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Paul is a Puppy. Paul's interests include maps, whales, and dragons.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "paul@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "11"
+    },
+    {
+      "name": "Rachel Rabbit",
+      "profilePic": "/assets/img/restaurants/rabbit.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Rachel is a Rabbit. Rachel's interests include clowns, skeletons, and yo-yos.",
+      "title": "Senior Software Engineer",
+      "location": "Everywhere",
+      "email": "rachel@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "12"
+    },
+    {
+      "name": "Ted Turtle",
+      "profilePic": "/assets/img/restaurants/turtle.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Ted is a Turtle. Ted's interests include butterflies, skiing, and cupcakes.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "ted@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "13"
+    }
+  ],
+
+  "map": [
+    {
+      "name": "Monona Terrace Convention Center",
+      "lat": 43.071584,
+      "lng": -89.38012,
+      "center": true
+    },
+    {
+      "name": "Ionic HQ",
+      "lat": 43.074395,
+      "lng": -89.381056
+    },
+    {
+      "name": "Afterparty - Brocach Irish Pub",
+      "lat": 43.07336,
+      "lng": -89.38335
+    }
+  ],
+
+  "foodItemList" : [
+    {
+      "$key": "1d4aa3b29bca735e4et5",
+      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+      "title": "Salads"
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/v1483635771/shutterstock_414301747_mtoc29.jpg",
+      "title": "Sides"
+    },
+    {
+      "$key": "6630fb89c48d80b888t3",
+      "description": "erving authentic Italian Chicken Masala made by a 100% Italian from Chicago to Denver's front range. Vegan and Gluten free options available",
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635600/shutterstock_78020470_mogsht.jpg"
+,
+      "title": "Desserts"
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on",
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/v1483635736/shutterstock_154111196_dr1rsp.jpg",
+      "title": "Main Course"
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635706/shutterstock_125990357_cktkdy.jpg",
+      "title": "Starters"
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635695/shutterstock_150017666_h2deah.jpg",
+      "title": "Sice"
+    }
+  ],
+  "restaurantList" : [
+    {
+      "$key": "1d4aa3b29bca735e4et5",
+      "name": "Otto Enoteca & Pizzeria",
+      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+      "thumb": "assets/img/restaurantOne.jpg",  
+      "type": "pizza",
+      "locality" : "pune",
+      "price_range": "500 Rs",
+      "user_rating" : "5",
+      "reviews" : 340,
+      "timings" : "12:00 - 18:00",
+      "foodTypes" : ".pizza .burger .coffee",
+       "like" : true
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "name": "Pizza Hut",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "assets/img/restaurantTwo.jpg",
+      "type": "pizza",
+      "locality" : "mumbai",
+      "price_range": "200 Rs",
+      "user_rating" : "2",
+      "reviews" : 150,
+      "timings" : "10:00 - 20:00",
+      "foodTypes" : ".pizza .burger .salad",
+      "like" : false
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "name": "Cafe-Coffee Day",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "assets/img/restaurantThree.jpg",
+      "title": "Sides",
+      "type": "coffee",
+      "locality" : "delhi",
+      "price_range": "100 Rs",
+      "user_rating" : "2.5",
+      "reviews" : 40,
+      "timings" : "11:00 - 19:00",
+      "foodTypes" : ".drinks .salad",
+      "like" : true
+    },
+    {
+      "$key": "6630fb89c48d80b888t3",
+      "name": "Coffee Cafe",
+      "description": "erving authentic Italian Chicken Masala made by a 100% Italian from Chicago to Denver's front range. Vegan and Gluten free options available",
+      "thumb": "assets/img/restaurantfour.jpg",
+       "type": "coffee",
+      "locality" : "pune",
+      "price_range": "550 Rs",
+      "user_rating" : "3.5",
+      "reviews" : 150,
+      "timings" : "08:00 - 20:00",
+      "foodTypes" : ".pizza .burger .sides",
+      "like" : true
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "name": "Choco Bite",
+      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on",
+      "thumb": "assets/img/restaurantfive.jpg",
+      "type": "ice-cream",
+      "locality" : "indore",
+      "price_range": "200 Rs",
+      "user_rating" : "2",
+      "reviews" : 150,
+      "timings" : "10:00 - 20:00",
+      "foodTypes" : ".biryani .tea .coffee",
+      "like" : false
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "name": "Naturals",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "assets/img/restaurantSix.jpg",
+      "type": "ice-cream",
+      "locality" : "nasik",
+      "price_range": "400 Rs",
+      "user_rating" : "4.5",
+      "reviews" : 10,
+      "timings" : "11:00 - 20:00",
+      "foodTypes" : ".chat .main-course ",
+      "like" : true
+    },
+    {
+      "$key": "6630fb89c48d80b888t2",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "assets/img/restaurantSeven.jpg",
+      "name": " dominos",
+      "type": "wine",
+      "locality" : "pune",
+      "price_range": "350 Rs",
+      "user_rating" : "5",
+      "reviews" : "170",
+      "timings" : "12:00 - 21:00",
+      "foodTypes" : ".pizza .ice-cream .coffee",
+      "like" : false
+    }
+  ]
+}

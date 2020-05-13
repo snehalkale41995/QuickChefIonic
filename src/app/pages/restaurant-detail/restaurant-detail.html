@@ -1,0 +1,72 @@
+<ion-content class="restaurant-detail">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/restaurants"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons  slot="end">
+        <ion-button>
+          <ion-icon name="start"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon slot="icon-only" ios="share-outline" md="share-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="restaurant-background">
+    <img [src]="restaurant?.thumb" [alt]="restaurant?.name">
+    <h1>{{restaurant?.title}}</h1>
+  </div>
+
+  <div class="ion-padding restaurant-detail">
+    <p>{{cafeList? cafeList.length : 0 }} Restaurants</p>
+    <hr>
+      <ion-card *ngFor="let category of cafeList" >
+          <ion-list>
+            <ion-grid routerLink="/app/tabs/restaurants/hotel-details/{{category.$key}}">
+                <ion-row>
+                  <ion-col size="3" class="imgCol">
+                    <img  src="{{category.thumb}}">
+                  </ion-col>  
+                  <ion-col size="8"> 
+                  <p><ion-text class="nameClass">{{category.name}}</ion-text></p>
+                  <p><ion-badge color="medium">{{category.foodTypes}}</ion-badge>
+                  </p>
+                  <p>
+                    <span><ion-icon name="star" class="rating"></ion-icon></span>
+                    <span class="badgeClass"><ion-badge color="success">&nbsp;{{category.user_rating}}</ion-badge> </span>
+                    <span> ({{category.reviews}}&nbsp;ratings) </span>
+                  </p>
+                  </ion-col>   
+                  <ion-col size="1">
+                    <span *ngIf="category.like"><ion-icon class="likeColor" name="heart"></ion-icon></span>
+                    <span *ngIf="!category.like"><ion-icon class="dislike" name="heart"></ion-icon></span>
+                  </ion-col>           
+                  </ion-row>
+                </ion-grid>
+          </ion-list>
+      </ion-card>
+   
+    
+    
+    
+    
+
+    <!-- <ion-chip color="twitter" button (click)="openExternalUrl('https://twitter.com/' + restaurant.twitter)">
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+
+    <ion-chip color="dark" button (click)="openExternalUrl('https://github.com/ionic-team/ionic')">
+      <ion-icon name="logo-github"></ion-icon>
+      <ion-label>GitHub</ion-label>
+    </ion-chip>
+
+    <ion-chip color="instagram" button (click)="openExternalUrl('https://instagram.com/ionicframework')">
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip> -->
+  </div>
+</ion-content>

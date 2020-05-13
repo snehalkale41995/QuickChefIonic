@@ -1,0 +1,52 @@
+<ion-content class="restaurant-detail">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/restaurants"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons  slot="end">
+        <ion-button>
+          <ion-icon name="heart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding restaurant-detail">
+    <!-- <p>{{cafeList? cafeList.length : 0 }}</p> -->
+    <ion-row>
+      <ion-col size="6">
+        
+      </ion-col>
+    </ion-row>
+    <hr>
+      <!-- <ion-card *ngFor="let category of cafeList" >
+          <ion-list>
+            <ion-grid routerLink="/app/tabs/restaurants/hotel-details/{{category.$key}}">
+                <ion-row>
+                  <ion-col size="3" class="imgCol">
+                    <img  src="{{category.thumb}}">
+                  </ion-col>  
+                  <ion-col size="8"> 
+                  <p><ion-text class="nameClass">{{category.name}}</ion-text></p>
+                  <p><ion-badge color="medium">{{category.foodTypes}}</ion-badge>
+                  </p>
+                  <p>
+                    <span><ion-icon name="star" class="rating"></ion-icon></span>
+                    <span class="badgeClass"><ion-badge color="success">&nbsp;{{category.user_rating}}</ion-badge> </span>
+                    <span> ({{category.reviews}}&nbsp;ratings) </span>
+                  </p>
+                  </ion-col>   
+                  <ion-col size="1">
+                    <span *ngIf="category.like"><ion-icon class="likeColor" name="heart"></ion-icon></span>
+                    <span *ngIf="!category.like"><ion-icon class="dislike" name="heart"></ion-icon></span>
+                  </ion-col>           
+                  </ion-row>
+                </ion-grid>
+          </ion-list>
+      </ion-card> -->
+  </div> 
+
+
+
+</ion-content>
