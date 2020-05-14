@@ -294,7 +294,7 @@
           "$key": "1",
           "description": "The texture of a food with a hard outer layer and soft interior.",
           "thumb": "assets/img/mealImage3.jpg",  
-          "title": "Veg cheese Burger",
+          "title": "Veg cheese Pizza",
           "price" : "12 $",
           "foodType" : "pizza",
           "ingredients" : [
@@ -441,9 +441,9 @@
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage12.jpg",  
-          "title": "pizza",
+          "title": "dessert blast",
           "price" : "17 $",
-          "foodType" : "pizza",
+          "foodType" : "dessert",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
@@ -471,13 +471,13 @@
           "$key": "1",
           "description": "Our mission is to give our customers a place to celebrate life’s special moments by offering the best food, service, and ambiance in Toronto.",
           "thumb": "assets/img/mealImage13.jpg",  
-          "title": "chicken pizza",
+          "title": "Rice Meal",
           "price" : "12 $",
-          "foodType" : "pizza",
+          "foodType" : "meal",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient13.jpg",
+            "assets/img/ingredient14.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         },
@@ -485,27 +485,27 @@
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage14.jpg",  
-          "title": "veg pizza",
+          "title": "chocolate shake",
           "price" : "15 $",
-          "foodType" : "pizza",
+          "foodType" : "dessert",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredient5.jpg",
+            "assets/img/ingredient6.jpg",
+            "assets/img/ingredient7.jpg"
           ]
         },
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage15.jpg",  
-          "title": "pizza",
-          "price" : "17 $",
-          "foodType" : "pizza",
+          "title": "cheese cake",
+          "price" : "10 $",
+          "foodType" : "dessert",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient10.jpg",
+            "assets/img/ingredient11.jpg",
+            "assets/img/ingredient17.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
@@ -529,9 +529,9 @@
           "$key": "1",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage14.jpg",  
-          "title": "chicken pizza",
+          "title": "choco crush",
           "price" : "12 $",
-          "foodType" : "pizza",
+          "foodType" : "dessert",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
@@ -543,13 +543,13 @@
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage15.jpg",  
-          "title": "veg pizza",
+          "title": "walnut cake",
           "price" : "15 $",
-          "foodType" : "pizza",
+          "foodType" : "dessert",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredient6.jpg",
             "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient12.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         },
@@ -557,13 +557,13 @@
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage16.jpg",  
-          "title": "pizza",
+          "title": "brownie",
           "price" : "17 $",
-          "foodType" : "pizza",
+          "foodType" : "dessert",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient6.jpg",
+            "assets/img/ingredient15.jpg",
+            "assets/img/ingredient16.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
@@ -572,8 +572,8 @@
     {
       "$key": "7",
       "description": "Our mission is to give our customers a place to celebrate life’s special moments by offering the best food, service, and ambiance in Toronto.",
-      "thumb": "assets/img/restaurantSeven.jpg",
-      "name": " dominos",
+      "thumb": "assets/img/restaurantNine.jpg",
+      "name": "biryani junction",
       "type": "wine",
       "locality" : "pune",
       "price_range": "350 Rs",
@@ -587,27 +587,27 @@
           "$key": "1",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage17.jpg",  
-          "title": "chicken pizza",
+          "title": "chicken Biryani",
           "price" : "12 $",
-          "foodType" : "pizza",
+          "foodType" : "biryani",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredient9.jpg",
+            "assets/img/ingredient10.jpg",
+            "assets/img/ingredient11.jpg"
           ]
         },
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage10.jpg",  
-          "title": "veg pizza",
+          "title": "veg salad",
           "price" : "15 $",
-          "foodType" : "pizza",
+          "foodType" : "salad",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient8.jpg",
+            "assets/img/ingredient6.jpg",
+            "assets/img/ingredient16.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         },
@@ -615,9 +615,9 @@
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
           "thumb": "assets/img/mealImage8.jpg",  
-          "title": "pizza",
-          "price" : "17 $",
-          "foodType" : "pizza",
+          "title": "egg toast",
+          "price" : "15 $",
+          "foodType" : "egg",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
@@ -630,7 +630,7 @@
     {
       "$key": "8",
       "description": "To create an environment where absolute guest satisfaction is our highest priority. Celebrate Life. Family. Food.",
-      "thumb": "assets/img/restaurantSeven.jpg",
+      "thumb": "assets/img/restaurantTen.jpg",
       "name": " dominos",
       "type": "nutrition",
       "locality" : "pune",
@@ -647,7 +647,7 @@
           "thumb": "assets/img/mealImage7.jpg",  
           "title": "hamburger",
           "price" : "12 $",
-          "foodType" : "pizza",
+          "foodType" : "burger",
           "ingredients" : [
             "assets/img/ingredient12.jpg",
             "assets/img/ingredientThree.jpg",
@@ -661,7 +661,7 @@
           "thumb": "assets/img/mealImage8.jpg",  
           "title": "egg meal",
           "price" : "15 $",
-          "foodType" : "pizza",
+          "foodType" : "meal",
           "ingredients" : [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient13.jpg",
@@ -676,7 +676,7 @@
           "thumb": "assets/img/mealImage9jpg.jpg",  
           "title": "fish curry",
           "price" : "17 $",
-          "foodType" : "pizza",
+          "foodType" : "meal",
           "ingredients" : [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient10.jpg",
