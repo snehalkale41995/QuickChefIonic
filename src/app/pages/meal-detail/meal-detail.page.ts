@@ -36,7 +36,6 @@ export class MealDetailPage {
     }
   }
    this.ingredientList = this.mealDetails.ingredients
-   console.log("this.ingredientList", this.ingredientList)
     });
   }
 

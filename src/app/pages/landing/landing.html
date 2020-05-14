@@ -5,7 +5,8 @@
     </ion-buttons>
    
     <ion-title *ngIf="!ios && !showSearchbar">Home</ion-title>
-    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateLanding()" (ionCancel)="showSearchbar = false" placeholder="Search for your location"></ion-searchbar>
+    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" 
+        (ionCancel)="showSearchbar = false" placeholder="Search for your location"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
         <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -38,7 +39,7 @@
       <ion-segment-button value="pizza">
         <ion-icon name="pizza"></ion-icon>
       </ion-segment-button>
-      <ion-segment-button value="cafe">
+      <ion-segment-button value="coffee">
         <ion-icon name="cafe"></ion-icon>
       </ion-segment-button>
       <ion-segment-button value="ice-cream">

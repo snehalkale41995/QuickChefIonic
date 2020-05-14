@@ -606,6 +606,64 @@
           ]
         }
        ]
+    },
+    {
+      "$key": "8",
+      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "thumb": "assets/img/restaurantSeven.jpg",
+      "name": " dominos",
+      "type": "nutrition",
+      "locality" : "pune",
+      "price_range": "350 Rs",
+      "user_rating" : 4,
+      "reviews" : "170",
+      "timings" : "12:00 - 21:00",
+      "foodTypes" : ".salads .healthy .eggs",
+      "like" : false,
+      "menuList" : [
+        {
+          "$key": "1",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "chicken pizza",
+          "price" : "12 $",
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
+        },
+        {
+          "$key": "2",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "veg pizza",
+          "price" : "15 $",
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
+        },
+        {
+          "$key": "3",
+          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "title": "pizza",
+          "price" : "17 $",
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
+        }
+       ]
     }
   ]
 }

@@ -47,11 +47,10 @@ export class LandingPage implements OnInit {
     // Close any open sliding items when the landing updates
     let  loading = await this.loadingCtrl.create({
       message: 'Please wait...',
-      duration: 3000
+      duration: 1000
     });
     await loading.present();
-    await this.deliveryData.getRestaurantList().subscribe((data: any) => {
-     console.log("restaurants", data)
+    await this.deliveryData.getRestaurantList(this.segment).subscribe((data: any) => {
        this.restaurantList = data;
      //  console.log("this.restaurantList", this.restaurantList)
   });

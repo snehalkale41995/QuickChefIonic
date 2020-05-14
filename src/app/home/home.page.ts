@@ -14,7 +14,6 @@ export class HomePage {
   constructor(private fb: Facebook) {
     fb.getLoginStatus()
     .then(res => {
-      console.log(res.status);
       if (res.status === 'connect') {
         this.isLoggedIn = true;
       } else {

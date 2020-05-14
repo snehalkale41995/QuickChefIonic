@@ -143,12 +143,19 @@ export class DeliveryData {
     );
   }
 
-  getRestaurantList() {
+  getRestaurantList(segment: string) {
     return this.load().pipe(
       map((data: any) => {
-        console.log("data", data.restaurantList)
-        return data.restaurantList
-       
+        let restaurants :  any ;
+         if(segment!=='all'){
+          restaurants =  data.restaurantList.filter(function (e) {
+            return e.type === segment;
+           });
+           return restaurants;
+         }
+         else{
+          return data.restaurantList
+         }
       })
     );
   }

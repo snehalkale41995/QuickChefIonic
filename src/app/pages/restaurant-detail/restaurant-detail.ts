@@ -23,7 +23,6 @@ export class RestaurantDetailPage {
       const mealId = this.route.snapshot.paramMap.get('restaurantId');
      
       if(data && data.restaurantList){
-        console.log("data.restaurantList", data.restaurantList)
         this.cafeList = data.restaurantList;
       }
       if (data && data.foodItemList) {

@@ -33,7 +33,7 @@ export class HotelDetailPage {
           }
         }
       }
-      console.log("hotellll", Array(5))
+     
     });
   }
 
