@@ -46,7 +46,7 @@
     
       <ion-card *ngFor="let item of menuList" >
           <ion-list>
-            <ion-grid routerLink="/app/tabs/restaurants/meal-details/{{item.$key}}">
+            <ion-grid routerLink="/app/tabs/restaurants/meal-details/{{hotel.$key}}/{{item.$key}}">
                 <ion-row>
                   <ion-col size="6"class="imgCol">
                     <img  src="{{item.thumb}}">

@@ -22,8 +22,10 @@ export class MealDetailPage {
   ionViewWillEnter() {
     this.dataProvider.load().subscribe((data: any) => {
       const mealId = this.route.snapshot.paramMap.get('mealId');
+      const restaurantId = this.route.snapshot.paramMap.get('restaurantId');
       if (data && data.restaurantList) {
         for (const item of data.restaurantList) {
+          if (item && item.$key === restaurantId) {
           let mealList = item.menuList
         {
           for(const meal of mealList) {
@@ -34,6 +36,7 @@ export class MealDetailPage {
          }
       }
     }
+  }
   }
    this.ingredientList = this.mealDetails.ingredients
     });

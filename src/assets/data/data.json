@@ -313,7 +313,7 @@
           "foodType" : "pizza",
           "ingredients" : [
             "assets/img/ingredient12.jpg",
-            "assets/img/ingredient16.jpg",
+            "assets/img/ingredientTwo.jpg",
             "assets/img/ingredient14.jpg",
             "assets/img/ingredient5.jpg"
            
@@ -329,7 +329,7 @@
           "ingredients" : [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient14.jpg",
-            "assets/img/ingredient3.jpg",
+            "assets/img/ingredientThree.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
@@ -361,7 +361,7 @@
             "assets/img/ingredient12.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredient18.jpg"
+            "assets/img/ingredient13.jpg"
           ]
         },
         {
