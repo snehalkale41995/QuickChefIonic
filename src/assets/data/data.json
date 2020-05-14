@@ -180,38 +180,38 @@
 
   "foodItemList" : [
     {
-      "$key": "1d4aa3b29bca735e4et5",
+      "$key": "1",
       "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
       "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
       "title": "Salads"
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "2",
       "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
       "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/v1483635771/shutterstock_414301747_mtoc29.jpg",
       "title": "Sides"
     },
     {
-      "$key": "6630fb89c48d80b888t3",
+      "$key": "3",
       "description": "erving authentic Italian Chicken Masala made by a 100% Italian from Chicago to Denver's front range. Vegan and Gluten free options available",
       "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635600/shutterstock_78020470_mogsht.jpg"
 ,
       "title": "Desserts"
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "4",
       "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on",
       "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/v1483635736/shutterstock_154111196_dr1rsp.jpg",
       "title": "Main Course"
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "5",
       "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
       "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635706/shutterstock_125990357_cktkdy.jpg",
       "title": "Starters"
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "6",
       "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
       "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635695/shutterstock_150017666_h2deah.jpg",
       "title": "Sice"
@@ -219,9 +219,9 @@
   ],
   "restaurantList" : [
     {
-      "$key": "1d4aa3b29bca735e4et5",
+      "$key": "1",
       "name": "Otto Enoteca & Pizzeria",
-      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+      "description": "Boston's Mei Mei Street Kitchen does a great job of this - including information about their restaurant and food truck, content about their local and sustainable approach, as well as links to recent press",
       "thumb": "assets/img/restaurantOne.jpg",  
       "type": "pizza",
       "locality" : "pune",
@@ -234,34 +234,52 @@
        "menuList" : [
         {
           "$key": "1",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "description": "A light, pillowy texture often created by the incorporation of air. A smooth and creamy texture similar to that of butter.",
+          "thumb": "assets/img/mealImage1.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         },
         {
           "$key": "2",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "description": "Roast chicken, baby carrots, spring peas topped with grandma’s flakey pie crust.",
+          "thumb": "assets/img/mealImage2.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg",
+            "assets/img/ingredient5.jpg",
+            "assets/img/ingredient6.jpg"
+          ]
         },
         {
           "$key": "3",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "pizza",
+          "description": "Grandma’s flakey pie crust filled with roast chicken, baby carrots, and spring peas. A light texture with a slight crunch.",
+          "thumb": "assets/img/mealImage3.jpg",  
+          "title": "cheese pizza",
           "price" : "17 $",
-          "foodType" : "pizza"
+          "foodType" : "pizza",
+          "ingredients" : [
+            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredientFour.jpg"
+          ]
         }
        ]
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "2",
       "name": "Pizza Hut",
-      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "description": "We imagine a world where there’s no such thing as a bad cup of coffee and all coffee farmers live prosperously.",
       "thumb": "assets/img/restaurantTwo.jpg",
       "type": "pizza",
       "locality" : "mumbai",
@@ -274,52 +292,53 @@
       "menuList" : [
         {
           "$key": "1",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "chicken pizza",
+          "description": "The texture of a food with a hard outer layer and soft interior.",
+          "thumb": "assets/img/mealImage3.jpg",  
+          "title": "Veg cheese Burger",
           "price" : "12 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
+            "assets/img/ingredient5.jpg",
             "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredient6.jpg",
+            "assets/img/ingredient7.jpg"
           ]
         },
         {
           "$key": "2",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "veg pizza",
+          "description": "A firm, crisp texture often identified by the sharp, audible noise that the food makes when being eaten.",
+          "thumb": "assets/img/mealImage5.jpg",  
+          "title": "paneer burger",
           "price" : "15 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredient12.jpg",
+            "assets/img/ingredient16.jpg",
+            "assets/img/ingredient14.jpg",
+            "assets/img/ingredient5.jpg"
+           
           ]
         },
         {
           "$key": "3",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "pizza",
+          "description": "A food that was dipped in butter and coated with spices before being cooked in a hot pan, resulting in a blackened appearance.",
+          "thumb": "assets/img/mealImage6.jpg",  
+          "title": "French fries",
           "price" : "17 $",
-          "foodType" : "pizza",
+          "foodType" : "burger",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient11.jpg",
+            "assets/img/ingredient14.jpg",
+            "assets/img/ingredient3.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
        ]
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "3",
       "name": "Cafe-Coffee Day",
-      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "description": "Our values include providing fair wages for workers, giving back to the communities we work with, and serving great coffee",
       "thumb": "assets/img/restaurantThree.jpg",
       "title": "Sides",
       "type": "coffee",
@@ -333,52 +352,53 @@
       "menuList" : [
         {
           "$key": "1",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "chicken pizza",
+          "description": "A food that was cooked in an oven, often resulting in a crispy outer coating.",
+          "thumb": "assets/img/mealImage7.jpg",  
+          "title": "hamburger",
           "price" : "12 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredient12.jpg",
             "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredient18.jpg"
           ]
         },
         {
           "$key": "2",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "veg pizza",
+          "description": "Food that is briefly fried in a small amount of fat and then is slowly stewed in a covered pot. Results in a seared, crispy exterior coupled with a tender interior texture.",
+          "thumb": "assets/img/mealImage8.jpg",  
+          "title": "egg meal",
           "price" : "15 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient11.jpg",
+            "assets/img/ingredient13.jpg",
+            "assets/img/ingredient7.jpg",
+            "assets/img/ingredient8.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         },
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "pizza",
+          "thumb": "assets/img/mealImage9jpg.jpg",  
+          "title": "fish curry",
           "price" : "17 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient11.jpg",
+            "assets/img/ingredient10.jpg",
+            "assets/img/ingredient9.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
        ]
     },
     {
-      "$key": "6630fb89c48d80b888t3",
+      "$key": "4",
       "name": "Coffee Cafe",
-      "description": "erving authentic Italian Chicken Masala made by a 100% Italian from Chicago to Denver's front range. Vegan and Gluten free options available",
+      "description": "Our mission is to be the most sustainable restaurant in New York by sourcing our ingredients locally, supplementing produce with herbs grown on our rooftop garden, and giving back to the community through urban farming education",
       "thumb": "assets/img/restaurantfour.jpg",
        "type": "coffee",
       "locality" : "pune",
@@ -391,36 +411,36 @@
       "menuList" : [
         {
           "$key": "1",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "chicken pizza",
+          "description": "A food cooked with intense radiant heat, as in an oven or on a grill. Often results in a darkened appearance and crispy texture.",
+          "thumb": "assets/img/mealImage10.jpg",  
+          "title": "veg salad",
           "price" : "12 $",
-          "foodType" : "pizza",
+          "foodType" : "salad",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredient9.jpg",
+            "assets/img/ingredient8.jpg",
+            "assets/img/ingredient7.jpg",
+            "assets/img/ingredient6.jpg"
           ]
         },
         {
           "$key": "2",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "veg pizza",
+          "description": "Food that has been cooked in nearly boiling liquid. Often results in a tender, moist texture.",
+          "thumb": "assets/img/mealImage11jpg.jpg",  
+          "title": "chocolate waffle",
           "price" : "15 $",
-          "foodType" : "pizza",
+          "foodType" : "dessert",
           "ingredients" : [
             "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient5.jpg",
+            "assets/img/ingredient6.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         },
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage12.jpg",  
           "title": "pizza",
           "price" : "17 $",
           "foodType" : "pizza",
@@ -434,9 +454,9 @@
        ]
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "5",
       "name": "Choco Bite",
-      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on",
+      "description": "Our mission is to make customers happy. Our mission is to share our family’s authentic Sri Lankan recipes with the world.",
       "thumb": "assets/img/restaurantfive.jpg",
       "type": "ice-cream",
       "locality" : "indore",
@@ -449,8 +469,8 @@
       "menuList" : [
         {
           "$key": "1",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "description": "Our mission is to give our customers a place to celebrate life’s special moments by offering the best food, service, and ambiance in Toronto.",
+          "thumb": "assets/img/mealImage13.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
           "foodType" : "pizza",
@@ -464,7 +484,7 @@
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage14.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
           "foodType" : "pizza",
@@ -478,7 +498,7 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage15.jpg",  
           "title": "pizza",
           "price" : "17 $",
           "foodType" : "pizza",
@@ -492,9 +512,9 @@
        ]
     },
     {
-      "$key": "6630fb89c48d80b888t2",
+      "$key": "6",
       "name": "Naturals",
-      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "description": "At noma, we wish to offer our personal rendition of Nordic gourmet cuisine with an innovative gastronomic take on traditional cooking methods, fine Nordic produce and the legacy of our shared food heritage",
       "thumb": "assets/img/restaurantSix.jpg",
       "type": "ice-cream",
       "locality" : "nasik",
@@ -508,7 +528,7 @@
         {
           "$key": "1",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage14.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
           "foodType" : "pizza",
@@ -522,7 +542,7 @@
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage15.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
           "foodType" : "pizza",
@@ -536,7 +556,7 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage16.jpg",  
           "title": "pizza",
           "price" : "17 $",
           "foodType" : "pizza",
@@ -550,8 +570,8 @@
        ]
     },
     {
-      "$key": "6630fb89c48d80b888t2",
-      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "$key": "7",
+      "description": "Our mission is to give our customers a place to celebrate life’s special moments by offering the best food, service, and ambiance in Toronto.",
       "thumb": "assets/img/restaurantSeven.jpg",
       "name": " dominos",
       "type": "wine",
@@ -566,7 +586,7 @@
         {
           "$key": "1",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage17.jpg",  
           "title": "chicken pizza",
           "price" : "12 $",
           "foodType" : "pizza",
@@ -580,7 +600,7 @@
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage10.jpg",  
           "title": "veg pizza",
           "price" : "15 $",
           "foodType" : "pizza",
@@ -594,7 +614,7 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+          "thumb": "assets/img/mealImage8.jpg",  
           "title": "pizza",
           "price" : "17 $",
           "foodType" : "pizza",
@@ -609,7 +629,7 @@
     },
     {
       "$key": "8",
-      "description": "Souvlaki features the fresh-tasting combination of lemon juice, garlic, and olive oil that is so prevalent in Greek cuisine",
+      "description": "To create an environment where absolute guest satisfaction is our highest priority. Celebrate Life. Family. Food.",
       "thumb": "assets/img/restaurantSeven.jpg",
       "name": " dominos",
       "type": "nutrition",
@@ -623,43 +643,44 @@
       "menuList" : [
         {
           "$key": "1",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "chicken pizza",
+          "description": "A food that was cooked in an oven, often resulting in a crispy outer coating.",
+          "thumb": "assets/img/mealImage7.jpg",  
+          "title": "hamburger",
           "price" : "12 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredient12.jpg",
             "assets/img/ingredientThree.jpg",
-            "assets/img/ingredientFour.jpg"
+            "assets/img/ingredientTwo.jpg",
+            "assets/img/ingredient5.jpg"
           ]
         },
         {
           "$key": "2",
-          "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "veg pizza",
+          "description": "Food that is briefly fried in a small amount of fat and then is slowly stewed in a covered pot. Results in a seared, crispy exterior coupled with a tender interior texture.",
+          "thumb": "assets/img/mealImage8.jpg",  
+          "title": "egg meal",
           "price" : "15 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient11.jpg",
+            "assets/img/ingredient13.jpg",
+            "assets/img/ingredient7.jpg",
+            "assets/img/ingredient8.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         },
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
-          "title": "pizza",
+          "thumb": "assets/img/mealImage9jpg.jpg",  
+          "title": "fish curry",
           "price" : "17 $",
           "foodType" : "pizza",
           "ingredients" : [
-            "assets/img/ingredientOne.jpg",
-            "assets/img/ingredientTwo.jpg",
-            "assets/img/ingredientThree.jpg",
+            "assets/img/ingredient11.jpg",
+            "assets/img/ingredient10.jpg",
+            "assets/img/ingredient9.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
