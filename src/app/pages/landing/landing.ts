@@ -17,7 +17,6 @@ export class LandingPage implements OnInit {
   dayIndex = 0;
   queryText = '';
   segment = 'all';
-  excludeTracks: any = [];
   shownSessions: any = [];
   groups: any = [];
   confDate: string;
@@ -52,6 +51,11 @@ export class LandingPage implements OnInit {
        this.restaurantList = data;
      //  console.log("this.restaurantList", this.restaurantList)
   });
+
+  await this.deliveryData.getFoodSegments().subscribe((data: any) => {
+     console.log("dataaaa",data);
+  //  console.log("this.restaurantList", this.restaurantList)
+});
 
       loading.dismiss(); 
     if (this.landingList) {
