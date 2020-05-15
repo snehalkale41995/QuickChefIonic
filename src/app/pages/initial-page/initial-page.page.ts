@@ -17,7 +17,6 @@ export class InitialPagePage implements OnInit {
 
   async naviagteLanding (){
     let  loading = await this.loadingCtrl.create({
-     // message: 'Loading...',
       duration: 2000
     });
     await loading.present();

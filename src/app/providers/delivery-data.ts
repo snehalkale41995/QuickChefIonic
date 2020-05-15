@@ -33,6 +33,10 @@ export class DeliveryData {
     );
   }
 
+  getFoodSegments(){
+    
+  }
+
   getRestaurantList(segment: string) {
     return this.load().pipe(
       map((data: any) => {
