@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalController, ToastController, Config } from '@ionic/angular';
 
 import { DeliveryData } from '../../providers/delivery-data';
-import { UserData } from '../../providers/user-data';
 
 @Component({
   selector: 'page-landing',
@@ -34,7 +33,6 @@ export class LandingPage implements OnInit {
     public router: Router,
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
-    public user: UserData,
     public config: Config
   ) { }
 

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheckTutorial } from './providers/check-tutorial.service';
+import { InitialPagePage } from './pages/initial-page/initial-page.page';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/landing',
+    redirectTo: '/initial-page',
     pathMatch: 'full'
   },
   {
@@ -15,6 +15,9 @@ const routes: Routes = [
   {
     path: 'landing',
     loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule),
+  },
+  { path: 'initial-page',
+   loadChildren: () => import('./pages/initial-page/initial-page.module').then(m => m.InitialPagePageModule),
   }
 ];
 
