@@ -12,7 +12,6 @@ let httpOptions = {
   }),
 };
 
-
 @Injectable({
   providedIn: "root",
 })
@@ -29,21 +28,50 @@ export class DeliveryData {
     }
   }
 
-  getRestaurants() {
-    return this.load().pipe(
+  getRestaurants(segment: string, queryText : string) {
+    let restaurants = [], 
+    apiUrl = `${AppConfig.serverURL}/search?q=pune`;
+
+    if(queryText && queryText!=="pune"){
+      apiUrl = `${AppConfig.serverURL}/search?q=${queryText}`;
+    }
+    if(segment && segment !== "all" ){
+      apiUrl= `${apiUrl}&category=${segment}`
+    }
+    
+    return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        return data.restaurants.sort((a: any, b: any) => {
-          const aName = a.name.split(" ").pop();
-          const bName = b.name.split(" ").pop();
-          return aName.localeCompare(bName);
-        });
+      data.restaurants.forEach(item => {
+        console.log(item.restaurant.cuisines)
+        if(item.restaurant.thumb){
+          restaurants.push({
+            id : item.restaurant.id,
+            name : item.restaurant.name,
+            thumb : item.restaurant.thumb,
+            timings : item.restaurant.timings,
+            location  : item.restaurant.location.locality_verbose,
+            price_range :  item.restaurant.price_range,
+            average_cost_for_two : item.restaurant.average_cost_for_two
+          })
+        }
+       
+      });
+       return restaurants;
       })
     );
   }
 
   getFoodSegments() {
+    let categories = [] ;
     const apiUrl = `${AppConfig.serverURL}/categories`;
-    return this.http.get(apiUrl, httpOptions);
+    return this.http.get(apiUrl, httpOptions).pipe(
+      map((data: any) => {
+       data.categories.forEach(category => {
+         categories.push(category.categories)
+       });
+        return categories;
+      })
+    );
   }
 
   getRestaurantList(segment: string) {
@@ -63,11 +91,23 @@ export class DeliveryData {
   }
 
   getMealList() {
-    return this.load().pipe(
+    // return this.load().pipe(
+    //   map((data: any) => {
+    //     console.log("data", data.foodItemList);
+    //     return data.foodItemList;
+    //   })
+    // );
+    let Cuisines = [] ;
+    const apiUrl = `${AppConfig.serverURL}/cuisines?city_id=5`;
+    return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data.foodItemList);
-        return data.foodItemList;
+       data.cuisines.forEach(cuisine => {
+        Cuisines.push(cuisine.cuisine)
+       });
+        return Cuisines;
       })
     );
   }
+
+
 }

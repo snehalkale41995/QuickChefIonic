@@ -25,6 +25,7 @@ export class RestaurantListPage {
     await loading.present();
     
     await this.deliveryData.getMealList().subscribe((mealList: any[]) => {
+      console.log("mealList", mealList)
       this.meals = mealList;
     });
     loading.dismiss(); 

@@ -15,7 +15,7 @@ export class LandingPage implements OnInit {
 
   ios: boolean;
   dayIndex = 0;
-  queryText = '';
+  queryText = 'pune';
   segment = 'all';
   shownSessions: any = [];
   groups: any = [];
@@ -23,6 +23,7 @@ export class LandingPage implements OnInit {
   showSearchbar: boolean;
   imageUrl: any = "../../../assets/icon/favicon.png";
   restaurantList : any = [];
+  foodTypeList : any = [];
 
   constructor(
     public alertCtrl: AlertController,
@@ -47,17 +48,22 @@ export class LandingPage implements OnInit {
       duration: 1000
     });
     await loading.present();
-    await this.deliveryData.getRestaurantList(this.segment).subscribe((data: any) => {
-       this.restaurantList = data;
-     //  console.log("this.restaurantList", this.restaurantList)
-  });
+  //   await this.deliveryData.getRestaurantList(this.segment).subscribe((data: any) => {
+  //      this.restaurantList = data;
+  //    //  console.log("this.restaurantList", this.restaurantList)
+  // });
 
   await this.deliveryData.getFoodSegments().subscribe((data: any) => {
-     console.log("dataaaa",data);
-  //  console.log("this.restaurantList", this.restaurantList)
+     this.foodTypeList = data ;
 });
 
-      loading.dismiss(); 
+await this.deliveryData.getRestaurants(this.segment, this.queryText).subscribe((data: any) => {
+  this.restaurantList = data
+  loading.dismiss(); 
+  console.log("dataaaa",data);
+});
+
+     
     if (this.landingList) {
 
       this.landingList.closeSlidingItems();
