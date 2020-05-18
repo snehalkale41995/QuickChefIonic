@@ -24,22 +24,14 @@
 
 <ion-content fullscreen="true">
   <ion-toolbar *ngIf="!ios">
-    <ion-row>
-      <ion-text>
-       <H3 class="header-home" > Hello, Dilan </H3>
-      </ion-text>
-    </ion-row>
-      <ion-row>
-      <ion-text>
-        <H4 class="header-subtitle" > What do you want to eat ?</H4>
-       </ion-text>
-    </ion-row>
-
+  
+    <div class="categoryClass">
      <ion-segment  scrollable [(ngModel)]="segment" (ionChange)="updateLanding()">
       <ion-segment-button  *ngFor="let item of foodTypeList" value={{item.id}}>
-        <ion-text class="segmentName"> {{item.name}} </ion-text>
+        <app-food-category-card [categoryData]="item"></app-food-category-card>
       </ion-segment-button>
     </ion-segment> 
+   </div>
 
     <ion-grid *ngIf="restaurantList">
     <ion-row *ngFor="let item of restaurantList" class="restCategories" routerLink="/app/tabs/restaurants/hotel-details/{{item.$key}}">

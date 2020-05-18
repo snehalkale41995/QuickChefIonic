@@ -686,5 +686,57 @@
         }
        ]
     }
+  ],
+  "categoryIcons" : [
+    {
+      "id" : 1,
+      "icon" : "assets/img/foodCategory/category_1.png"
+    },
+    {
+      "id" : 2,
+      "icon" : "assets/img/foodCategory/category_2.png"
+    },
+    {
+      "id" : 3,
+      "icon" :  "assets/img/foodCategory/category_3.jpg"
+    },
+    {
+      "id" : 4,
+      "icon" : "assets/img/foodCategory/category_4.jpg"
+    },
+    {
+      "id" : 5,
+      "icon" : "assets/img/foodCategory/category_5.png"
+    },
+    {
+      "id" : 6,
+      "icon" :  "assets/img/foodCategory/category_6.png"
+    },
+    {
+      "id" : 7,
+      "icon" : "assets/img/foodCategory/category_7.jpg"
+    },
+    {
+      "id" : 8,
+      "icon" :  "assets/img/foodCategory/category_8.jpg"
+    },{
+      "id" : 9,
+      "icon" :  "assets/img/foodCategory/category_9.png"
+    },{
+      "id" : 10,
+      "icon" :  "assets/img/foodCategory/category_10.png"
+    },
+    {
+      "id" : 11,
+      "icon" : "assets/img/foodCategory/category_11.png"
+    },
+    {
+      "id" : 12,
+      "icon" : "assets/img/foodCategory/category_12.jpg"
+    },
+    {
+      "id" : 13,
+      "icon" : "assets/img/foodCategory/category_13.png"
+    }
   ]
 }

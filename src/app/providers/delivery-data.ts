@@ -3,6 +3,8 @@ import { Injectable } from "@angular/core";
 import { of } from "rxjs";
 import { map } from "rxjs/operators";
 import { AppConfig } from "../appConstants/appConfig.js";
+import jsonData from '../../assets/data/data.json';
+
 
 
 let httpOptions = {
@@ -62,13 +64,22 @@ export class DeliveryData {
   }
 
   getFoodSegments() {
+    let iconList = jsonData.categoryIcons;
     let categories = [] ;
     const apiUrl = `${AppConfig.serverURL}/categories`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-       data.categories.forEach(category => {
-         categories.push(category.categories)
+        let list = data.categories
+       data.categories.forEach((category, index) => {
+         let categoryDetails = {
+           id : category.categories.id,
+           name : category.categories.name,
+           icon : iconList[index].icon
+         }
+         if(categoryDetails.id !== 13)
+         categories.push(categoryDetails)
        });
+       console.log("categories", categories)
         return categories;
       })
     );
@@ -90,6 +101,7 @@ export class DeliveryData {
     );
   }
 
+
   getMealList() {
     // return this.load().pipe(
     //   map((data: any) => {
@@ -98,11 +110,13 @@ export class DeliveryData {
     //   })
     // );
     let Cuisines = [] ;
+    let cuisineIds = [270, 30, 25, 100, 40, 143, 164, 50, 1015, 85, 90];
     const apiUrl = `${AppConfig.serverURL}/cuisines?city_id=5`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
        data.cuisines.forEach(cuisine => {
-        Cuisines.push(cuisine.cuisine)
+        if(cuisineIds.includes(cuisine.cuisine.cuisine_id))
+          Cuisines.push(cuisine.cuisine)
        });
         return Cuisines;
       })

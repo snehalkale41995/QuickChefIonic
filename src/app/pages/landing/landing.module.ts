@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { LandingPage } from './landing';
 import { LandingPageRoutingModule } from './landing-routing.module';
+import {FoodCategoryCardComponent} from '../../components/food-category-card/food-category-card.component'
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { LandingPageRoutingModule } from './landing-routing.module';
     LandingPageRoutingModule
   ],
   declarations: [
-    LandingPage
+    LandingPage,
+    FoodCategoryCardComponent
     
   ],
   entryComponents: [
