@@ -1,3 +1,21 @@
-<p>
-  restaurant-card works!
-</p>
+<ion-grid class="gridClass">
+  <ion-row class="rowClass">
+    <ion-col class="colClass">
+
+      <ion-row>
+          <img src="{{restaurantItem.thumb}}" class="imgClass" />
+      </ion-row>
+
+      <ion-row class="nameRow">
+        <ion-col><ion-text class="nameText">{{restaurantItem.name}}</ion-text></ion-col>
+      </ion-row>
+
+       <ion-row class="badgeClass" >
+        <span><ion-icon name="star" class="rating"></ion-icon></span>
+        <span class="badgeClass"><ion-text>&nbsp;{{restaurantItem.ratings}}&nbsp;&nbsp;</ion-text> </span>
+        <span> ({{restaurantItem.votes}}&nbsp;ratings) </span>
+      </ion-row> 
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

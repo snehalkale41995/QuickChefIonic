@@ -1,0 +1,41 @@
+.gridClass{
+    padding: 10px;
+}
+
+.imgClass {
+    height: 180px;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+  //  position: relative;
+  }
+
+.rowClass {
+    border: 1px solid rgba(119, 119, 119, 0.6);
+    border-radius: 10px;
+    padding: 0px;
+}
+
+.colClass{
+    padding : 0px
+}
+
+.nameRow{
+    padding : 5px
+}
+
+.nameText{
+    font-size:16px;
+    font-weight:bold;
+    font-family: sans-serif;
+}
+
+.rating{
+    color: hsl(335, 100%, 50%);
+    font-size : 18px
+  }
+
+  .badgeClass{
+    margin-left : 10px
+  }
+

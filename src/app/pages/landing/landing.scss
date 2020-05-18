@@ -87,7 +87,8 @@ $categories: (
     }
     .gridCol {
       border: 1px solid rgba(119, 119, 119, 0.6);
-      border-radius: 10px
+      border-radius: 10px;
+      padding: 1px;
     }
    }
    
@@ -99,4 +100,18 @@ $categories: (
    .categoryClass{
      margin-top : 20px;
    }
+
+   .btnClass{
+     padding: 0px !important;
+   }
+
+   .button-native {
+    margin-left: unset;
+    margin-right: unset;
+    margin-inline-start: var(--margin-start);
+    margin-inline-end: var(--margin-end);
+    padding : 0px !important;
+    padding-inline-start: var(--padding-start);
+    padding-inline-end: var(--padding-end);
+}
   

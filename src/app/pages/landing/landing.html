@@ -3,13 +3,10 @@
     <ion-buttons *ngIf="!showSearchbar" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-   
-    <!-- <ion-title *ngIf="!ios && !showSearchbar">Home</ion-title> -->
-    <ion-searchbar  [(ngModel)]="queryText" 
-        (ionCancel)="showSearchbar = false" placeholder="Search for your location">
-      </ion-searchbar>
+    <ion-searchbar [(ngModel)]="queryText" (ionCancel)="showSearchbar = false" placeholder="Search for your location">
+    </ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button  (click)="updateLanding()">
+      <ion-button (click)="updateLanding()">
         <ion-text> Search</ion-text>
       </ion-button>
       <ion-button>
@@ -19,40 +16,21 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  
 </ion-header>
 
 <ion-content fullscreen="true">
   <ion-toolbar *ngIf="!ios">
-  
     <div class="categoryClass">
-     <ion-segment  scrollable [(ngModel)]="segment" (ionChange)="updateLanding()">
-      <ion-segment-button  *ngFor="let item of foodTypeList" value={{item.id}}>
-        <app-food-category-card [categoryData]="item"></app-food-category-card>
-      </ion-segment-button>
-    </ion-segment> 
-   </div>
+      <ion-segment scrollable [(ngModel)]="segment" (ionChange)="updateLanding()">
+        <ion-segment-button *ngFor="let item of foodTypeList" value={{item.id}}>
+          <app-food-category-card [categoryData]="item"></app-food-category-card>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
 
-    <ion-grid *ngIf="restaurantList">
-    <ion-row *ngFor="let item of restaurantList" class="restCategories" routerLink="/app/tabs/restaurants/hotel-details/{{item.$key}}">
-      <ion-col size="12" class="gridCol">
-        <img src="{{item.thumb}}" />
-        <p class="text-over-img">
-          <ion-row >
-            <ion-col col-6 class="text-img-color">{{item.name}}</ion-col>
-            <ion-col class="subtitle-over-img"><ion-icon name="time"> </ion-icon> : {{item.timings}}
-              </ion-col>
-          </ion-row>
-          <ion-row class="subtitle-over-img">
-            <ion-col col-6 class="subtitle-over-img"><ion-icon name="pin"></ion-icon>:  {{item.location}}</ion-col>
-            <ion-col class="subtitle-over-img"> <ion-icon name="cash"></ion-icon> : Min  {{item.average_cost_for_two}}</ion-col>
-          </ion-row>
-        </p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
+    <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details/{{item.$key}}">
+      <app-restaurant-card [restaurantItem]="item"></app-restaurant-card>
+    </div>
+
   </ion-toolbar>
-  </ion-content>
-
-  
+</ion-content>
