@@ -55,7 +55,8 @@ export class DeliveryData {
             price_range :  item.restaurant.price_range,
             average_cost_for_two : item.restaurant.average_cost_for_two,
             ratings : Math.floor(item.restaurant.user_rating.aggregate_rating) ,
-            votes : item.restaurant.user_rating.votes
+            votes : item.restaurant.user_rating.votes,
+            cuisines : item.restaurant.cuisines
           })
         }
        

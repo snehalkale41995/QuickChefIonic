@@ -31,11 +31,26 @@
 }
 
 .rating{
-    color: hsl(335, 100%, 50%);
+    color: darkred;
     font-size : 18px
   }
 
   .badgeClass{
-    margin-left : 10px
+    margin-left : 4px
+  }
+
+  .cuisineClass {
+    margin-top: 1px;
+    background-color: #f5dae0;
+}
+
+  .ratingText {
+    font-size: 18px;
+    color: darkred;
+    font-family: sans-serif;
+  }
+  .votingText{
+    font-size: 14px;
+    font-family: sans-serif;
   }
 
