@@ -23,9 +23,9 @@ export class AppComponent implements OnInit {
       icon: 'restaurant'
     },
     {
-      title: 'Daily Meals',
-      url: '/app/tabs/restaurants',
-      icon: 'md-pizza'
+      title: 'User Profile',
+      url: '/user-profile',
+      icon: 'contact'
     }
   ];
   loggedIn = false;
