@@ -8,7 +8,7 @@
 
       <ion-row class="nameRow">
         <ion-col size="10"><ion-text class="nameText">{{restaurantItem.name}}</ion-text></ion-col>
-        <ion-col size="2"><ion-badge color="danger">50% off</ion-badge></ion-col>
+        <ion-col size="2" *ngIf="isOffer"><ion-badge color="danger">50% off</ion-badge></ion-col>
       </ion-row>
 
        <ion-row class="badgeClass" >
@@ -16,8 +16,8 @@
         <span><ion-text class="ratingText">&nbsp;{{restaurantItem.ratings}}&nbsp;</ion-text> </span>
         <span><ion-text class="votingText">({{restaurantItem.votes}}&nbsp;ratings) </ion-text> </span>
       </ion-row> 
-      <ion-row class="badgeClass">
-        <p class="cuisineClass"><ion-badge color="#fbe9ed">{{restaurantItem.cuisines}}</ion-badge> </p>
+      <ion-row  class="badgeClass">
+        <p class="cuisineClass" ><ion-badge color="#fbe9ed">{{restaurantItem.cuisines}}</ion-badge> </p>
       </ion-row>
 
     </ion-col>

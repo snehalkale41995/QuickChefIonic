@@ -14,6 +14,7 @@ export class LandingPage implements OnInit {
   @ViewChild('landingList', { static: true }) landingList: IonList;
 
   ios: boolean;
+  isOffer = false;
   dayIndex = 0;
   queryText = 'pune';
   segment = 'all';

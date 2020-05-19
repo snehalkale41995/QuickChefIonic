@@ -7,6 +7,6 @@
     <img src="../../../../../assets/img/foodDelivery223.jpg"/>
   </div>
   <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details/{{item.$key}}">
-    <app-restaurant-card [restaurantItem]="item"></app-restaurant-card>
+    <app-restaurant-card [restaurantItem]="item" [isOffer]="isOffer"></app-restaurant-card>
   </div>
 </ion-content>

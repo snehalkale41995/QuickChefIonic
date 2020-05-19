@@ -8,9 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RestaurantCardComponent implements OnInit {
 
   @Input()  restaurantItem : {};
+  @Input()  isOffer ;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("isOffer", this.isOffer)
+  }
 
 }

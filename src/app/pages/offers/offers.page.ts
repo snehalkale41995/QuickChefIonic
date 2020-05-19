@@ -7,7 +7,7 @@ import { DeliveryData } from '../../providers/delivery-data';
   styleUrls: ['./offers.page.scss'],
 })
 export class OffersPage implements OnInit {
-
+  isOffer = true;
   queryText = 'pune';
   segment = 'all';
   restaurantList ;
