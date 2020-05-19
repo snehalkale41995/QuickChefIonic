@@ -1,0 +1,22 @@
+<ion-content class="restaurant-detail">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons  slot="end">
+        <ion-button>
+          <span >
+            <ion-icon class="likeColor" name="heart"></ion-icon></span>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <div class="restaurant-background">
+  <ion-row>
+   <h2>Latest Offers</h2>
+   <h6>Find Offers, Special meals and More !</h6>
+  </ion-row>
+    <img src="../../../../../assets/img/foodDelivery223.jpg"/>
+  </div>
+  <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details/{{item.$key}}">
+    <app-restaurant-card [restaurantItem]="item"></app-restaurant-card>
+  </div>
+</ion-content>

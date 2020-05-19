@@ -12,12 +12,17 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 
+import {OffersPageModule} from './pages/offers/offers.module'
+import {LandingModule} from './pages/landing/landing.module'
+
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    OffersPageModule,
+    LandingModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot()
   ],

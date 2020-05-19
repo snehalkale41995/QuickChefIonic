@@ -11,7 +11,7 @@ import { HotelDetailModule } from '../hotel-detail/hotel-detail.module';
 import { RestaurantDetailModule } from '../restaurant-detail/restaurant-detail.module';
 import { RestaurantListModule } from '../restaurant-list/restaurant-list.module';
 import { MealDetailPageModule } from '../meal-detail/meal-detail.module'
-import { MealDetailPage } from '../meal-detail/meal-detail.page';
+import { OffersPageModule } from '../offers/offers.module'
 @NgModule({
   imports: [
     AboutModule,
@@ -22,7 +22,8 @@ import { MealDetailPage } from '../meal-detail/meal-detail.page';
     MealDetailPageModule,
     RestaurantDetailModule,
     RestaurantListModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    OffersPageModule
   ],
   declarations: [
     TabsPage,

@@ -53,6 +53,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'offers',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../offers/offers.module').then(m => m.OffersPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/landing',
         pathMatch: 'full'
