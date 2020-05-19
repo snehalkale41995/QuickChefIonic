@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DeliveryData } from '../../providers/delivery-data';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.page.scss'],
 })
 export class UserProfilePage implements OnInit {
-
-  constructor() { }
-
+  itemList ;
+  constructor(public deliveryData: DeliveryData) { }
+  
   ngOnInit() {
+    this.getList()
   }
 
+    async getList(){
+      await this.deliveryData.getUserProfileList().subscribe((data: any) => {
+        console.log(data, "data")
+        this.itemList = data ;
+    });
+    }
+  
 }

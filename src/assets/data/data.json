@@ -738,5 +738,14 @@
       "id" : 13,
       "icon" : "assets/img/foodCategory/category_13.png"
     }
+  ],
+  "userProfileItems" : [
+    "Profile",
+    "Payment Method",
+    "Order History",
+    "Delivery Address",
+    "Settings",
+    "About Us",
+    "Support Center"
   ]
 }

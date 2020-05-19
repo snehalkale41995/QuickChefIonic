@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>userProfile</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="card">
+  <div class="header">
+    <div class="avatar">
+      <img src="../../../assets/img/userImage2..jpg" alt="">
+      <h3 class="name">Snehal Kale</h3>
+      <h5 class="email">snehal.kale@gmail.com</h5>
+    </div>
+  </div>
+</div>
 
 <ion-content>
+  <ion-list *ngFor="let item of itemList">
+    <ion-item routerLink="">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+    </ion-list>
+  </ion-content>
 
-</ion-content>
+

@@ -1,0 +1,54 @@
+.card {
+    margin: 0 auto;
+    background-color: #fbe9ed;
+    border-radius: 30px;
+    position: relative;
+    height: 250px;
+    width: 100%;
+
+    .header {
+        height: 80px;
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                border-radius: 50%;
+                /* position: absolute; */
+                bottom: 20px;
+                border: 1px solid #fff;
+                background-color: #fff;
+                height: 150px;
+                width: 200px;
+                margin-top: 10px;
+            }
+
+            .name{
+                top: 140px;
+                position: absolute;
+                color: #CB202D;
+                font-family: serif;
+                margin-left: 18px;
+                font-size: 22px;
+            }
+            .email
+            {
+                top: 175px;
+                position: absolute;
+                color: #CB202D;
+                font-family: serif;
+                margin-left: 7px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+
+.card-body {
+     padding: 10px;
+    }

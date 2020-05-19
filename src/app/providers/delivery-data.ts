@@ -104,6 +104,14 @@ export class DeliveryData {
     );
   }
 
+  getUserProfileList() {
+    return this.load().pipe(
+      map((data: any) => {
+        console.log("data", data.foodItemList);
+        return data.userProfileItems;
+      })
+    );
+  }
 
   getMealList() {
     // return this.load().pipe(
