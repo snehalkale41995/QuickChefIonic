@@ -66,7 +66,7 @@ export class LandingPage implements OnInit {
     });
 
     await this.deliveryData
-      .getRestaurants(this.restaurantName, this.cityName)
+      .getRestaurants(this.restaurantName, this.cityName, "")
       .subscribe((data: any) => {
         this.restaurantList = data;
         loading.dismiss();

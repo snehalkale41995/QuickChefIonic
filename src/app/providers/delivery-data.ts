@@ -30,16 +30,16 @@ export class DeliveryData {
     }
   }
 
-  getRestaurants(restaurantName: string, cityName : string) {
+  getRestaurants(restaurantName: string, cityName : string, category : string) {
     let restaurants = [], 
     apiUrl = `${AppConfig.serverURL}/search?q=pune`;
 
     if(cityName && cityName!=="pune"){
       apiUrl = `${AppConfig.serverURL}/search?q=${cityName}`;
     }
-    // if(segment && segment !== "all" ){
-    //   apiUrl= `${apiUrl}&category=${segment}`
-    // }
+       if(category){
+         apiUrl= `${apiUrl}&category=${category}`
+        }
     
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
@@ -65,8 +65,6 @@ export class DeliveryData {
         let restaurantList =  restaurants.filter((restaurant) => restaurant.name.toLowerCase().startsWith(restaurantName.toLowerCase()));
           return restaurantList;
         }
-       
-
        return restaurants;
       })
     );
@@ -150,5 +148,33 @@ export class DeliveryData {
       })
     )
    }
+
+  //  getRestaurantDetails(){
+  //   const apiUrl = `${AppConfig.serverURL}/geocode?lat=${latitude}&lon=${longitude}`;
+  //   return this.http.get(apiUrl, httpOptions).pipe(
+  //     map((data: any) => {
+  //       // let locatinDetails = {
+  //       //   "locationName" : data.location.title,
+  //       //   "cityName" : data.location.city_name
+  //       // }
+  //        return data.location
+  //     })
+  //   )
+  //  }
+
+  getImageByCategory(categoryId){
+ 
+  return this.load().pipe(
+    map((data: any) => {
+     let iconData ;
+      let iconList =  data.categoryIcons;
+      iconData = iconList.filter(function (e) {
+        return e.id === parseInt(categoryId);
+      });
+       console.log("iconData", iconData)
+      return iconData[0].icon
+     
+    })
+  )}
 
 }

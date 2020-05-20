@@ -63,10 +63,10 @@
 
   <ion-toolbar *ngIf="!ios">
     <div class="categoryClass">
-      <ion-segment scrollable [(ngModel)]="segment" (ionChange)="updateLanding()">
+      <ion-segment scrollable [(ngModel)]="segment">
         <!-- <ion-text> {{latitude ? latitude : ""}} </ion-text>
         <ion-text> {{longitude ? longitude : ""}} </ion-text> -->
-        <ion-segment-button *ngFor="let item of foodTypeList" value={{item.id}}>
+        <ion-segment-button *ngFor="let item of foodTypeList" value={{item.id}} routerLink="/app/tabs/restaurants/restaurant-list/{{item.id}}">
           <app-food-category-card [categoryData]="item"></app-food-category-card>
         </ion-segment-button>
       </ion-segment>

@@ -33,10 +33,10 @@ export class OffersPage implements OnInit {
 
   await loading.present();
    
-  await this.deliveryData.getRestaurants(this.restaurantName, this.cityName).subscribe((data: any) => {
+  await this.deliveryData.getRestaurants(this.restaurantName, this.cityName, "").subscribe((data: any) => {
       this.restaurantList = data
       loading.dismiss();
     });
   }
-  
+
 }
