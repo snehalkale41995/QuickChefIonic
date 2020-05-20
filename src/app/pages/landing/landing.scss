@@ -115,3 +115,17 @@ $categories: (
     padding-inline-end: var(--padding-end);
 }
   
+ .searchBtn{
+  --background-hover: #de8e90;
+  text-align: center;
+  margin-top: 14px;
+  background-color: #CB202D;
+  border-radius: 10px;
+ }
+
+ .searchText {
+  color: white;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  font-size: 12px;
+ }
