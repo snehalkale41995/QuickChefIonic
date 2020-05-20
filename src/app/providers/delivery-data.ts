@@ -44,7 +44,6 @@ export class DeliveryData {
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
       data.restaurants.forEach(item => {
-        console.log(item.restaurant.cuisines)
         if(item.restaurant.thumb){
           restaurants.push({
             id : item.restaurant.id,
@@ -82,7 +81,6 @@ export class DeliveryData {
          if(categoryDetails.id !== 13)
          categories.push(categoryDetails)
        });
-       console.log("categories", categories)
         return categories;
       })
     );
@@ -107,7 +105,6 @@ export class DeliveryData {
   getUserProfileList() {
     return this.load().pipe(
       map((data: any) => {
-        console.log("data", data.foodItemList);
         return data.userProfileItems;
       })
     );
@@ -134,5 +131,17 @@ export class DeliveryData {
     );
   }
 
+   getDeviceLocation(latitude , longitude){
+    const apiUrl = `${AppConfig.serverURL}/geocode?lat=${latitude}&lon=${longitude}`;
+    return this.http.get(apiUrl, httpOptions).pipe(
+      map((data: any) => {
+        // let locatinDetails = {
+        //   "locationName" : data.location.title,
+        //   "cityName" : data.location.city_name
+        // }
+         return data.location
+      })
+    )
+   }
 
 }

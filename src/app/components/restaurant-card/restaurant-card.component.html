@@ -17,7 +17,7 @@
         <span><ion-text class="votingText">({{restaurantItem.votes}}&nbsp;ratings) </ion-text> </span>
       </ion-row> 
       <ion-row  class="badgeClass">
-        <p class="cuisineClass" ><ion-badge color="#fbe9ed">{{restaurantItem.cuisines}}</ion-badge> </p>
+        <p class="cuisineClass" ><ion-badge color="#fbe9ed">{{restaurantItem.cuisines | limitPipe:20}}</ion-badge> </p>
       </ion-row>
 
     </ion-col>

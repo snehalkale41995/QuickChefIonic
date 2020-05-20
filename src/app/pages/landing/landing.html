@@ -3,7 +3,7 @@
     <ion-buttons *ngIf="!showSearchbar" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-searchbar [(ngModel)]="queryText" (ionCancel)="showSearchbar = false" placeholder="Search for your location">
+    <ion-searchbar [(ngModel)]="cityName" (ionCancel)="showSearchbar = false" placeholder="Search for your location">
     </ion-searchbar>
     <ion-buttons slot="end">
       <ion-button (click)="updateLanding()">
@@ -22,6 +22,8 @@
   <ion-toolbar *ngIf="!ios">
     <div class="categoryClass">
       <ion-segment scrollable [(ngModel)]="segment" (ionChange)="updateLanding()">
+        <ion-text> {{latitude ? latitude : ""}} </ion-text>
+        <ion-text> {{longitude ? longitude : ""}} </ion-text>
         <ion-segment-button *ngFor="let item of foodTypeList" value={{item.id}}>
           <app-food-category-card [categoryData]="item"></app-food-category-card>
         </ion-segment-button>

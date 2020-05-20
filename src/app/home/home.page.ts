@@ -39,11 +39,9 @@ export class HomePage {
   getUserDetail(userid: any) {
     this.fb.api('/' + userid + '/?fields=id,email,name,picture', ['public_profile'])
       .then(res => {
-        console.log(res);
         this.users = res;
       })
       .catch(e => {
-        console.log(e);
       });
   }
 

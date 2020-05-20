@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 
 import {OffersPageModule} from './pages/offers/offers.module'
 import {LandingModule} from './pages/landing/landing.module'
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import {LandingModule} from './pages/landing/landing.module'
     IonicStorageModule.forRoot()
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  providers: [InAppBrowser, SplashScreen, StatusBar, Geolocation],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

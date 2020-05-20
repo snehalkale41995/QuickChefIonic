@@ -21,7 +21,6 @@ export class OffersPage implements OnInit {
  async getRestaurants(){
     await this.deliveryData.getRestaurants(this.segment, this.queryText).subscribe((data: any) => {
       this.restaurantList = data
-      console.log("dataaaa",data);
     });
   }
 }

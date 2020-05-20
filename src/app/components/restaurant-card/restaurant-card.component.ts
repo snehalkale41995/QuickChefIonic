@@ -13,7 +13,6 @@ export class RestaurantCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("isOffer", this.isOffer)
   }
 
 }

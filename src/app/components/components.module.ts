@@ -4,13 +4,15 @@ import {FoodCategoryCardComponent} from '../components/food-category-card/food-c
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { PipesModule } from "../../pipes.module";
 
 @NgModule({
     imports: [
         FormsModule,
         IonicModule.forRoot(),
         CommonModule,
-        FormsModule
+        FormsModule,
+        PipesModule
     ],
     declarations: [RestaurantCardComponent, FoodCategoryCardComponent],
     exports : [RestaurantCardComponent, FoodCategoryCardComponent]

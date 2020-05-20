@@ -17,7 +17,6 @@ export class UserProfilePage implements OnInit {
 
     async getList(){
       await this.deliveryData.getUserProfileList().subscribe((data: any) => {
-        console.log(data, "data")
         this.itemList = data ;
     });
     }
