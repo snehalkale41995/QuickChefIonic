@@ -30,16 +30,16 @@ export class DeliveryData {
     }
   }
 
-  getRestaurants(segment: string, queryText : string) {
+  getRestaurants(restaurantName: string, cityName : string) {
     let restaurants = [], 
     apiUrl = `${AppConfig.serverURL}/search?q=pune`;
 
-    if(queryText && queryText!=="pune"){
-      apiUrl = `${AppConfig.serverURL}/search?q=${queryText}`;
+    if(cityName && cityName!=="pune"){
+      apiUrl = `${AppConfig.serverURL}/search?q=${cityName}`;
     }
-    if(segment && segment !== "all" ){
-      apiUrl= `${apiUrl}&category=${segment}`
-    }
+    // if(segment && segment !== "all" ){
+    //   apiUrl= `${apiUrl}&category=${segment}`
+    // }
     
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
@@ -60,6 +60,13 @@ export class DeliveryData {
         }
        
       });
+
+        if(restaurantName){
+        let restaurantList =  restaurants.filter((restaurant) => restaurant.name.toLowerCase().startsWith(restaurantName.toLowerCase()));
+          return restaurantList;
+        }
+       
+
        return restaurants;
       })
     );

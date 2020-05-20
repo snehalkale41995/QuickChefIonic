@@ -1,37 +1,64 @@
 <ion-header translucent="true">
   <ion-toolbar>
-    <ion-buttons *ngIf="!showSearchbar" slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+      <!-- <ion-row>
+        <ion-col size="10">
+          <p><ion-text>Delivering to</ion-text> </p>
+          <p><ion-text>{{deviceLocation}}</ion-text></p>
+        </ion-col>
+        <ion-col size="2">
+          <ion-buttons>
+            <ion-button>
+                <span>
+                  <ion-icon slot="icon-only" name="cart"></ion-icon>
+                </span>
+              </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row> -->
+      <ion-buttons slot="start">
+        <ion-button>
+          <span>
+            <ion-icon slot="icon-only" name="pin" class="pinIcon"></ion-icon>
+          </span>
+        </ion-button>
+        <ion-button class="addressBtn">
+          <ion-text class="addressText">{{deviceLocation}}</ion-text>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button>
+          <span>
+            <ion-icon slot="icon-only" name="cart"></ion-icon>
+          </span>
+        </ion-button>
+        
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content fullscreen="true">
-
-
   <div>
     <ion-row>
       <ion-col size="9">
-        <ion-searchbar [(ngModel)]="cityName" 
-                    (ionCancel)="showSearchbar = false"
-                    placeholder="Search for your location">
+        <ion-searchbar [(ngModel)]="restaurantName" (ionCancel)="showSearchbar = false"
+          placeholder="Search Restaurant">
         </ion-searchbar>
       </ion-col>
-        <ion-col size="3">
-          <ion-buttons>
-            <ion-button (click)="updateLanding()" class="searchBtn">
-              <ion-text class="searchText"> Search</ion-text>
-            </ion-button>
-            <!-- <ion-button>
+      <ion-col size="3">
+        <ion-buttons>
+          <ion-button (click)="updateLanding()" class="searchBtn">
+            <ion-text class="searchText"> Search</ion-text>
+          </ion-button>
+          <!-- <ion-button>
               <span>
                 <ion-icon slot="icon-only" name="cart"></ion-icon>
               </span>
             </ion-button> -->
-          </ion-buttons>
-        
+        </ion-buttons>
+
       </ion-col>
-  </ion-row>
+    </ion-row>
   </div>
 
   <ion-toolbar *ngIf="!ios">

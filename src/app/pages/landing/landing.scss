@@ -116,7 +116,7 @@ $categories: (
 }
   
  .searchBtn{
-  --background-hover: #de8e90;
+ // --background-hover: #de8e90;
   text-align: center;
   margin-top: 14px;
   background-color: #CB202D;
@@ -128,4 +128,20 @@ $categories: (
   font-family: sans-serif;
   text-transform: capitalize;
   font-size: 12px;
+ }
+
+ .addressText {
+  font-size: 18px;
+ font-weight: bold;
+ text-transform: capitalize;
+ font-family: aria;
+}
+
+.pinIcon{
+    font-size: 19px;
+    color: #CB202D;
+}
+
+.addressBtn {
+   margin-left : -12px
  }

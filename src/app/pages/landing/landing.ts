@@ -12,6 +12,8 @@ import {
 
 import { DeliveryData } from "../../providers/delivery-data";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: "page-landing",
@@ -26,14 +28,10 @@ export class LandingPage implements OnInit {
   ios: boolean;
   isOffer = false;
   dayIndex = 0;
-  cityName = "mumbai";
+  cityName = "pune";
   deviceLocation = "aundh";
+  restaurantName = "";
   segment = "all";
-  shownSessions: any = [];
-  groups: any = [];
-  confDate: string;
-  showSearchbar: boolean;
-  imageUrl: any = "../../../assets/icon/favicon.png";
   restaurantList: any = [];
   foodTypeList: any = [];
 
@@ -46,7 +44,8 @@ export class LandingPage implements OnInit {
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
     public config: Config,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -61,22 +60,18 @@ export class LandingPage implements OnInit {
       duration: 1000,
     });
     await loading.present();
-    //   await this.deliveryData.getRestaurantList(this.segment).subscribe((data: any) => {
-    //      this.restaurantList = data;
-    //    //  console.log("this.restaurantList", this.restaurantList)
-    // });
 
     await this.deliveryData.getFoodSegments().subscribe((data: any) => {
       this.foodTypeList = data;
     });
 
     await this.deliveryData
-      .getRestaurants(this.segment, this.cityName)
+      .getRestaurants(this.restaurantName, this.cityName)
       .subscribe((data: any) => {
         this.restaurantList = data;
         loading.dismiss();
       });
-    }
+  }
 
   async getCurrentCoordinates() {
     this.geolocation
@@ -89,10 +84,11 @@ export class LandingPage implements OnInit {
           .subscribe((data: any) => {
             this.cityName = data.cityName;
             this.deviceLocation = data.title;
-            console.log("data", data);
+            this.storage.set('cityName', this.cityName);
           });
       })
       .catch((error) => {
+        this.storage.set('cityName', this.cityName);
         console.log("Error getting location", error);
       });
   }
