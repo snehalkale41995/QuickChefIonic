@@ -1,0 +1,19 @@
+<div class="sliderDiv">
+  <ion-slides [options]="slideOptions">
+    <ion-slide *ngFor="let item of menuList">
+      <ion-row class="sliderRow">
+        <ion-col size="12">
+          <span class="spanClass">
+            <img [src]="item.thumb" alt="" class="spanImg">
+          </span>
+        </ion-col>
+        <ion-col size="12" class="textClass">
+          <ion-text class="sliderText">{{item.title}}</ion-text>
+        </ion-col>
+        <ion-col size="12" class="textpriceClass">
+          <ion-text class="priceText">{{item.price}}</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+</div>

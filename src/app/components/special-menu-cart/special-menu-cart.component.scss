@@ -1,0 +1,62 @@
+///@special menu
+
+.spanClass {
+    padding-left: 2px!important;
+    padding-right: 2px!important;
+    padding-top: 2px!important;
+    padding-bottom: 2px!important;
+    width: 85px!important;
+    height: 70px!important;
+  }
+  
+  .spanImg {
+    width: 70px;
+    height: 70px;
+    border-radius : 10px
+  }
+  
+  ion-slide {
+  //  width: 100px!important;
+  //  height: 85px!important;
+    background-color: #fbe9ed;
+    float: left;
+    margin-left: 2.5px!important;
+    margin-right: 2.5px!important;
+    border-radius: 15px;
+  //  border-radius: 50px!important;
+  }
+  
+  ion-slides{
+    background-color: transparent;
+  }
+  
+  ion-slide:hover {
+    background:#fbe9ed;
+    cursor: pointer;
+  }
+  
+  .sliderText{
+    font-size: 12px;
+  }
+  
+  
+  .priceText{
+    font-size: 16px;
+  }
+  
+  .textClass {
+    bottom: 10px;
+  }
+  
+  .textpriceClass {
+    bottom: 20px;
+  }
+  
+  .sliderRow{
+    margin-top: 10px;
+    margin-bottom: -20px
+  }
+  
+  .sliderDiv {
+    margin-top : 10px;
+  }

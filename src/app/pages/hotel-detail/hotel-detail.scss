@@ -39,6 +39,7 @@ ion-toolbar ion-menu-button {
 .restaurant-background img {
    width: 100%;
    height : 400px ;
+   border-radius: 10px;
   // border-radius: 50%;
   // margin-top: calc(-1 * var(--ion-safe-area-top));
 }
@@ -61,48 +62,9 @@ ion-toolbar ion-menu-button {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
 }
 
-/*
- * Restaurant Details
- */
-
-.restaurant-detail p {
-  margin-left: 6px;
-  margin-right: 6px;
-}
-
-.restaurant-detail hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  background: var(--ion-color-step-150, #d7d8da);
-}
-
-.item ion-thumbnail {
-  min-width: 5rem;    
-  min-height: 5rem;
-  img {
-      max-width: 5rem;    
-      min-width: 5rem;
-  }
-}
-
-.titleClass{
-  padding : 10px;
-  margin-left : 10px
-}
-
-.imgCol{
-  width:100%;
-  height: 80px;
-}
-
-.heading {
-  font-size: 15px;
-  font-weight: 700;
-  color: grey;
-}
-.descriptionText{
-  font-size : 14px;
+.menuClass {
+  padding: 3px;
+    margin-left: 10px;
 }
 
 .likeColor{
@@ -134,82 +96,6 @@ ion-toolbar ion-menu-button {
 
 .addressClass{
   font-size: 14px;
-  color: rgb(133, 129, 129);
+ // color: rgb(133, 129, 129);
 }
 
-.priceClass{
-  text-align : center;
-  margin-top : 20px
-}
-
-.priceText{
-  color :#CB202D;
-}
-
-.menuClass {
-  padding: 3px;
-    margin-left: 10px;
-}
-
-///@special menu
-
-.spanClass {
-  padding-left: 2px!important;
-  padding-right: 2px!important;
-  padding-top: 2px!important;
-  padding-bottom: 2px!important;
-  width: 85px!important;
-  height: 70px!important;
-}
-
-.spanImg {
-  width: 70px;
-  height: 70px;
-  border-radius : 10px
-}
-
-ion-slide {
-//  width: 100px!important;
-//  height: 85px!important;
-  background-color:  #FFF;
-  float: left;
-  margin-left: 1.5px!important;
-  margin-right: 1.5px!important;
-  border-radius: 10px;
-//  border-radius: 50px!important;
-}
-
-ion-slides{
-  background-color:  rgba(194, 193, 194, 0.52);
-}
-
-ion-slide:hover {
-  background:#fbe9ed;
-  cursor: pointer;
-}
-
-.sliderText{
-  font-size: 12px;
-}
-
-
-.priceText{
-  font-size: 16px;
-}
-
-.textClass {
-  bottom: 10px;
-}
-
-.textpriceClass {
-  bottom: 20px;
-}
-
-.sliderRow{
-  margin-top: 10px;
-  margin-bottom: -20px
-}
-
-.sliderDiv {
-  margin-top : 10px;
-}
