@@ -70,6 +70,8 @@ export class DeliveryData {
     );
   }
 
+  
+
   getFoodSegments() {
     let iconList = jsonData.categoryIcons;
     let categories = [] ;
@@ -149,21 +151,9 @@ export class DeliveryData {
     )
    }
 
-  //  getRestaurantDetails(){
-  //   const apiUrl = `${AppConfig.serverURL}/geocode?lat=${latitude}&lon=${longitude}`;
-  //   return this.http.get(apiUrl, httpOptions).pipe(
-  //     map((data: any) => {
-  //       // let locatinDetails = {
-  //       //   "locationName" : data.location.title,
-  //       //   "cityName" : data.location.city_name
-  //       // }
-  //        return data.location
-  //     })
-  //   )
-  //  }
 
   getImageByCategory(categoryId){
- 
+    
   return this.load().pipe(
     map((data: any) => {
      let iconData ;
@@ -176,5 +166,36 @@ export class DeliveryData {
      
     })
   )}
+
+  getRestaurantDetails(id){
+    const apiUrl = `${AppConfig.serverURL}/restaurant?res_id=${id}`;
+    return this.http.get(apiUrl, httpOptions).pipe(
+      map((data: any) => {
+       console.log("data", data)
+        return {
+          id : data.id,
+          name : data.name,
+          thumb : data.thumb,
+          timings : data.timings,
+          location  : data.location.locality_verbose,
+          price_range :  data.price_range,
+          average_cost_for_two : data.average_cost_for_two,
+          ratings : Math.floor(data.user_rating.aggregate_rating) ,
+          votes : data.user_rating.votes,
+          cuisines : data.cuisines,
+          user_rating : Array(Math.floor(data.user_rating.aggregate_rating))
+        };
+      })
+    );
+   }
+
+   getMenuListByRestaurant(restaurantId){
+    return this.load().pipe(
+      map((data: any) => {
+        let menuList: any;
+        return data.menuList;
+      })
+    );
+   }
 
 }

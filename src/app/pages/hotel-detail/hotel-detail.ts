@@ -13,6 +13,18 @@ export class HotelDetailPage {
   menuList : any;
   defaultHref = ''
   ratings : any;
+  slideOpts = {
+    slidesPerView: 3,
+    freeMode: false,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }
+  }  
+
   constructor(
     private dataProvider: DeliveryData,
     private route: ActivatedRoute,
@@ -21,20 +33,35 @@ export class HotelDetailPage {
   ) {}
 
   ionViewWillEnter() {
-    this.dataProvider.load().subscribe((data: any) => {
-      const hotelId = this.route.snapshot.paramMap.get('hotelId');
-      if (data && data.restaurantList) {
-        for (const item of data.restaurantList) {
-          if (item && item.$key === hotelId) {
-            this.hotel = item;
-            this.ratings = Array(item.user_rating);
-            this.menuList = item.menuList
-            break;
-          }
-        }
-      }
+  //   this.dataProvider.load().subscribe((data: any) => {
+  //     const hotelId = this.route.snapshot.paramMap.get('hotelId');
+  //     if (data && data.restaurantList) {
+  //       for (const item of data.restaurantList) {
+  //         if (item && item.$key === hotelId) {
+  //           this.hotel = item;
+  //           this.ratings = Array(item.user_rating);
+  //           this.menuList = item.menuList
+  //           break;
+  //         }
+  //       }
+  //     }
      
-    });
-  }
+  //   });
+
+
+        const hotelId = this.route.snapshot.paramMap.get('hotelId');
+
+        this.dataProvider.getMenuListByRestaurant(hotelId).subscribe((data)=>{
+            console.log("menu", data)
+            this.menuList = data;
+        })
+
+
+
+        this.dataProvider.getRestaurantDetails(hotelId).subscribe((data : any)=>{
+           console.log("details", data)
+           this.hotel = data;
+        })
+   }
 
 }

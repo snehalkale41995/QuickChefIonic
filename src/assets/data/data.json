@@ -747,5 +747,80 @@
     "Settings",
     "About Us",
     "Support Center"
-  ]
+  ],
+  "menuList" : [
+    {
+      "id": "1",
+      "description": "The texture of a food with a hard outer layer and soft interior.",
+      "thumb": "assets/img/mealImage3.jpg",  
+      "title": "Veg cheese Pizza",
+      "price" : "12 $",
+      "foodType" : "pizza"
+    },
+    {
+      "id": "2",
+      "description": "A firm, crisp texture often identified by the sharp, audible noise that the food makes when being eaten.",
+      "thumb": "assets/img/mealImage5.jpg",  
+      "title": "paneer burger",
+      "price" : "15 $",
+      "foodType" : "pizza"
+    },
+    {
+      "id": "3",
+      "description": "A food that was dipped in butter and coated with spices before being cooked in a hot pan, resulting in a blackened appearance.",
+      "thumb": "assets/img/mealImage6.jpg",  
+      "title": "French fries",
+      "price" : "17 $",
+      "foodType" : "burger"
+    },
+   {
+      "id": "4",
+      "description": "A food that was cooked in an oven, often resulting in a crispy outer coating.",
+      "thumb": "assets/img/mealImage7.jpg",  
+      "title": "hamburger",
+      "price" : "12 $",
+      "foodType" : "pizza"
+     
+    },
+    {
+      "id": "5",
+      "description": "Food that is briefly fried in a small amount of fat and then is slowly stewed in a covered pot. Results in a seared, crispy exterior coupled with a tender interior texture.",
+      "thumb": "assets/img/mealImage8.jpg",  
+      "title": "egg meal",
+      "price" : "15 $",
+      "foodType" : "pizza"
+    },
+    {
+      "id": "6",
+      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+      "thumb": "assets/img/mealImage9jpg.jpg",  
+      "title": "fish curry",
+      "price" : "17 $",
+      "foodType" : "pizza"
+    },
+  {
+      "id": "7",
+      "description": "A food cooked with intense radiant heat, as in an oven or on a grill. Often results in a darkened appearance and crispy texture.",
+      "thumb": "assets/img/mealImage10.jpg",  
+      "title": "veg salad",
+      "price" : "12 $",
+      "foodType" : "salad"
+    },
+    {
+      "id": "8",
+      "description": "Food that has been cooked in nearly boiling liquid. Often results in a tender, moist texture.",
+      "thumb": "assets/img/mealImage11jpg.jpg",  
+      "title": "chocolate waffle",
+      "price" : "15 $",
+      "foodType" : "dessert"
+    },
+    {
+      "id": "9",
+      "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+      "thumb": "assets/img/mealImage12.jpg",  
+      "title": "dessert blast",
+      "price" : "17 $",
+      "foodType" : "dessert"
+    }
+   ]
 }

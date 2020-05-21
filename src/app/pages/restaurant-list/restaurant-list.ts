@@ -10,7 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RestaurantListPage {
   meals: any[] = [];
-  cafeList ; restaurant;
+  cafeList ;
+  restaurant ;
+  categoryImg ;
+ 
 
   constructor(public deliveryData: DeliveryData, 
               private route: ActivatedRoute, 
@@ -34,27 +37,15 @@ export class RestaurantListPage {
   //   });
   //   loading.dismiss(); 
   // }
- 
-  
-
- 
-  this.deliveryData.load().subscribe((data: any) => {
-    if(data && data.restaurantList){
-      this.cafeList = data.restaurantList;
-    }
-    if (data && data.foodItemList) {
-      for (const foodItem of data.foodItemList) {
-        if (foodItem && foodItem.$key === categoryId) {
-          this.restaurant = foodItem;
-          break;
-        }
-      }
-    }
-    });
-   
     this.deliveryData.getImageByCategory(categoryId).subscribe((data: any) => {
-         console.log("data", data)
+         this.categoryImg = data;
     })
+
+    this.deliveryData.getRestaurants("", "" , categoryId).subscribe((data: any) => {
+      console.log("data", data)
+        this.cafeList = data;
+        loading.dismiss(); 
+      })
   
   }
 }

@@ -115,7 +115,7 @@ ion-toolbar ion-menu-button {
 }
 
 .rating{
-  color: #ffb400;
+  color:  #CB202D;
   font-size : 18px
 }
 
@@ -125,7 +125,7 @@ ion-toolbar ion-menu-button {
 
 .nameClass{
   font-size: 18px;
-  color: white;
+  color: #CB202D;
 }
 
 .statusCol{
@@ -143,10 +143,73 @@ ion-toolbar ion-menu-button {
 }
 
 .priceText{
-  color : #0cd1e8
+  color :#CB202D;
 }
 
 .menuClass {
   padding: 3px;
     margin-left: 10px;
+}
+
+///@special menu
+
+.spanClass {
+  padding-left: 2px!important;
+  padding-right: 2px!important;
+  padding-top: 2px!important;
+  padding-bottom: 2px!important;
+  width: 85px!important;
+  height: 70px!important;
+}
+
+.spanImg {
+  width: 70px;
+  height: 70px;
+  border-radius : 10px
+}
+
+ion-slide {
+//  width: 100px!important;
+//  height: 85px!important;
+  background-color:  #FFF;
+  float: left;
+  margin-left: 1.5px!important;
+  margin-right: 1.5px!important;
+  border-radius: 10px;
+//  border-radius: 50px!important;
+}
+
+ion-slides{
+  background-color:  rgba(194, 193, 194, 0.52);
+}
+
+ion-slide:hover {
+  background:#fbe9ed;
+  cursor: pointer;
+}
+
+.sliderText{
+  font-size: 12px;
+}
+
+
+.priceText{
+  font-size: 16px;
+}
+
+.textClass {
+  bottom: 10px;
+}
+
+.textpriceClass {
+  bottom: 20px;
+}
+
+.sliderRow{
+  margin-top: 10px;
+  margin-bottom: -20px
+}
+
+.sliderDiv {
+  margin-top : 10px;
 }

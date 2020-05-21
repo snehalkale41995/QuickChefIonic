@@ -4,13 +4,14 @@ import { IonicModule } from '@ionic/angular';
 import { PipesModule } from "../../../pipes.module";
 import { RestaurantListPage } from './restaurant-list';
 import { RestaurantListPageRoutingModule } from './restaurant-list-routing.module';
-
+import {ComponentsModule} from '../../components/components.module'
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
     RestaurantListPageRoutingModule,
-    PipesModule
+    PipesModule,
+    ComponentsModule
   ],
   declarations: [RestaurantListPage],
 })

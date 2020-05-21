@@ -4,10 +4,14 @@
       <ion-buttons slot="start">
         <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
       </ion-buttons>
-      <ion-buttons  slot="end">
+      <ion-buttons slot="end">
         <ion-button>
-          <span *ngIf="hotel?.like"><ion-icon class="likeColor" name="heart"></ion-icon></span>
-                    <span *ngIf="!hotel?.like"><ion-icon class="dislike" name="heart"></ion-icon></span>
+          <span *ngIf="hotel?.like">
+            <ion-icon class="likeColor" name="heart"></ion-icon>
+          </span>
+          <span *ngIf="!hotel?.like">
+            <ion-icon class="dislike" name="heart"></ion-icon>
+          </span>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -16,56 +20,94 @@
 
   <div class="restaurant-background">
     <img [src]="hotel?.thumb" [alt]="hotel?.name">
-    
+
   </div>
-  
+
   <div class="ion-padding restaurant-detail">
     <!-- <p>{{cafeList? cafeList.length : 0 }}</p> -->
 
     <ion-row>
-      <ion-col size="8"><ion-text class="nameClass">{{hotel?.name}}</ion-text></ion-col>
-      <ion-col class="statusCol" *ngIf="hotel?.like" size="4"><ion-badge color="secondary">Open</ion-badge></ion-col>
-      <ion-col  class="statusCol" *ngIf="!hotel?.like" size="4"><ion-badge color="danger">Closed</ion-badge></ion-col>
+      <ion-col size="8">
+        <ion-text class="nameClass">{{hotel?.name}}</ion-text>
+      </ion-col>
+      <ion-col class="statusCol" *ngIf="hotel?.like" size="4">
+        <ion-badge color="secondary">Open</ion-badge>
+      </ion-col>
+      <ion-col class="statusCol" *ngIf="!hotel?.like" size="4">
+        <ion-badge color="danger">Closed</ion-badge>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-text class="addressClass">{{hotel?.locality}}</ion-text>
+        <ion-icon class="addressClass" name="pin"></ion-icon>
+        <ion-text class="addressClass">&nbsp;{{hotel?.location}}</ion-text>
       </ion-col>
       <ion-col class="statusCol">
-        <ion-icon class="rating" name="star" *ngFor="let number of ratings">  </ion-icon>
+        <ion-icon class="rating" name="star" *ngFor="let number of hotel?.user_rating"> </ion-icon>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-text class="addressClass">{{hotel?.description}}</ion-text>
+        <ion-icon class="addressClass" name="clock"></ion-icon>
+        <ion-text class="addressClass">&nbsp;{{hotel?.timings}}</ion-text>
       </ion-col>
     </ion-row>
     <hr>
-   <div class="menuClass">
-    <ion-text>MENU</ion-text>
-   </div>
-    
-      <ion-card *ngFor="let item of menuList" >
-          <ion-list>
-            <ion-grid routerLink="/app/tabs/restaurants/meal-details/{{hotel.$key}}/{{item.$key}}">
-                <ion-row>
-                  <ion-col size="6"class="imgCol">
-                    <img  src="{{item.thumb}}">
-                  </ion-col>  
-                  <ion-col size="4"> 
-                  <p><ion-text>{{item.title}}</ion-text></p>
-                  <p><ion-badge color="medium">.{{item.foodType}}</ion-badge>
-                  </p>
-                  </ion-col>   
-                  <ion-col size="2" class="priceClass">
-                    <ion-text class="priceText">{{item.price}}</ion-text>
-                  </ion-col> 
-                  </ion-row>
-                </ion-grid>
-          </ion-list>
-      </ion-card> 
-  </div> 
+
+
+    <div class="menuClass">
+      <ion-text>Popular Choices</ion-text>
+    </div>
+
+    <div class="sliderDiv">
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let item of menuList">
+          <ion-row class="sliderRow">
+            <ion-col size="12">
+              <span class="spanClass">
+                <img [src]="item.thumb" alt="" class="spanImg">
+              </span>
+            </ion-col>
+            <ion-col size="12" class="textClass">
+              <ion-text class="sliderText">{{item.title}}</ion-text>
+            </ion-col>
+            <ion-col size="12" class="textpriceClass">
+              <ion-text class="priceText">{{item.price}}</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <hr />
+
+    <div class="menuClass">
+      <ion-text>Menu</ion-text>
+    </div>
+    <ion-card *ngFor="let item of menuList">
+      <ion-list>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" class="imgCol">
+              <img src="{{item.thumb}}">
+            </ion-col>
+            <ion-col size="4">
+              <p>
+                <ion-text>{{item.title}}</ion-text>
+              </p>
+              <p>
+                <ion-badge color="medium">.{{item.foodType}}</ion-badge>
+              </p>
+            </ion-col>
+            <ion-col size="2" class="priceClass">
+              <ion-text class="priceText">{{item.price}}</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-card>
 
 
 
+  </div>
 </ion-content>
