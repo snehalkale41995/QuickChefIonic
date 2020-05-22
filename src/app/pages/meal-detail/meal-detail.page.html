@@ -4,10 +4,14 @@
       <ion-buttons slot="start">
         <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
       </ion-buttons>
-      <ion-buttons  slot="end">
+      <ion-buttons slot="end">
         <ion-button>
-          <span *ngIf="restaurantDetails?.like"><ion-icon class="likeColor" name="heart"></ion-icon></span>
-                    <span *ngIf="!restaurantDetails?.like"><ion-icon class="dislike" name="heart"></ion-icon></span>
+          <span *ngIf="restaurantDetails?.like">
+            <ion-icon class="likeColor" name="heart"></ion-icon>
+          </span>
+          <span *ngIf="!restaurantDetails?.like">
+            <ion-icon class="dislike" name="heart"></ion-icon>
+          </span>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -18,89 +22,45 @@
     <img [src]="mealDetails?.thumb" [alt]="mealDetails?.title">
     <h1>{{mealDetails?.title}}</h1>
   </div>
-  
-   <div class="ion-padding restaurant-detail">
-     <ion-row class="menuClass">
-       <h4>About</h4>
-     </ion-row>
-     <ion-row>
-     <p><ion-text class="addressClass">{{mealDetails?.description}} </ion-text></p> 
+
+  <div class="ion-padding restaurant-detail">
+    <ion-row class="menuClass">
+      <h4>About</h4>
+    </ion-row>
+    <ion-row>
+      <p>
+        <ion-text class="addressClass">{{mealDetails?.description}} </ion-text>
+      </p>
     </ion-row>
     <ion-row class="menuClass">
       <h4>Ingredients</h4>
     </ion-row>
     <ion-row>
       <ion-card *ngIf="ingredientList">
-          <ion-grid   >
-            <ion-row>
-              <ion-col *ngFor="let item of ingredientList">
-                <ion-thumbnail>
-                <img  src="{{item}}">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let item of ingredientList">
+              <ion-thumbnail>
+                <img src="{{item}}">
               </ion-thumbnail>
-              </ion-col>
-            </ion-row>  
-          </ion-grid>
-          </ion-card>
-   </ion-row>
-   </div>
-   <div class="addCart">
-     <ion-row class="cartClass">
-       <ion-col size="6">
-         <ion-text class="cartText"> {{mealDetails?.price}} </ion-text>
-       </ion-col>
-       <ion-col size="4" class="cartItem">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-row>
+  </div>
+  <div class="addCart">
+    <ion-row class="cartClass">
+      <ion-col size="6">
+        <ion-text class="cartText"> {{mealDetails?.price}} </ion-text>
+      </ion-col>
+      <ion-col size="4" class="cartItem">
         <ion-text class="cartText"> - &nbsp; 1 &nbsp;+ </ion-text>
-    </ion-col>
+      </ion-col>
       <ion-col size="2">
-       <ion-icon class="cartLogo" name="logo-bitbucket"></ion-icon> 
+        <ion-icon class="cartLogo" name="logo-bitbucket"></ion-icon>
       </ion-col>
-      
-     </ion-row>
-   </div>
-   <!-- <ion-row>
-      <ion-col size="8"><ion-text class="nameClass">{{hotel?.name}}</ion-text></ion-col>
-      <ion-col class="statusCol" *ngIf="hotel?.like" size="4"><ion-badge color="secondary">Open</ion-badge></ion-col>
-      <ion-col  class="statusCol" *ngIf="!hotel?.like" size="4"><ion-badge color="danger">Closed</ion-badge></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-text class="addressClass">{{hotel?.locality}}</ion-text>
-      </ion-col>
-      <ion-col class="statusCol">
-        <ion-icon class="rating" name="star" *ngFor="let number of ratings">  </ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-text class="addressClass">{{hotel?.description}}</ion-text>
-      </ion-col>
-    </ion-row>
-    <hr>
-   <div class="menuClass">
-    <ion-text>MENU</ion-text>
-   </div>
-    
-      <ion-card *ngFor="let item of menuList" >
-          <ion-list>
-            <ion-grid>
-                <ion-row>
-                  <ion-col size="6"class="imgCol">
-                    <img  src="{{item.thumb}}">
-                  </ion-col>  
-                  <ion-col size="4"> 
-                  <p><ion-text>{{item.title}}</ion-text></p>
-                  <p><ion-badge color="medium">.{{item.foodType}}</ion-badge>
-                  </p>
-                  </ion-col>   
-                  <ion-col size="2" class="priceClass">
-                    <ion-text class="priceText">{{item.price}}</ion-text>
-                  </ion-col> 
-                  </ion-row>
-                </ion-grid>
-          </ion-list>
-      </ion-card> 
-  </div>   -->
 
-
-
+    </ion-row>
+  </div>
 </ion-content>

@@ -4,7 +4,7 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/app/tabs/landing"></ion-back-button>
       </ion-buttons>
-      <ion-buttons  slot="end">
+      <ion-buttons slot="end">
         <ion-button>
           <ion-icon name="start"></ion-icon>
         </ion-button>
@@ -27,17 +27,14 @@
         <ion-text class="categoryText">{{categoryInfo?.categoryName}}</ion-text>
       </ion-col>
       <ion-col size="4" class="countCol">
-      <ion-text> {{cafeList? cafeList.length : 0 }} &nbsp; Restaurants </ion-text>
+        <ion-text> {{cafeList? cafeList.length : 0 }} &nbsp; Restaurants </ion-text>
       </ion-col>
     </ion-row>
     <hr>
-      <ion-card *ngFor="let category of cafeList">
-          <ion-list routerLink="/app/tabs/restaurants/hotel-details/{{category.id}}">
-            <app-category-cart [restaurantDetails]="category"></app-category-cart>
-          </ion-list>
-      </ion-card>
+    <ion-card *ngFor="let category of cafeList">
+      <ion-list routerLink="/app/tabs/restaurants/hotel-details/{{category.id}}">
+        <app-category-cart [restaurantDetails]="category"></app-category-cart>
+      </ion-list>
+    </ion-card>
   </div>
 </ion-content>
-
-
-

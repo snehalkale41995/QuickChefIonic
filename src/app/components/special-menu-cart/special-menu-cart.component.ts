@@ -9,7 +9,8 @@ export class SpecialMenuCartComponent implements OnInit {
 
   @Input() menuList : any;
   @Input() slideOptions : any;
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit() {}
 

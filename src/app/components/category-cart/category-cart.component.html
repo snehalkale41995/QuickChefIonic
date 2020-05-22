@@ -2,21 +2,35 @@
   <ion-row>
     <ion-col size="4" class="imgCol">
       <img class="imgClass" src="{{restaurantDetails?.thumb}}">
-    </ion-col>  
-    <ion-col size="7"> 
-    <p class="nameP"><ion-text class="nameClass">{{restaurantDetails?.name}}</ion-text></p>
-    <p class="detailP" *ngIf="restaurantDetails?.ratings" >
-      <span ><ion-icon name="star" class="rating"></ion-icon></span>
-      <span class="badgeClass"><ion-text>&nbsp;{{restaurantDetails?.ratings}}</ion-text> </span>
-      <span> <ion-text> ({{restaurantDetails?.votes}}&nbsp;ratings) </ion-text></span>
-    </p>
-    <p class="detailP" ><ion-badge color="#fbe9ed">{{restaurantDetails?.cuisines}}</ion-badge> </p>
-    </ion-col>   
+    </ion-col>
+    <ion-col size="7">
+      <p class="nameP">
+        <ion-text class="nameClass">{{restaurantDetails?.name}}</ion-text>
+      </p>
+      <p class="detailP" *ngIf="restaurantDetails?.ratings">
+        <span>
+          <ion-icon name="star" class="rating"></ion-icon>
+        </span>
+        <span class="badgeClass">
+          <ion-text>&nbsp;{{restaurantDetails?.ratings}}</ion-text>
+        </span>
+        <span>
+          <ion-text> ({{restaurantDetails?.votes}}&nbsp;ratings) </ion-text>
+        </span>
+      </p>
+      <p class="detailP">
+        <ion-badge color="#fbe9ed">{{restaurantDetails?.cuisines}}</ion-badge>
+      </p>
+    </ion-col>
     <ion-col size="1">
-      <span *ngIf="restaurantDetails?.like"><ion-icon class="likeColor" name="heart"></ion-icon></span>
-      <span *ngIf="!restaurantDetails?.like"><ion-icon class="dislike" name="heart"></ion-icon></span>
-    </ion-col>     
-   
-    </ion-row>
-   
-  </ion-grid>
+      <span *ngIf="restaurantDetails?.like">
+        <ion-icon class="likeColor" name="heart"></ion-icon>
+      </span>
+      <span *ngIf="!restaurantDetails?.like">
+        <ion-icon class="dislike" name="heart"></ion-icon>
+      </span>
+    </ion-col>
+
+  </ion-row>
+
+</ion-grid>

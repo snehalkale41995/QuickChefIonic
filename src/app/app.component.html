@@ -4,7 +4,7 @@
       <ion-content>
         <ion-list lines="none">
           <ion-list-header class="headerClass">
-           <ion-text class="iconColor">  Quick Chef </ion-text>
+            <ion-text class="iconColor"> Quick Chef </ion-text>
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
@@ -13,7 +13,7 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
-           
+
           </ion-menu-toggle>
 
           <ion-item>

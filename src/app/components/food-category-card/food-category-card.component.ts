@@ -7,13 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FoodCategoryCardComponent implements OnInit {
 
-  
   @Input()  categoryData : {};
  
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
 }

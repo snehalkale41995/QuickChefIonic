@@ -12,8 +12,7 @@ import {
 
 import { DeliveryData } from "../../providers/delivery-data";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
-import { Storage } from '@ionic/storage';
-
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "page-landing",
@@ -84,11 +83,11 @@ export class LandingPage implements OnInit {
           .subscribe((data: any) => {
             this.cityName = data.cityName;
             this.deviceLocation = data.title;
-            this.storage.set('cityName', this.cityName);
+            this.storage.set("cityName", this.cityName);
           });
       })
       .catch((error) => {
-        this.storage.set('cityName', this.cityName);
+        this.storage.set("cityName", this.cityName);
         console.log("Error getting location", error);
       });
   }

@@ -3,24 +3,34 @@
     <ion-col class="colClass">
 
       <ion-row>
-          <img src="{{restaurantItem.thumb}}" class="imgClass" />
+        <img src="{{restaurantItem.thumb}}" class="imgClass" />
       </ion-row>
 
       <ion-row class="nameRow">
-        <ion-col size="10"><ion-text class="nameText">{{restaurantItem.name}}</ion-text></ion-col>
-        <ion-col size="2" *ngIf="isOffer"><ion-badge color="danger">50% off</ion-badge></ion-col>
+        <ion-col size="10">
+          <ion-text class="nameText">{{restaurantItem.name}}</ion-text>
+        </ion-col>
+        <ion-col size="2" *ngIf="isOffer">
+          <ion-badge color="danger">50% off</ion-badge>
+        </ion-col>
       </ion-row>
 
-       <ion-row class="badgeClass" >
-        <span class="badgeClass"><ion-icon name="star" class="rating"></ion-icon></span>
-        <span><ion-text class="ratingText">&nbsp;{{restaurantItem.ratings}}&nbsp;</ion-text> </span>
-        <span><ion-text class="votingText">({{restaurantItem.votes}}&nbsp;ratings) </ion-text> </span>
-      </ion-row> 
-      <ion-row  class="badgeClass">
-        <p class="cuisineClass" ><ion-badge color="#fbe9ed">{{restaurantItem.cuisines | limitPipe:20}}</ion-badge> </p>
+      <ion-row class="badgeClass">
+        <span class="badgeClass">
+          <ion-icon name="star" class="rating"></ion-icon>
+        </span>
+        <span>
+          <ion-text class="ratingText">&nbsp;{{restaurantItem.ratings}}&nbsp;</ion-text>
+        </span>
+        <span>
+          <ion-text class="votingText">({{restaurantItem.votes}}&nbsp;ratings) </ion-text>
+        </span>
+      </ion-row>
+      <ion-row class="badgeClass">
+        <p class="cuisineClass">
+          <ion-badge color="#fbe9ed">{{restaurantItem.cuisines | limitPipe:20}}</ion-badge>
+        </p>
       </ion-row>
     </ion-col>
   </ion-row>
 </ion-grid>
-
-<!-- <h1>heyyy</h1> -->

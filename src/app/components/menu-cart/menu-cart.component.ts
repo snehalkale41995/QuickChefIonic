@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuCartComponent implements OnInit {
 
   @Input() MenuDetails : {}
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 

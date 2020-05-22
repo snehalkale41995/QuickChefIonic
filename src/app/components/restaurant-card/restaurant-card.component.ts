@@ -10,9 +10,8 @@ export class RestaurantCardComponent implements OnInit {
   @Input()  restaurantItem : {};
   @Input()  isOffer ;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
