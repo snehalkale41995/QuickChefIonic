@@ -161,8 +161,8 @@ export class DeliveryData {
       iconData = iconList.filter(function (e) {
         return e.id === parseInt(categoryId);
       });
-       console.log("iconData", iconData)
-      return iconData[0].icon
+      console.log("iconData", iconData[0])
+      return iconData[0]
      
     })
   )}

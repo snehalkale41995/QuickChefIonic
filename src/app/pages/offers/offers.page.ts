@@ -28,7 +28,7 @@ export class OffersPage implements OnInit {
  async getRestaurants(){
   let loading = await this.loadingCtrl.create({
     message: "Please wait...",
-    duration: 2000,
+    duration: 3000,
   });
 
   await loading.present();

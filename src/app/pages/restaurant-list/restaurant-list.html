@@ -1,36 +1,8 @@
-<!-- 
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-title >Daily Meals</ion-title>
-  </ion-toolbar>
-  
-</ion-header>
-
-<ion-content>
-  <ion-card *ngFor="let category of meals">
-      <ion-list>
-          <ion-item routerLink="/app/tabs/restaurants/restaurant-details/{{category.$key}}">
-            <P>
-            <ion-row>
-              <ion-col col-3 class="imgCol">
-               <img src="{{category.thumb}}"> 
-              </ion-col>  
-              <ion-col col-9 class="titleClass"> 
-              <p class="heading">{{category.cuisine_name}}</p>
-              <p class="descriptionText">{{category.description |limitPipe:50}}</p>
-              </ion-col>              
-              </ion-row>
-            </P>
-          </ion-item>
-      </ion-list>
-  </ion-card>
-</ion-content> -->
-
 <ion-content class="restaurant-detail">
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/app/tabs/restaurants"></ion-back-button>
+        <ion-back-button defaultHref="/app/tabs/landing"></ion-back-button>
       </ion-buttons>
       <ion-buttons  slot="end">
         <ion-button>
@@ -54,32 +26,8 @@
     <p>{{cafeList? cafeList.length : 0 }} Restaurants</p>
     <hr>
       <ion-card *ngFor="let category of cafeList">
-          <ion-list>
+          <ion-list routerLink="/app/tabs/restaurants/hotel-details/{{category.id}}">
             <app-category-cart [restaurantDetails]="category"></app-category-cart>
-            <!-- <ion-grid routerLink="/app/tabs/restaurants/hotel-details/{{category.$key}}">
-                <ion-row>
-                  <ion-col size="4" class="imgCol">
-                    <img  src="{{category.thumb}}">
-                  </ion-col>  
-                  <ion-col size="7"> 
-                  <p><ion-text class="nameClass">{{category.name}}</ion-text></p>
-                  <p><ion-badge color="medium">{{category.foodTypes}}</ion-badge>
-                  </p>
-                  <p>
-                    <span ><ion-icon name="star" class="rating"></ion-icon></span>
-                    <span class="badgeClass"><ion-text>&nbsp;{{category.ratings}}</ion-text> </span>
-                    <span> <ion-text> ({{category.votes}}&nbsp;ratings) </ion-text></span>
-                  </p>
-                  <p class="cuisineClass" ><ion-badge color="#fbe9ed">{{category.cuisines}}</ion-badge> </p>
-                  </ion-col>   
-                  <ion-col size="1">
-                    <span *ngIf="category.like"><ion-icon class="likeColor" name="heart"></ion-icon></span>
-                    <span *ngIf="!category.like"><ion-icon class="dislike" name="heart"></ion-icon></span>
-                  </ion-col>     
-                 
-                  </ion-row>
-                 
-                </ion-grid> -->
           </ion-list>
       </ion-card>
   </div>

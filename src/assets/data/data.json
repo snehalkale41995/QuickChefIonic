@@ -690,53 +690,79 @@
   "categoryIcons" : [
     {
       "id" : 1,
-      "icon" : "assets/img/foodCategory/category_1.png"
+      "icon" : "assets/img/foodCategory/category_1.png",
+      "categoryThumb" : "assets/img/categoryImg/category_1.jpg",
+      "categoryName" : "Delivery"
     },
     {
       "id" : 2,
-      "icon" : "assets/img/foodCategory/category_2.png"
+      "icon" : "assets/img/foodCategory/category_2.png",
+      "categoryThumb" : "assets/img/categoryImg/category_2.jpg",
+      "categoryName" : "Dine-Out"
     },
     {
       "id" : 3,
-      "icon" :  "assets/img/foodCategory/category_3.jpg"
+      "icon" :  "assets/img/foodCategory/category_3.jpg",
+      "categoryThumb" : "assets/img/categoryImg/category_3.jpg",
+      "categoryName" : "Nightlife"
     },
     {
       "id" : 4,
-      "icon" : "assets/img/foodCategory/category_4.jpg"
+      "icon" : "assets/img/foodCategory/category_4.jpg",
+      "categoryThumb" : "assets/img/categoryImg/category_4.jpg",
+      "categoryName" : "Catching-Up"
     },
     {
       "id" : 5,
-      "icon" : "assets/img/foodCategory/category_5.png"
+      "icon" : "assets/img/foodCategory/category_5.png",
+      "categoryThumb" : "assets/img/categoryImg/category_5.jpg",
+      "categoryName" : "Takeway"
     },
     {
       "id" : 6,
-      "icon" :  "assets/img/foodCategory/category_6.png"
+      "icon" :  "assets/img/foodCategory/category_6.png",
+      "categoryThumb" : "assets/img/categoryImg/category_6.jpg",
+      "categoryName" : "Cafes"
     },
     {
       "id" : 7,
-      "icon" : "assets/img/foodCategory/category_7.jpg"
+      "icon" : "assets/img/foodCategory/category_7.jpg",
+      "categoryThumb" : "assets/img/categoryImg/category_7.jpg",
+      "categoryName" : "Daily Menus"
     },
     {
       "id" : 8,
-      "icon" :  "assets/img/foodCategory/category_8.jpg"
+      "icon" :  "assets/img/foodCategory/category_8.jpg",
+      "categoryThumb" : "assets/img/categoryImg/category_8.jpg",
+      "categoryName" : "Breakfast"
     },{
       "id" : 9,
-      "icon" :  "assets/img/foodCategory/category_9.png"
+      "icon" :  "assets/img/foodCategory/category_9.png",
+      "categoryThumb" : "assets/img/categoryImg/category_9.jpg",
+      "categoryName" : "Lunch"
     },{
       "id" : 10,
-      "icon" :  "assets/img/foodCategory/category_10.png"
+      "icon" :  "assets/img/foodCategory/category_10.png",
+      "categoryThumb" : "assets/img/categoryImg/category_10.jpg",
+      "categoryName" : "Dinner"
     },
     {
       "id" : 11,
-      "icon" : "assets/img/foodCategory/category_11.png"
+      "icon" : "assets/img/foodCategory/category_11.png",
+      "categoryThumb" : "assets/img/categoryImg/category_11.jpg",
+      "categoryName" : "Pubs & Bars"
     },
     {
-      "id" : 12,
-      "icon" : "assets/img/foodCategory/category_12.jpg"
+      "id" : 14,
+      "icon" : "assets/img/foodCategory/category_12.jpg",
+      "categoryThumb" : "assets/img/categoryImg/category_12.jpg",
+      "categoryName" : "Clubs & Lounges"
     },
     {
       "id" : 13,
-      "icon" : "assets/img/foodCategory/category_13.png"
+      "icon" : "assets/img/foodCategory/category_13.png",
+      "categoryThumb" : "assets/img/categoryImg/category_13.jpg",
+      "categoryName" : "Delivery"
     }
   ],
   "userProfileItems" : [

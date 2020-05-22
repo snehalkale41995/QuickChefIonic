@@ -2,33 +2,6 @@
  * Restaurant Details
  */
 
- .restaurant-detail p {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-  
-  .restaurant-detail hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  
-    background: var(--ion-color-step-150, #d7d8da);
-  }
-  
-  .item ion-thumbnail {
-    min-width: 5rem;    
-    min-height: 5rem;
-    img {
-        max-width: 5rem;    
-        min-width: 5rem;
-        
-    }
-  }
-  
-  .titleClass{
-    padding : 10px;
-    margin-left : 10px;
-  }
-  
   .imgCol{
     width:100%;
     height: 80px;
@@ -52,8 +25,21 @@
     color :#CB202D;
   }
   
- 
-  
   .hotelImg{
     border-radius : 10px !important;
+  }
+
+  .addBtn{
+    width: 40px;
+    height: 20px;
+    margin-top: -10px;
+  }
+
+  .addTxt{
+    font-size: 10px;
+   // text-transform: capitalize;
+  }
+
+  .plusSign {
+    color : red
   }
