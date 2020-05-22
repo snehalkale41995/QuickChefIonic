@@ -21,7 +21,7 @@ export class RestaurantDetailPage {
   ionViewWillEnter() {
     this.dataProvider.load().subscribe((data: any) => {
       const categoryId = this.route.snapshot.paramMap.get('restaurantId');
-      console.log("categoryId", categoryId)
+     
       if(data && data.restaurantList){
         this.cafeList = data.restaurantList;
       }

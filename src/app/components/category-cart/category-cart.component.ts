@@ -9,7 +9,7 @@ export class CategoryCartComponent implements OnInit {
 
   @Input()  restaurantDetails : {};
   constructor() {
-   // console.log("restaurantItem", this.restaurantItem)
+   
    }
 
   ngOnInit() {

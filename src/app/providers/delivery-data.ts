@@ -118,12 +118,6 @@ export class DeliveryData {
   }
 
   getMealList() {
-    // return this.load().pipe(
-    //   map((data: any) => {
-    //     console.log("data", data.foodItemList);
-    //     return data.foodItemList;
-    //   })
-    // );
     let Cuisines = [] ;
     let cuisineIds = [270, 30, 25, 100, 40, 143, 164, 50, 1015, 85, 90];
     const apiUrl = `${AppConfig.serverURL}/cuisines?city_id=5`;
@@ -161,7 +155,7 @@ export class DeliveryData {
       iconData = iconList.filter(function (e) {
         return e.id === parseInt(categoryId);
       });
-      console.log("iconData", iconData[0])
+     
       return iconData[0]
      
     })
@@ -171,7 +165,7 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/restaurant?res_id=${id}`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-       console.log("data", data)
+      
         return {
           id : data.id,
           name : data.name,
