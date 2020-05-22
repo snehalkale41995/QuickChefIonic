@@ -13,5 +13,14 @@ export class SpecialMenuCartComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  
+  removeQuantity(){
 
+  }
+
+  addQuantity() {
+
+  }
 }
+
+

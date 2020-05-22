@@ -43,6 +43,7 @@ export class HotelDetailPage {
     const hotelId = this.route.snapshot.paramMap.get("hotelId");
 
     this.dataProvider.getMenuListByRestaurant(hotelId).subscribe((data) => {
+      console.log("data", data)
       this.menuList = data;
     });
     this.dataProvider.getRestaurantDetails(hotelId).subscribe((data: any) => {

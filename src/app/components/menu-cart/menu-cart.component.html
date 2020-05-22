@@ -3,7 +3,7 @@
     <ion-col size="6" class="imgCol">
       <img src="{{MenuDetails?.thumb}}" class="hotelImg">
     </ion-col>
-    <ion-col size="4">
+    <ion-col size="3">
       <p>
         <ion-text>{{MenuDetails?.title}}</ion-text>
       </p>
@@ -12,9 +12,32 @@
       </p> -->
       <p><ion-text class="priceText">{{MenuDetails?.price}}</ion-text></p>
     </ion-col>
-    <ion-col size="2">
-      <p><ion-button color="light" class="addBtn"><ion-text class="addTxt"> Add <ion-text class="plusSign"><b>+</b></ion-text></ion-text></ion-button></p>
+    <ion-col size="3">
+      <p *ngIf="!MenuDetails?.count"><ion-button color="light" class="addBtn"><ion-text class="addTxt"> Add <ion-text class="plusSign"><b>+</b></ion-text></ion-text></ion-button></p>
      
+       <div class="count">
+         <ion-row>
+           <ion-col (click)="removeQuantity()" class="minusCol">
+            <ion-text class="itemText">_</ion-text> 
+           </ion-col>
+           <ion-col class="show-count">
+            {{MenuDetails?.count}}
+          </ion-col>
+          <ion-col (click)="addQuantity()">
+            <ion-text class="itemText">+</ion-text> 
+          </ion-col>
+         </ion-row>
+         <!-- <span class="item-count" (click)="removeQuantity()">
+           <ion-text>-</ion-text> 
+        </span>
+        <span class="item-count show-count">
+            {{MenuDetails?.count}}
+        </span>
+        <span class="item-count" (click)="addQuantity()">
+          <ion-text>+</ion-text> 
+        </span>  -->
+      </div>
+   
     </ion-col>
   </ion-row>
 </ion-grid>

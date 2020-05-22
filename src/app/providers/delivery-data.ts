@@ -182,6 +182,9 @@ export class DeliveryData {
     return this.load().pipe(
       map((data: any) => {
         let menuList: any;
+        data.menuList.forEach((menu)=>{
+          Object.assign(menu, {"count" : 0})
+        })
         return data.menuList;
       })
     );

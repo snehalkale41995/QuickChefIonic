@@ -43,3 +43,30 @@
   .plusSign {
     color : red
   }
+
+  .count {
+    margin: 0px;
+    border-radius: 5px;
+    border: solid rgba(0,0,0,.25) 1px;
+    width: 60px;
+    height: 25px;
+    cursor : pointer
+  }
+
+  .item-count {
+    //  font-size: 8px;
+      bottom: 5px;
+      background-color:white;
+    }
+    .show-count {
+      height: 23px;
+      background-color: #f3c9d0 !important;
+    }
+    .itemText{
+      font-weight: bold;
+      color: #CB202D;
+    }
+
+    .minusCol{
+      bottom: 5px;
+    }
