@@ -12,8 +12,7 @@ export class RestaurantListPage {
   meals: any[] = [];
   cafeList ;
   restaurant ;
-  categoryImg ;
-  categoryName ;
+  categoryInfo;
  
 
   constructor(public deliveryData: DeliveryData, 
@@ -34,8 +33,7 @@ export class RestaurantListPage {
     await loading.present();
 
     this.deliveryData.getImageByCategory(categoryId).subscribe((data: any) => {
-         this.categoryImg = data.categoryThumb;
-         this.categoryName = data.categoryName;
+         this.categoryInfo = data
     })
 
     this.deliveryData.getRestaurants("", "" , categoryId).subscribe((data: any) => {
