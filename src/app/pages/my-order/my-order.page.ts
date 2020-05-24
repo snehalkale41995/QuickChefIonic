@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { DeliveryData } from "../../providers/delivery-data";
 import { LoadingController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
+
 @Component({
   selector: "app-my-order",
   templateUrl: "./my-order.page.html",
@@ -12,6 +13,7 @@ export class MyOrderPage implements OnInit {
   hotel: any;
   order: any;
   hotelId;
+  deliverNote : any;
   defaultHrefLink = `/app/tabs/restaurants/hotel-details`;
   constructor(
     private dataProvider: DeliveryData,

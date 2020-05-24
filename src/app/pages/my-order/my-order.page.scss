@@ -9,10 +9,11 @@ ion-title {
 
     .ion-colName{
         margin-left: 20px;
+        cursor: pointer;
     }
     
     ion-list{
-    background-color: #e9e0e5;
+    background-color: #fdfeff;
     padding: 2px;
     }
     
@@ -35,3 +36,24 @@ ion-title {
         font-size : 12px ;
         text-decoration : underline;
     }
+
+    .noteText{
+        color :  #CB202D;
+        font-size : 14px ;
+        cursor: pointer !important;
+
+    }
+    .noteRow{
+        margin-top : 6px;
+        cursor: pointer !important;
+    }
+
+    .totalRow {
+        padding: 2px;
+        margin-top: 5px;
+    }
+
+    .RestaurantInfo{
+        overflow: hidden;
+    }
+    

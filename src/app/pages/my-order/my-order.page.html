@@ -8,32 +8,68 @@
 </ion-header>
 
 <ion-content>
-  <div>
+  <div class="RestaurantInfo">
     <app-category-cart [restaurantDetails]="hotel"></app-category-cart>
   </div>
-  <hr/>
-  <ion-card *ngFor="let item of order?.CartItems">
-    <ion-list>
-      <ion-row>
-        <ion-col class="ion-colName">
-          <ion-text>{{item.title}} &nbsp;<ion-icon name="close"></ion-icon>&nbsp;{{item.itemCount}}</ion-text>
-        </ion-col>
-        <ion-col class="ion-colPrice">
-          <ion-text>{{item.price}}</ion-text> 
-        </ion-col>
-      </ion-row>
+  <div>
+    <ion-card *ngFor="let item of order?.CartItems">
+      <ion-list>
+        <ion-row>
+          <ion-col class="ion-colName">
+            <ion-text>{{item.title}} &nbsp;<ion-icon name="close"></ion-icon>&nbsp;{{item.itemCount}}</ion-text>
+          </ion-col>
+          <ion-col class="ion-colPrice">
+            <ion-text>{{item.price}}</ion-text>
+          </ion-col>
+        </ion-row>
+  
+      </ion-list>
+    </ion-card>
+  </div>
+  
+  <div>
+    <ion-row>
+      <ion-col class="foodLinkCol" routerLink="/app/tabs/restaurants/hotel-details">
+        <ion-text class="foodLinkText">Add More Food</ion-text>
+      </ion-col>
+    </ion-row>
+  </div>
 
-     </ion-list>
-     </ion-card>
-     <div>
-      <ion-row>
-        <ion-col class="foodLinkCol" routerLink="/app/tabs/restaurants/hotel-details">
-       <ion-text class="foodLinkText">Add More Food</ion-text> 
-        </ion-col>
+  <div class="totalRow">
+    <ion-row>
+      <ion-col class="ion-colName">
+        <ion-text>Subtotal</ion-text>
+      </ion-col>
+      <ion-col class="ion-colPrice">
+        <ion-text>{{order?.subtotal}}</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-colName">
+        <ion-text>Delivery Cost</ion-text>
+      </ion-col>
+      <ion-col class="ion-colPrice">
+        <ion-text>{{order?.deliveryCost}}</ion-text>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div>
+    <!-- <ion-row class="noteRow">
+      <ion-col class="ion-colName" size="6">
+      <ion-badge color="medium">  <ion-text class="noteText">Add Instructions +</ion-text> </ion-badge>
+      </ion-col>
+      </ion-row> -->
+      <ion-row class="noteRow"> 
+        <ion-col class="ion-colName" size="6">
+        <ion-item>
+          <ion-label  position="floating" class="noteText">Add Instructions +</ion-label>
+          <ion-input [value]="deliverNote"></ion-input>
+        </ion-item>
+      </ion-col>
       </ion-row>
-     </div>
+  </div>
+
 </ion-content>
-<div class="cartBtn"  routerLink="/app/tabs/restaurants/check-out">
+<div class="cartBtn" routerLink="/app/tabs/restaurants/check-out">
   <ion-text class="cartTxt"> Check Out </ion-text>
 </div>
-

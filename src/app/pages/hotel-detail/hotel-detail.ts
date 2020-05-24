@@ -55,7 +55,5 @@ export class HotelDetailPage {
         loading.dismiss();
       });
     });
-  
   }
-
 }
