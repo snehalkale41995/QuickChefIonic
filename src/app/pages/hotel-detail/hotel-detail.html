@@ -63,11 +63,9 @@
     <div class="menuClass">
       <ion-text>Menu</ion-text>
     </div>
-    <ion-card *ngFor="let item of menuList">
-      <ion-list>
-        <app-menu-cart [MenuDetails]="item"></app-menu-cart>
-      </ion-list>
-    </ion-card>
+   
+        <app-menu-cart [menuList]="menuList"></app-menu-cart>
+     
 
   </div>
   
