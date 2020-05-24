@@ -67,6 +67,7 @@ export class LandingPage implements OnInit {
     await this.deliveryData
       .getRestaurants(this.restaurantName, this.cityName, "")
       .subscribe((data: any) => {
+        console.log("data", data)
         this.restaurantList = data;
         loading.dismiss();
       });

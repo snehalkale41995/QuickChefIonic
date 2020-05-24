@@ -1,5 +1,4 @@
 {
-
   "restaurants": [
     {
       "name": "Burt Bear",
@@ -158,7 +157,6 @@
       "id": "13"
     }
   ],
-
   "map": [
     {
       "name": "Monona Terrace Convention Center",
@@ -177,12 +175,11 @@
       "lng": -89.38335
     }
   ],
-
-  "foodItemList" : [
+  "foodItemList": [
     {
       "$key": "1",
       "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",  
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635603/shutterstock_85029121_yqrjco.jpg",
       "title": "Salads"
     },
     {
@@ -194,8 +191,7 @@
     {
       "$key": "3",
       "description": "erving authentic Italian Chicken Masala made by a 100% Italian from Chicago to Denver's front range. Vegan and Gluten free options available",
-      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635600/shutterstock_78020470_mogsht.jpg"
-,
+      "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635600/shutterstock_78020470_mogsht.jpg",
       "title": "Desserts"
     },
     {
@@ -217,29 +213,29 @@
       "title": "Sice"
     }
   ],
-  "restaurantList" : [
+  "restaurantList": [
     {
       "$key": "1",
       "name": "Otto Enoteca & Pizzeria",
       "description": "Boston's Mei Mei Street Kitchen does a great job of this - including information about their restaurant and food truck, content about their local and sustainable approach, as well as links to recent press",
-      "thumb": "assets/img/restaurantOne.jpg",  
+      "thumb": "assets/img/restaurantOne.jpg",
       "type": "pizza",
-      "locality" : "pune",
+      "locality": "pune",
       "price_range": "500 Rs",
-      "user_rating" : 5,
-      "reviews" : 340,
-      "timings" : "12:00 - 18:00",
-      "foodTypes" : ".pizza .burger .coffee",
-       "like" : true,
-       "menuList" : [
+      "user_rating": 5,
+      "reviews": 340,
+      "timings": "12:00 - 18:00",
+      "foodTypes": ".pizza .burger .coffee",
+      "like": true,
+      "menuList": [
         {
           "$key": "1",
           "description": "A light, pillowy texture often created by the incorporation of air. A smooth and creamy texture similar to that of butter.",
-          "thumb": "assets/img/mealImage1.jpg",  
+          "thumb": "assets/img/mealImage1.jpg",
           "title": "chicken pizza",
-          "price" : "12 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredientThree.jpg",
@@ -249,11 +245,11 @@
         {
           "$key": "2",
           "description": "Roast chicken, baby carrots, spring peas topped with grandma’s flakey pie crust.",
-          "thumb": "assets/img/mealImage2.jpg",  
+          "thumb": "assets/img/mealImage2.jpg",
           "title": "veg pizza",
-          "price" : "15 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientFour.jpg",
             "assets/img/ingredient5.jpg",
@@ -263,18 +259,18 @@
         {
           "$key": "3",
           "description": "Grandma’s flakey pie crust filled with roast chicken, baby carrots, and spring peas. A light texture with a slight crunch.",
-          "thumb": "assets/img/mealImage3.jpg",  
+          "thumb": "assets/img/mealImage3.jpg",
           "title": "cheese pizza",
-          "price" : "17 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "17 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "2",
@@ -282,22 +278,22 @@
       "description": "We imagine a world where there’s no such thing as a bad cup of coffee and all coffee farmers live prosperously.",
       "thumb": "assets/img/restaurantTwo.jpg",
       "type": "pizza",
-      "locality" : "mumbai",
+      "locality": "mumbai",
       "price_range": "200 Rs",
-      "user_rating" : 3,
-      "reviews" : 150,
-      "timings" : "10:00 - 20:00",
-      "foodTypes" : ".pizza .burger .salad",
-      "like" : false,
-      "menuList" : [
+      "user_rating": 3,
+      "reviews": 150,
+      "timings": "10:00 - 20:00",
+      "foodTypes": ".pizza .burger .salad",
+      "like": false,
+      "menuList": [
         {
           "$key": "1",
           "description": "The texture of a food with a hard outer layer and soft interior.",
-          "thumb": "assets/img/mealImage3.jpg",  
+          "thumb": "assets/img/mealImage3.jpg",
           "title": "Veg cheese Pizza",
-          "price" : "12 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredient5.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredient6.jpg",
@@ -307,33 +303,32 @@
         {
           "$key": "2",
           "description": "A firm, crisp texture often identified by the sharp, audible noise that the food makes when being eaten.",
-          "thumb": "assets/img/mealImage5.jpg",  
+          "thumb": "assets/img/mealImage5.jpg",
           "title": "paneer burger",
-          "price" : "15 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredient12.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredient14.jpg",
             "assets/img/ingredient5.jpg"
-           
           ]
         },
         {
           "$key": "3",
           "description": "A food that was dipped in butter and coated with spices before being cooked in a hot pan, resulting in a blackened appearance.",
-          "thumb": "assets/img/mealImage6.jpg",  
+          "thumb": "assets/img/mealImage6.jpg",
           "title": "French fries",
-          "price" : "17 $",
-          "foodType" : "burger",
-          "ingredients" : [
+          "price": "17 $",
+          "foodType": "burger",
+          "ingredients": [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient14.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "3",
@@ -342,22 +337,22 @@
       "thumb": "assets/img/restaurantThree.jpg",
       "title": "Sides",
       "type": "coffee",
-      "locality" : "delhi",
+      "locality": "delhi",
       "price_range": "100 Rs",
-      "user_rating" : 4,
-      "reviews" : 40,
-      "timings" : "11:00 - 19:00",
-      "foodTypes" : ".drinks .salad",
-      "like" : true,
-      "menuList" : [
+      "user_rating": 4,
+      "reviews": 40,
+      "timings": "11:00 - 19:00",
+      "foodTypes": ".drinks .salad",
+      "like": true,
+      "menuList": [
         {
           "$key": "1",
           "description": "A food that was cooked in an oven, often resulting in a crispy outer coating.",
-          "thumb": "assets/img/mealImage7.jpg",  
+          "thumb": "assets/img/mealImage7.jpg",
           "title": "hamburger",
-          "price" : "12 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredient12.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientTwo.jpg",
@@ -367,11 +362,11 @@
         {
           "$key": "2",
           "description": "Food that is briefly fried in a small amount of fat and then is slowly stewed in a covered pot. Results in a seared, crispy exterior coupled with a tender interior texture.",
-          "thumb": "assets/img/mealImage8.jpg",  
+          "thumb": "assets/img/mealImage8.jpg",
           "title": "egg meal",
-          "price" : "15 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient13.jpg",
             "assets/img/ingredient7.jpg",
@@ -382,41 +377,41 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage9jpg.jpg",  
+          "thumb": "assets/img/mealImage9jpg.jpg",
           "title": "fish curry",
-          "price" : "17 $",
-          "foodType" : "pizza",
-          "ingredients" : [
+          "price": "17 $",
+          "foodType": "pizza",
+          "ingredients": [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient10.jpg",
             "assets/img/ingredient9.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "4",
       "name": "Coffee Cafe",
       "description": "Our mission is to be the most sustainable restaurant in New York by sourcing our ingredients locally, supplementing produce with herbs grown on our rooftop garden, and giving back to the community through urban farming education",
       "thumb": "assets/img/restaurantfour.jpg",
-       "type": "coffee",
-      "locality" : "pune",
+      "type": "coffee",
+      "locality": "pune",
       "price_range": "550 Rs",
-      "user_rating" : 2,
-      "reviews" : 150,
-      "timings" : "08:00 - 20:00",
-      "foodTypes" : ".pizza .burger .sides",
-      "like" : true,
-      "menuList" : [
+      "user_rating": 2,
+      "reviews": 150,
+      "timings": "08:00 - 20:00",
+      "foodTypes": ".pizza .burger .sides",
+      "like": true,
+      "menuList": [
         {
           "$key": "1",
           "description": "A food cooked with intense radiant heat, as in an oven or on a grill. Often results in a darkened appearance and crispy texture.",
-          "thumb": "assets/img/mealImage10.jpg",  
+          "thumb": "assets/img/mealImage10.jpg",
           "title": "veg salad",
-          "price" : "12 $",
-          "foodType" : "salad",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "salad",
+          "ingredients": [
             "assets/img/ingredient9.jpg",
             "assets/img/ingredient8.jpg",
             "assets/img/ingredient7.jpg",
@@ -426,11 +421,11 @@
         {
           "$key": "2",
           "description": "Food that has been cooked in nearly boiling liquid. Often results in a tender, moist texture.",
-          "thumb": "assets/img/mealImage11jpg.jpg",  
+          "thumb": "assets/img/mealImage11jpg.jpg",
           "title": "chocolate waffle",
-          "price" : "15 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredient5.jpg",
             "assets/img/ingredient6.jpg",
@@ -440,18 +435,18 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage12.jpg",  
+          "thumb": "assets/img/mealImage12.jpg",
           "title": "dessert blast",
-          "price" : "17 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "17 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "5",
@@ -459,22 +454,22 @@
       "description": "Our mission is to make customers happy. Our mission is to share our family’s authentic Sri Lankan recipes with the world.",
       "thumb": "assets/img/restaurantfive.jpg",
       "type": "ice-cream",
-      "locality" : "indore",
+      "locality": "indore",
       "price_range": "200 Rs",
-      "user_rating" : 1,
-      "reviews" : 150,
-      "timings" : "10:00 - 20:00",
-      "foodTypes" : ".biryani .tea .coffee",
-      "like" : false,
-      "menuList" : [
+      "user_rating": 1,
+      "reviews": 150,
+      "timings": "10:00 - 20:00",
+      "foodTypes": ".biryani .tea .coffee",
+      "like": false,
+      "menuList": [
         {
           "$key": "1",
           "description": "Our mission is to give our customers a place to celebrate life’s special moments by offering the best food, service, and ambiance in Toronto.",
-          "thumb": "assets/img/mealImage13.jpg",  
+          "thumb": "assets/img/mealImage13.jpg",
           "title": "Rice Meal",
-          "price" : "12 $",
-          "foodType" : "meal",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "meal",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredient13.jpg",
             "assets/img/ingredient14.jpg",
@@ -484,11 +479,11 @@
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage14.jpg",  
+          "thumb": "assets/img/mealImage14.jpg",
           "title": "chocolate shake",
-          "price" : "15 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredient5.jpg",
             "assets/img/ingredient6.jpg",
@@ -498,18 +493,18 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage15.jpg",  
+          "thumb": "assets/img/mealImage15.jpg",
           "title": "cheese cake",
-          "price" : "10 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "10 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredient10.jpg",
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient17.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "6",
@@ -517,22 +512,22 @@
       "description": "At noma, we wish to offer our personal rendition of Nordic gourmet cuisine with an innovative gastronomic take on traditional cooking methods, fine Nordic produce and the legacy of our shared food heritage",
       "thumb": "assets/img/restaurantSix.jpg",
       "type": "ice-cream",
-      "locality" : "nasik",
+      "locality": "nasik",
       "price_range": "400 Rs",
-      "user_rating" : 4,
-      "reviews" : 10,
-      "timings" : "11:00 - 20:00",
-      "foodTypes" : ".chat .main-course ",
-      "like" : true,
-      "menuList" : [
+      "user_rating": 4,
+      "reviews": 10,
+      "timings": "11:00 - 20:00",
+      "foodTypes": ".chat .main-course ",
+      "like": true,
+      "menuList": [
         {
           "$key": "1",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage14.jpg",  
+          "thumb": "assets/img/mealImage14.jpg",
           "title": "choco crush",
-          "price" : "12 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredientThree.jpg",
@@ -542,11 +537,11 @@
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage15.jpg",  
+          "thumb": "assets/img/mealImage15.jpg",
           "title": "walnut cake",
-          "price" : "15 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredient6.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredient12.jpg",
@@ -556,18 +551,18 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage16.jpg",  
+          "thumb": "assets/img/mealImage16.jpg",
           "title": "brownie",
-          "price" : "17 $",
-          "foodType" : "dessert",
-          "ingredients" : [
+          "price": "17 $",
+          "foodType": "dessert",
+          "ingredients": [
             "assets/img/ingredient6.jpg",
             "assets/img/ingredient15.jpg",
             "assets/img/ingredient16.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "7",
@@ -575,22 +570,22 @@
       "thumb": "assets/img/restaurantNine.jpg",
       "name": "biryani junction",
       "type": "wine",
-      "locality" : "pune",
+      "locality": "pune",
       "price_range": "350 Rs",
-      "user_rating" : 4,
-      "reviews" : "170",
-      "timings" : "12:00 - 21:00",
-      "foodTypes" : ".pizza .ice-cream .coffee",
-      "like" : false,
-      "menuList" : [
+      "user_rating": 4,
+      "reviews": "170",
+      "timings": "12:00 - 21:00",
+      "foodTypes": ".pizza .ice-cream .coffee",
+      "like": false,
+      "menuList": [
         {
           "$key": "1",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage17.jpg",  
+          "thumb": "assets/img/mealImage17.jpg",
           "title": "chicken Biryani",
-          "price" : "12 $",
-          "foodType" : "biryani",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "biryani",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredient9.jpg",
             "assets/img/ingredient10.jpg",
@@ -600,11 +595,11 @@
         {
           "$key": "2",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage10.jpg",  
+          "thumb": "assets/img/mealImage10.jpg",
           "title": "veg salad",
-          "price" : "15 $",
-          "foodType" : "salad",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "salad",
+          "ingredients": [
             "assets/img/ingredient8.jpg",
             "assets/img/ingredient6.jpg",
             "assets/img/ingredient16.jpg",
@@ -614,18 +609,18 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage8.jpg",  
+          "thumb": "assets/img/mealImage8.jpg",
           "title": "egg toast",
-          "price" : "15 $",
-          "foodType" : "egg",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "egg",
+          "ingredients": [
             "assets/img/ingredientOne.jpg",
             "assets/img/ingredientTwo.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     },
     {
       "$key": "8",
@@ -633,22 +628,22 @@
       "thumb": "assets/img/restaurantTen.jpg",
       "name": " dominos",
       "type": "nutrition",
-      "locality" : "pune",
+      "locality": "pune",
       "price_range": "350 Rs",
-      "user_rating" : 4,
-      "reviews" : "170",
-      "timings" : "12:00 - 21:00",
-      "foodTypes" : ".salads .healthy .eggs",
-      "like" : false,
-      "menuList" : [
+      "user_rating": 4,
+      "reviews": "170",
+      "timings": "12:00 - 21:00",
+      "foodTypes": ".salads .healthy .eggs",
+      "like": false,
+      "menuList": [
         {
           "$key": "1",
           "description": "A food that was cooked in an oven, often resulting in a crispy outer coating.",
-          "thumb": "assets/img/mealImage7.jpg",  
+          "thumb": "assets/img/mealImage7.jpg",
           "title": "hamburger",
-          "price" : "12 $",
-          "foodType" : "burger",
-          "ingredients" : [
+          "price": "12 $",
+          "foodType": "burger",
+          "ingredients": [
             "assets/img/ingredient12.jpg",
             "assets/img/ingredientThree.jpg",
             "assets/img/ingredientTwo.jpg",
@@ -658,11 +653,11 @@
         {
           "$key": "2",
           "description": "Food that is briefly fried in a small amount of fat and then is slowly stewed in a covered pot. Results in a seared, crispy exterior coupled with a tender interior texture.",
-          "thumb": "assets/img/mealImage8.jpg",  
+          "thumb": "assets/img/mealImage8.jpg",
           "title": "egg meal",
-          "price" : "15 $",
-          "foodType" : "meal",
-          "ingredients" : [
+          "price": "15 $",
+          "foodType": "meal",
+          "ingredients": [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient13.jpg",
             "assets/img/ingredient7.jpg",
@@ -673,99 +668,101 @@
         {
           "$key": "3",
           "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-          "thumb": "assets/img/mealImage9jpg.jpg",  
+          "thumb": "assets/img/mealImage9jpg.jpg",
           "title": "fish curry",
-          "price" : "17 $",
-          "foodType" : "meal",
-          "ingredients" : [
+          "price": "17 $",
+          "foodType": "meal",
+          "ingredients": [
             "assets/img/ingredient11.jpg",
             "assets/img/ingredient10.jpg",
             "assets/img/ingredient9.jpg",
             "assets/img/ingredientFour.jpg"
           ]
         }
-       ]
+      ]
     }
   ],
-  "categoryIcons" : [
+  "categoryIcons": [
     {
-      "id" : 1,
-      "icon" : "assets/img/foodCategory/category_1.png",
-      "categoryThumb" : "assets/img/categoryImg/category_1.jpg",
-      "categoryName" : "Delivery"
+      "id": 1,
+      "icon": "assets/img/foodCategory/category_1.png",
+      "categoryThumb": "assets/img/categoryImg/category_1.jpg",
+      "categoryName": "Delivery"
     },
     {
-      "id" : 2,
-      "icon" : "assets/img/foodCategory/category_2.png",
-      "categoryThumb" : "assets/img/categoryImg/category_2.jpg",
-      "categoryName" : "Dine-Out"
+      "id": 2,
+      "icon": "assets/img/foodCategory/category_2.png",
+      "categoryThumb": "assets/img/categoryImg/category_2.jpg",
+      "categoryName": "Dine-Out"
     },
     {
-      "id" : 3,
-      "icon" :  "assets/img/foodCategory/category_3.jpg",
-      "categoryThumb" : "assets/img/categoryImg/category_3.jpg",
-      "categoryName" : "Nightlife"
+      "id": 3,
+      "icon": "assets/img/foodCategory/category_3.jpg",
+      "categoryThumb": "assets/img/categoryImg/category_3.jpg",
+      "categoryName": "Nightlife"
     },
     {
-      "id" : 4,
-      "icon" : "assets/img/foodCategory/category_4.jpg",
-      "categoryThumb" : "assets/img/categoryImg/category_4.jpg",
-      "categoryName" : "Catching-Up"
+      "id": 4,
+      "icon": "assets/img/foodCategory/category_4.jpg",
+      "categoryThumb": "assets/img/categoryImg/category_4.jpg",
+      "categoryName": "Catching-Up"
     },
     {
-      "id" : 5,
-      "icon" : "assets/img/foodCategory/category_5.png",
-      "categoryThumb" : "assets/img/categoryImg/category_5.jpg",
-      "categoryName" : "Takeway"
+      "id": 5,
+      "icon": "assets/img/foodCategory/category_5.png",
+      "categoryThumb": "assets/img/categoryImg/category_5.jpg",
+      "categoryName": "Takeway"
     },
     {
-      "id" : 6,
-      "icon" :  "assets/img/foodCategory/category_6.png",
-      "categoryThumb" : "assets/img/categoryImg/category_6.jpg",
-      "categoryName" : "Cafes"
+      "id": 6,
+      "icon": "assets/img/foodCategory/category_6.png",
+      "categoryThumb": "assets/img/categoryImg/category_6.jpg",
+      "categoryName": "Cafes"
     },
     {
-      "id" : 7,
-      "icon" : "assets/img/foodCategory/category_7.jpg",
-      "categoryThumb" : "assets/img/categoryImg/category_7.jpg",
-      "categoryName" : "Daily Menus"
+      "id": 7,
+      "icon": "assets/img/foodCategory/category_7.jpg",
+      "categoryThumb": "assets/img/categoryImg/category_7.jpg",
+      "categoryName": "Daily Menus"
     },
     {
-      "id" : 8,
-      "icon" :  "assets/img/foodCategory/category_8.jpg",
-      "categoryThumb" : "assets/img/categoryImg/category_8.jpg",
-      "categoryName" : "Breakfast"
-    },{
-      "id" : 9,
-      "icon" :  "assets/img/foodCategory/category_9.png",
-      "categoryThumb" : "assets/img/categoryImg/category_9.jpg",
-      "categoryName" : "Lunch"
-    },{
-      "id" : 10,
-      "icon" :  "assets/img/foodCategory/category_10.png",
-      "categoryThumb" : "assets/img/categoryImg/category_10.jpg",
-      "categoryName" : "Dinner"
+      "id": 8,
+      "icon": "assets/img/foodCategory/category_8.jpg",
+      "categoryThumb": "assets/img/categoryImg/category_8.jpg",
+      "categoryName": "Breakfast"
     },
     {
-      "id" : 11,
-      "icon" : "assets/img/foodCategory/category_11.png",
-      "categoryThumb" : "assets/img/categoryImg/category_11.jpg",
-      "categoryName" : "Pubs & Bars"
+      "id": 9,
+      "icon": "assets/img/foodCategory/category_9.png",
+      "categoryThumb": "assets/img/categoryImg/category_9.jpg",
+      "categoryName": "Lunch"
     },
     {
-      "id" : 14,
-      "icon" : "assets/img/foodCategory/category_12.jpg",
-      "categoryThumb" : "assets/img/categoryImg/category_12.jpg",
-      "categoryName" : "Clubs & Lounges"
+      "id": 10,
+      "icon": "assets/img/foodCategory/category_10.png",
+      "categoryThumb": "assets/img/categoryImg/category_10.jpg",
+      "categoryName": "Dinner"
     },
     {
-      "id" : 13,
-      "icon" : "assets/img/foodCategory/category_13.png",
-      "categoryThumb" : "assets/img/categoryImg/category_13.jpg",
-      "categoryName" : "Delivery"
+      "id": 11,
+      "icon": "assets/img/foodCategory/category_11.png",
+      "categoryThumb": "assets/img/categoryImg/category_11.jpg",
+      "categoryName": "Pubs & Bars"
+    },
+    {
+      "id": 14,
+      "icon": "assets/img/foodCategory/category_12.jpg",
+      "categoryThumb": "assets/img/categoryImg/category_12.jpg",
+      "categoryName": "Clubs & Lounges"
+    },
+    {
+      "id": 13,
+      "icon": "assets/img/foodCategory/category_13.png",
+      "categoryThumb": "assets/img/categoryImg/category_13.jpg",
+      "categoryName": "Delivery"
     }
   ],
-  "userProfileItems" : [
+  "userProfileItems": [
     "Profile",
     "Payment Method",
     "Order History",
@@ -774,79 +771,120 @@
     "About Us",
     "Support Center"
   ],
-  "menuList" : [
+  "menuList": [
     {
       "id": "1",
       "description": "The texture of a food with a hard outer layer and soft interior.",
-      "thumb": "assets/img/mealImage3.jpg",  
+      "thumb": "assets/img/mealImage3.jpg",
       "title": "Veg cheese Pizza",
-      "price" : "12 $",
-      "foodType" : "pizza"
+      "price": "12 $",
+      "foodType": "pizza"
     },
     {
       "id": "2",
       "description": "A firm, crisp texture often identified by the sharp, audible noise that the food makes when being eaten.",
-      "thumb": "assets/img/mealImage5.jpg",  
+      "thumb": "assets/img/mealImage5.jpg",
       "title": "paneer burger",
-      "price" : "15 $",
-      "foodType" : "pizza"
+      "price": "15 $",
+      "foodType": "pizza"
     },
     {
       "id": "3",
       "description": "A food that was dipped in butter and coated with spices before being cooked in a hot pan, resulting in a blackened appearance.",
-      "thumb": "assets/img/mealImage6.jpg",  
+      "thumb": "assets/img/mealImage6.jpg",
       "title": "French fries",
-      "price" : "17 $",
-      "foodType" : "burger"
+      "price": "17 $",
+      "foodType": "burger"
     },
-   {
+    {
       "id": "4",
       "description": "A food that was cooked in an oven, often resulting in a crispy outer coating.",
-      "thumb": "assets/img/mealImage7.jpg",  
+      "thumb": "assets/img/mealImage7.jpg",
       "title": "hamburger",
-      "price" : "12 $",
-      "foodType" : "pizza"
-     
+      "price": "12 $",
+      "foodType": "pizza"
     },
     {
       "id": "5",
       "description": "Food that is briefly fried in a small amount of fat and then is slowly stewed in a covered pot. Results in a seared, crispy exterior coupled with a tender interior texture.",
-      "thumb": "assets/img/mealImage8.jpg",  
+      "thumb": "assets/img/mealImage8.jpg",
       "title": "egg meal",
-      "price" : "15 $",
-      "foodType" : "pizza"
+      "price": "15 $",
+      "foodType": "pizza"
     },
     {
       "id": "6",
       "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-      "thumb": "assets/img/mealImage9jpg.jpg",  
+      "thumb": "assets/img/mealImage9jpg.jpg",
       "title": "fish curry",
-      "price" : "17 $",
-      "foodType" : "pizza"
+      "price": "17 $",
+      "foodType": "pizza"
     },
-  {
+    {
       "id": "7",
       "description": "A food cooked with intense radiant heat, as in an oven or on a grill. Often results in a darkened appearance and crispy texture.",
-      "thumb": "assets/img/mealImage10.jpg",  
+      "thumb": "assets/img/mealImage10.jpg",
       "title": "veg salad",
-      "price" : "12 $",
-      "foodType" : "salad"
+      "price": "12 $",
+      "foodType": "salad"
     },
     {
       "id": "8",
       "description": "Food that has been cooked in nearly boiling liquid. Often results in a tender, moist texture.",
-      "thumb": "assets/img/mealImage11jpg.jpg",  
+      "thumb": "assets/img/mealImage11jpg.jpg",
       "title": "chocolate waffle",
-      "price" : "15 $",
-      "foodType" : "dessert"
+      "price": "15 $",
+      "foodType": "dessert"
     },
     {
       "id": "9",
       "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
-      "thumb": "assets/img/mealImage12.jpg",  
+      "thumb": "assets/img/mealImage12.jpg",
       "title": "dessert blast",
-      "price" : "17 $",
-      "foodType" : "dessert"
+      "price": "17 $",
+      "foodType": "dessert"
     }
-   ]
+  ],
+  "orderDetails": {
+    "restaurantDetails": {
+      "id": "1400277",
+      "location": "New Palasia, Indore",
+      "name": "Cafe Coffee Day",
+      "price_range": 2,
+      "rating": 3,
+      "thumb": "https://b.zmtcdn.com/data/pictures/chains/3/1400053/59e23c71d7a26242d2f38ef14d22851f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "timings": "11 AM to 11 PM",
+      "votes": "111"
+    },
+    "CartItems": [
+      {
+        "menuItemId": 2,
+        "itemCount": 2,
+        "title": "paneer burger",
+        "price": "15 $"
+      },
+      {
+        "menuItemId": 4,
+        "itemCount": 1,
+        "title": "hamburger",
+        "price": "12 $"
+      },
+      {
+        "menuItemId": 5,
+        "itemCount": 1,
+        "title": "egg meal",
+        "price": "15 $"
+      },
+      {
+        "menuItemId": "6",
+        "itemCount": 1,
+        "title": "fish curry",
+        "price": "17 $"
+      }
+    ],
+    "subtotal": "74 $",
+    "deliveryCost": "Free",
+    "discount": "6 $",
+    "total": "68 $"
+  }
 }

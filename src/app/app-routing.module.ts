@@ -19,7 +19,9 @@ const routes: Routes = [
   { path: 'initial-page',
    loadChildren: () => import('./pages/initial-page/initial-page.module').then(m => m.InitialPagePageModule),
   },
-  { path: 'user-profile', loadChildren: './pages/user-profile/user-profile.module#UserProfilePageModule' }
+  { path: 'user-profile', loadChildren: './pages/user-profile/user-profile.module#UserProfilePageModule' },  { path: 'my-order', loadChildren: './pages/my-order/my-order.module#MyOrderPageModule' },
+  { path: 'check-out', loadChildren: './pages/check-out/check-out.module#CheckOutPageModule' }
+
 ];
 
 @NgModule({

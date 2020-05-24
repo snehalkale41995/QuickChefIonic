@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DeliveryData } from "../../providers/delivery-data";
 import { ActionSheetController } from "@ionic/angular";
 import { LoadingController } from "@ionic/angular";
@@ -31,7 +31,8 @@ export class HotelDetailPage {
     private route: ActivatedRoute,
     public actionSheetCtrl: ActionSheetController,
     public confData: DeliveryData,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private router: Router
   ) {}
 
   async ionViewWillEnter() {

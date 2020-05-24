@@ -34,12 +34,12 @@ const routes: Routes = [
             loadChildren: () => import('../hotel-detail/hotel-detail.module').then(m => m.HotelDetailModule)
           },
           {
-            path: 'restaurant-details/:restaurantId',
-            loadChildren: () => import('../restaurant-detail/restaurant-detail.module').then(m => m.RestaurantDetailModule)
+            path: 'order-details/:hotelId',
+            loadChildren: () => import('../my-order/my-order.module').then(m => m.MyOrderPageModule)
           },
           {
-            path: 'meal-details/:restaurantId/:mealId',
-            loadChildren: () => import('../meal-detail/meal-detail.module').then(m => m.MealDetailPageModule)
+            path: 'check-out',
+            loadChildren: () => import('../check-out/check-out.module').then(m => m.CheckOutPageModule)
           }
         ]
       },
