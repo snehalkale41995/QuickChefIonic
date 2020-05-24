@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>myOrder</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHrefLink"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Order</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div>
+    <app-category-cart [restaurantDetails]="hotel"></app-category-cart>
+  </div>
+  <hr/>
+  <ion-card *ngFor="let item of order?.CartItems">
+    <ion-list>
+      <ion-row>
+        <ion-col class="ion-colName">
+          <ion-text>{{item.title}} &nbsp;<ion-icon name="close"></ion-icon>&nbsp;{{item.itemCount}}</ion-text>
+        </ion-col>
+        <ion-col class="ion-colPrice">
+          <ion-text>{{item.price}}</ion-text> 
+        </ion-col>
+      </ion-row>
 
+     </ion-list>
+     </ion-card>
+     <div>
+      <ion-row>
+        <ion-col class="foodLinkCol" routerLink="/app/tabs/restaurants/hotel-details">
+       <ion-text class="foodLinkText">Add More Food</ion-text> 
+        </ion-col>
+      </ion-row>
+     </div>
 </ion-content>
+<div class="cartBtn"  routerLink="/app/tabs/restaurants/check-out">
+  <ion-text class="cartTxt"> Check Out </ion-text>
+</div>
+

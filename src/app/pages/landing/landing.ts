@@ -92,4 +92,10 @@ export class LandingPage implements OnInit {
         console.log("Error getting location", error);
       });
   }
+
+
+  hotelDetailsNav(restaurantId){
+    this.router.navigate(["/app", "tabs", "restaurants", "hotel-details"]);
+    this.storage.set("selectedRestaurantId", restaurantId);
+  }
 }

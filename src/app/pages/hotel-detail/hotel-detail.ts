@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute} from "@angular/router";
 import { DeliveryData } from "../../providers/delivery-data";
 import { ActionSheetController } from "@ionic/angular";
 import { LoadingController } from "@ionic/angular";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "page-hotel-detail",
@@ -14,6 +15,7 @@ export class HotelDetailPage {
   menuList: any;
   defaultHref = "app/tabs/landing";
   ratings: any;
+  hotelId : any;
   slideOpts = {
     slidesPerView: 3,
     freeMode: false,
@@ -30,9 +32,8 @@ export class HotelDetailPage {
     private dataProvider: DeliveryData,
     private route: ActivatedRoute,
     public actionSheetCtrl: ActionSheetController,
-    public confData: DeliveryData,
     public loadingCtrl: LoadingController,
-    private router: Router
+    public storage : Storage 
   ) {}
 
   async ionViewWillEnter() {
@@ -41,16 +42,20 @@ export class HotelDetailPage {
       duration: 3000,
     });
     await loading.present();
-    const hotelId = this.route.snapshot.paramMap.get("hotelId");
+   // const hotelId = this.route.snapshot.paramMap.get("hotelId");
 
-    this.dataProvider.getMenuListByRestaurant(hotelId).subscribe((data) => {
-      console.log("data", data)
-      this.menuList = data;
+    this.storage.get("selectedRestaurantId").then((val) => {
+      this.hotelId = val;
+
+      this.dataProvider.getMenuListByRestaurant(this.hotelId).subscribe((data) => {
+        this.menuList = data;
+      });
+      this.dataProvider.getRestaurantDetails(this.hotelId).subscribe((data: any) => {
+        this.hotel = data;
+        loading.dismiss();
+      });
     });
-    this.dataProvider.getRestaurantDetails(hotelId).subscribe((data: any) => {
-      this.hotel = data;
-      loading.dismiss();
-    });
+  
   }
 
 }

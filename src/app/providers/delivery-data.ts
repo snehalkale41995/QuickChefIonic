@@ -189,4 +189,12 @@ export class DeliveryData {
       })
     );
   }
+
+  getOrderDetails(){
+    return this.load().pipe(
+      map((data: any) => {
+        return data.orderDetails;
+      })
+    );
+  }
 }

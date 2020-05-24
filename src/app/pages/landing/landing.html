@@ -48,9 +48,12 @@
       </ion-segment>
     </div>
 
-    <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details/{{item.id}}">
+    <div *ngFor="let item of restaurantList" (click)="hotelDetailsNav(item.id)">
       <app-restaurant-card [restaurantItem]="item" [isOffer]="isOffer"></app-restaurant-card>
     </div>
 
   </ion-toolbar>
 </ion-content>
+
+
+//routerLink="/app/tabs/restaurants/hotel-details"

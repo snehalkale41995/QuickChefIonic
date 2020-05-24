@@ -30,11 +30,11 @@ const routes: Routes = [
             loadChildren: () => import('../restaurant-list/restaurant-list.module').then(m => m.RestaurantListModule)
           },
           {
-            path: 'hotel-details/:hotelId',
+            path: 'hotel-details',
             loadChildren: () => import('../hotel-detail/hotel-detail.module').then(m => m.HotelDetailModule)
           },
           {
-            path: 'order-details/:hotelId',
+            path: 'order-details',
             loadChildren: () => import('../my-order/my-order.module').then(m => m.MyOrderPageModule)
           },
           {

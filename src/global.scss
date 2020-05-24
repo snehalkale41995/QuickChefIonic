@@ -44,4 +44,19 @@
     font-family: 'Lato-Light' !important;
 }
 
+.cartBtn{
+    height: 40px;
+    text-align: center;
+    background-color: #CB202D;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-right: 30px;
+}
+
+.cartTxt {
+  font-size: 14px;
+  color: white !important;
+}
+
 @import "./app/app.scss";
