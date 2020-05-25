@@ -159,20 +159,17 @@
   ],
   "map": [
     {
-      "name": "Monona Terrace Convention Center",
-      "lat": 43.071584,
-      "lng": -89.38012,
-      "center": true
+      "name": "pune",
+      "lat": 18.516726,
+      "lng": 73.856255,
+      "center": true,
+      "image" : "../../../assets/img/delievery.png"
     },
     {
-      "name": "Ionic HQ",
-      "lat": 43.074395,
-      "lng": -89.381056
-    },
-    {
-      "name": "Afterparty - Brocach Irish Pub",
-      "lat": 43.07336,
-      "lng": -89.38335
+      "name": "hadpsar",
+      "lat": 18.496668,
+      "lng": 73.941666,
+      "image" : "../../../assets/img/delievery.png"
     }
   ],
   "foodItemList": [

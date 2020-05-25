@@ -13,6 +13,7 @@ import {
 import { DeliveryData } from "../../providers/delivery-data";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { Storage } from "@ionic/storage";
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: "page-landing",
@@ -22,8 +23,8 @@ import { Storage } from "@ionic/storage";
 export class LandingPage implements OnInit {
   // Gets a reference to the list element
   @ViewChild("landingList", { static: true }) landingList: IonList;
-  latitude: any = 1; //latitude
-  longitude: any = 1; //longitude
+  latitude: any = 18.5204; //latitude
+  longitude: any = 73.8567; //longitude
   ios: boolean;
   isOffer = false;
   dayIndex = 0;
@@ -67,7 +68,6 @@ export class LandingPage implements OnInit {
     await this.deliveryData
       .getRestaurants(this.restaurantName, this.cityName, "")
       .subscribe((data: any) => {
-        console.log("data", data)
         this.restaurantList = data;
         loading.dismiss();
       });
@@ -86,7 +86,9 @@ export class LandingPage implements OnInit {
             this.deviceLocation = data.title;
             let currentLocation = {
               cityName : this.cityName,
-              deviceLocation : this.deviceLocation
+              deviceLocation : this.deviceLocation,
+              latitude : this.latitude,
+              longitude : this.longitude
             }
             this.storage.set("cityName", this.cityName);
             this.storage.set("currentLocation", currentLocation)
@@ -95,7 +97,9 @@ export class LandingPage implements OnInit {
       .catch((error) => {
         let currentLocation = {
           cityName : this.cityName,
-          deviceLocation : this.deviceLocation
+          deviceLocation : this.deviceLocation,
+          latitude : this.latitude,
+          longitude : this.longitude
         }
         this.storage.set("cityName", this.cityName);
         this.storage.set("currentLocation", currentLocation)

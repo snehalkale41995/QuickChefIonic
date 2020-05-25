@@ -2,9 +2,8 @@ import { Component, ElementRef, Inject, ViewChild, AfterViewInit } from '@angula
 import { DeliveryData } from '../../providers/delivery-data';
 import { Platform } from '@ionic/angular';
 import { DOCUMENT} from '@angular/common';
-
 import { darkStyle } from './map-dark-style';
-
+import { Storage } from "@ionic/storage";
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
@@ -16,7 +15,8 @@ export class MapPage implements AfterViewInit {
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public deliveryData: DeliveryData,
-    public platform: Platform) {}
+    public platform: Platform,
+    public storage : Storage) {}
 
   async ngAfterViewInit() {
     const appEl = this.doc.querySelector('ion-app');
@@ -27,40 +27,45 @@ export class MapPage implements AfterViewInit {
     }
 
     const googleMaps = await getGoogleMaps(
-      'AIzaSyB8pf6ZdFQj5qw7rc_HSGrhUwQKfIe9ICw'
+      'AIzaSyCcXjlA3bLlSEkAeMg-jdB6zIm-4gE4lQs'
     );
 
     let map;
-
-    this.deliveryData.getMap().subscribe((mapData: any) => {
-      const mapEle = this.mapElement.nativeElement;
-
-      map = new googleMaps.Map(mapEle, {
-        center: mapData.find((d: any) => d.center),
-        zoom: 16,
-        styles: style
-      });
-
-      mapData.forEach((markerData: any) => {
-        const infoWindow = new googleMaps.InfoWindow({
-          content: `<h5>${markerData.name}</h5>`
+   
+    this.storage.get("selectedRestaurantId").then((id) => {
+      this.deliveryData.getMap(id).subscribe((mapData: any) => {
+        const mapEle = this.mapElement.nativeElement;
+  
+        map = new googleMaps.Map(mapEle, {
+          center: mapData.find((d: any) => d.center),
+          zoom: 16,
+          styles: style
         });
-
-        const marker = new googleMaps.Marker({
-          position: markerData,
-          map,
-          title: markerData.name
+  
+        mapData.forEach((markerData: any) => {
+          const infoWindow = new googleMaps.InfoWindow({
+            content: `<h5>${markerData.name}</h5>`
+          });
+  
+          const marker = new googleMaps.Marker({
+            position: markerData,
+            map,
+          //  icon: image,
+            icon: {url: markerData.image, scaledSize: new googleMaps.Size(70, 70)},
+            title: markerData.name
+          });
+  
+          marker.addListener('click', () => {
+            infoWindow.open(map, marker);
+          });
         });
-
-        marker.addListener('click', () => {
-          infoWindow.open(map, marker);
+  
+        googleMaps.event.addListenerOnce(map, 'idle', () => {
+          mapEle.classList.add('show-map');
         });
       });
-
-      googleMaps.event.addListenerOnce(map, 'idle', () => {
-        mapEle.classList.add('show-map');
-      });
-    });
+    }) 
+  
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {

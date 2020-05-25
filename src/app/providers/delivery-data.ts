@@ -4,6 +4,7 @@ import { of } from "rxjs";
 import { map } from "rxjs/operators";
 import { AppConfig } from "../appConstants/appConfig.js";
 import jsonData from "../../assets/data/data.json";
+import { Storage } from "@ionic/storage";
 
 let httpOptions = {
   headers: new HttpHeaders({
@@ -18,7 +19,7 @@ let httpOptions = {
 export class DeliveryData {
   data: any;
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient, public storage : Storage) {}
 
   load(): any {
     if (this.data) {
@@ -173,6 +174,8 @@ export class DeliveryData {
           votes: data.user_rating.votes,
           cuisines: data.cuisines,
           user_rating: Array(Math.floor(data.user_rating.aggregate_rating)),
+          latitude : data.location.latitude,
+          longitude : data.location.longitude
         };
       })
     );
@@ -198,10 +201,42 @@ export class DeliveryData {
     );
   }
 
-  getMap() {
-    return this.load().pipe(
-      map((data: any) => {
-        return data.map;
+  getMap(restaurantId) {
+    // return this.load().pipe(
+    //   map((data: any) => {
+    //     return data.map;
+    //   })
+    // )}
+   
+    let currentLocation
+    this.storage.get("currentLocation").then((location) => {
+      currentLocation = location;
+    })
+  
+     return this.getRestaurantDetails(restaurantId).pipe(
+      map((restaurantInfo: any) => {
+      //  return data.map;
+      return [
+        {
+          "name": restaurantInfo.location,
+          "lat":  parseInt(restaurantInfo.latitude),
+          "lng": parseInt(restaurantInfo.longitude),
+          "center": true,
+          "image" : "../../../assets/img/delievery.png"
+        },
+        {
+          "name": currentLocation.deviceLocation,
+          "lat": parseInt(currentLocation.latitude),
+          "lng": parseInt(currentLocation.longitude),
+          "image" : "../../../assets/img/delievery.png"
+        }
+      ]
       })
     )}
-}
+
+
+  }
+ 
+  
+  
+
