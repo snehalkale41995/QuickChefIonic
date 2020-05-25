@@ -1,3 +1,25 @@
-<p>
-  confirm-order works!
-</p>
+<ion-content>
+<div class="maindiv">
+  <ion-row>
+    <ion-col>
+     <ion-text><ion-icon name="checkmark-circle"></ion-icon></ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+     <ion-text class="thankNote">Thank You For Your Order</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+     <ion-text class="trackNote">You Can Track The Delivery In 'Order' Section</ion-text>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-content>
+
+<div class="cartBtn" (click)="openModal()">
+  <ion-text class="cartTxt"> Track Order </ion-text>
+</div>
+
