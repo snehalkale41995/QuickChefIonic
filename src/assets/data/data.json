@@ -883,5 +883,12 @@
     "deliveryCost": "Free",
     "discount": "6 $",
     "total": "68 $"
-  }
+  },
+  "riderDetails" : {
+    "name": "John Ray",
+    "thumb": "https://b.zmtcdn.com/data/pictures/chains/3/1400053/59e23c71d7a26242d2f38ef14d22851f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+    "ratings": 121,
+    "votes": 121,
+    "user_rating": 4
+    }
 }

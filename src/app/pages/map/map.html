@@ -1,11 +1,30 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button [defaultHref]="defaultHrefLink"></ion-back-button>
     </ion-buttons>
-    <ion-title>Map</ion-title>
+    <ion-title>Track Your Order</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <div class="mainDiv">
+ <div>
+   <ion-row>
+     <ion-col>
+    <ion-text>Estimated Delivery time</ion-text>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+    <ion-col >
+      <ion-text>5:30 PM</ion-text>
+    </ion-col>
+  </ion-row>
+ </div>
+ <div class="riderDiv">
+  <app-category-cart [restaurantDetails]="rider"></app-category-cart>
+ </div>
+</div>
   <div #mapCanvas class="map-canvas"></div>
+
+
 </ion-content>

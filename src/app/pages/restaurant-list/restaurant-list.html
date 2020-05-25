@@ -32,7 +32,7 @@
     </ion-row>
     <hr>
     <ion-card *ngFor="let category of cafeList">
-      <ion-list routerLink="/app/tabs/restaurants/hotel-details/{{category.id}}">
+      <ion-list routerLink="/app/tabs/restaurants/hotel-details">
         <app-category-cart [restaurantDetails]="category"></app-category-cart>
       </ion-list>
     </ion-card>

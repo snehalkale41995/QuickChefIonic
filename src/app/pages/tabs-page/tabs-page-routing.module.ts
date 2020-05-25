@@ -40,6 +40,10 @@ const routes: Routes = [
           {
             path: 'check-out',
             loadChildren: () => import('../check-out/check-out.module').then(m => m.CheckOutPageModule)
+          },
+          {
+            path: 'track-order',
+            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
           }
         ]
       },

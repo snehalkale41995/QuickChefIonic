@@ -12,6 +12,8 @@ import { Storage } from "@ionic/storage";
 export class MapPage implements AfterViewInit {
   @ViewChild('mapCanvas', { static: true }) mapElement: ElementRef;
 
+  defaultHrefLink = ``;
+  rider ;
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public deliveryData: DeliveryData,
@@ -19,6 +21,11 @@ export class MapPage implements AfterViewInit {
     public storage : Storage) {}
 
   async ngAfterViewInit() {
+
+    this.deliveryData.getRider().subscribe((data: any) => {
+      this.rider = data;
+    })
+
     const appEl = this.doc.querySelector('ion-app');
     let isDark = false;
     let style = [];
@@ -51,7 +58,7 @@ export class MapPage implements AfterViewInit {
             position: markerData,
             map,
           //  icon: image,
-            icon: {url: markerData.image, scaledSize: new googleMaps.Size(70, 70)},
+            icon: {url: markerData.image, scaledSize: new googleMaps.Size(40, 40)},
             title: markerData.name
           });
   

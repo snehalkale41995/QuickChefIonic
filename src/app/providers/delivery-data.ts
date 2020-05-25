@@ -222,21 +222,31 @@ export class DeliveryData {
           "lat":  parseInt(restaurantInfo.latitude),
           "lng": parseInt(restaurantInfo.longitude),
           "center": true,
-          "image" : "../../../assets/img/delievery.png"
+          "image" : "http://maps.google.com/mapfiles/kml/shapes/motorcycling.png"
         },
         {
           "name": currentLocation.deviceLocation,
           "lat": parseInt(currentLocation.latitude),
           "lng": parseInt(currentLocation.longitude),
-          "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRL4hyvwAlBlT2R5FPJbPVGxytwkdzGOlOECMQ7qSSJvEGHUvz&usqp=CAU"
+          "image" : "http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png"
         }
       ]
       })
     )}
 
+  
+    getRider() {
+      return this.load().pipe(
+        map((data: any) => {
+          return data.riderDetails;
+        })
+      )}
+      
 
   }
  
+
+
   
   
 

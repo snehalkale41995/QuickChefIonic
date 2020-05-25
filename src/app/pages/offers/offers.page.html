@@ -6,7 +6,7 @@
     </ion-row>
     <img src="../../../../../assets/img/foodDelivery223.jpg" />
   </div>
-  <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details/{{item.id}}">
+  <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details">
     <app-restaurant-card [restaurantItem]="item" [isOffer]="isOffer"></app-restaurant-card>
   </div>
 </ion-content>
