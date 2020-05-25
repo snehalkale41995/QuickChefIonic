@@ -1,0 +1,34 @@
+ion-title {
+    text-align: center;
+    margin-right: 40px;
+}
+
+
+.addBtn{
+    width: 50px;
+    height: 40px;
+  //  margin-top: -10px;
+  }
+
+  .addTxt{
+    font-size: 10px;
+    text-transform: capitalize;
+  }
+
+  .plusSign {
+    color : red
+  }
+
+  .ion-colPrice{
+    text-align: center;
+    }
+
+    .ion-colName{
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .totalRow {
+      padding: 2px;
+      margin-top: 5px;
+  }

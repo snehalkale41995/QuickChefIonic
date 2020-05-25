@@ -84,11 +84,21 @@ export class LandingPage implements OnInit {
           .subscribe((data: any) => {
             this.cityName = data.cityName;
             this.deviceLocation = data.title;
+            let currentLocation = {
+              cityName : this.cityName,
+              deviceLocation : this.deviceLocation
+            }
             this.storage.set("cityName", this.cityName);
+            this.storage.set("currentLocation", currentLocation)
           });
       })
       .catch((error) => {
+        let currentLocation = {
+          cityName : this.cityName,
+          deviceLocation : this.deviceLocation
+        }
         this.storage.set("cityName", this.cityName);
+        this.storage.set("currentLocation", currentLocation)
         console.log("Error getting location", error);
       });
   }
