@@ -3,6 +3,7 @@ import { DeliveryData } from "../../providers/delivery-data";
 import { LoadingController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 import { ModalController } from '@ionic/angular';
+import {ConfirmOrderComponent}  from '../../components/confirm-order/confirm-order.component'
 
 @Component({
   selector: 'app-check-out',
@@ -48,7 +49,9 @@ export class CheckOutPage implements OnInit {
   }
    
   async openModal(){
-   
-  
+    const modal = await this.modalCtrl.create({
+      component: ConfirmOrderComponent,
+    });
+    await modal.present();
   }
 }

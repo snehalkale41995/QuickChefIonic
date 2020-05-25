@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { CheckOutPage } from './check-out.page';
+import {ConfirmOrderComponent}  from '../../components/confirm-order/confirm-order.component'
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CheckOutPage]
+  declarations: [CheckOutPage, ConfirmOrderComponent],
+  entryComponents : [ConfirmOrderComponent]
 })
 export class CheckOutPageModule {}
