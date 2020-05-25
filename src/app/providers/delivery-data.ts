@@ -228,7 +228,7 @@ export class DeliveryData {
           "name": currentLocation.deviceLocation,
           "lat": parseInt(currentLocation.latitude),
           "lng": parseInt(currentLocation.longitude),
-          "image" : "../../../assets/img/delievery.png"
+          "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRL4hyvwAlBlT2R5FPJbPVGxytwkdzGOlOECMQ7qSSJvEGHUvz&usqp=CAU"
         }
       ]
       })

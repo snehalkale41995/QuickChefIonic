@@ -51,6 +51,7 @@ export class CheckOutPage implements OnInit {
   async openModal(){
     const modal = await this.modalCtrl.create({
       component: ConfirmOrderComponent,
+      cssClass: 'my-custom-modal-css'
     });
     await modal.present();
   }

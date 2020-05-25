@@ -13,6 +13,7 @@ ion-title {
   .addTxt{
     font-size: 10px;
     text-transform: capitalize;
+    color: #CB202D;
   }
 
   .plusSign {
@@ -31,4 +32,22 @@ ion-title {
     .totalRow {
       padding: 2px;
       margin-top: 5px;
+  }
+
+  .mainDiv{
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .divRow {
+    margin-top: 20px;
+  }
+
+  .rowClass {
+    margin-top: 10px;
+  }
+
+  .headerText {
+    font-size: 18px;
+    color: #CB202D;
   }

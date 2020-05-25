@@ -38,7 +38,7 @@ export class MapPage implements AfterViewInit {
   
         map = new googleMaps.Map(mapEle, {
           center: mapData.find((d: any) => d.center),
-          zoom: 16,
+          zoom: 8,
           styles: style
         });
   

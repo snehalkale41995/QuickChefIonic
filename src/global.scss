@@ -59,4 +59,13 @@
   color: white !important;
 }
 
+.my-custom-modal-css .modal-wrapper {
+    height: 50%;
+    top: 50%;
+    position: absolute; 
+    display: block;  
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px ;
+ }
+
 @import "./app/app.scss";
