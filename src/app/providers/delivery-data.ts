@@ -197,4 +197,11 @@ export class DeliveryData {
       })
     );
   }
+
+  getMap() {
+    return this.load().pipe(
+      map((data: any) => {
+        return data.map;
+      })
+    )}
 }

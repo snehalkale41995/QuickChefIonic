@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InitialPagePage } from './pages/initial-page/initial-page.page';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -19,9 +20,10 @@ const routes: Routes = [
   { path: 'initial-page',
    loadChildren: () => import('./pages/initial-page/initial-page.module').then(m => m.InitialPagePageModule),
   },
-  { path: 'user-profile', loadChildren: './pages/user-profile/user-profile.module#UserProfilePageModule' },  { path: 'my-order', loadChildren: './pages/my-order/my-order.module#MyOrderPageModule' },
-  { path: 'check-out', loadChildren: './pages/check-out/check-out.module#CheckOutPageModule' }
-
+  { path: 'user-profile', loadChildren: './pages/user-profile/user-profile.module#UserProfilePageModule' },
+  { path: 'map',
+   loadChildren: () => import('./pages/map/map.module').then(m => m.MapModule),
+  },
 ];
 
 @NgModule({
