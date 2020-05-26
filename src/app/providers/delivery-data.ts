@@ -222,13 +222,13 @@ export class DeliveryData {
           "lat":  parseInt(restaurantInfo.latitude),
           "lng": parseInt(restaurantInfo.longitude),
           "center": true,
-          "image" : "http://maps.google.com/mapfiles/kml/shapes/motorcycling.png"
+          "image" : "../../assets/img/mapIcon/motorcycling.png"
         },
         {
           "name": currentLocation.deviceLocation,
           "lat": parseInt(currentLocation.latitude),
           "lng": parseInt(currentLocation.longitude),
-          "image" : "http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png"
+          "image" : "../../assets/img/mapIcon/home.png"
         }
       ]
       })

@@ -82,7 +82,7 @@ export class LandingPage implements OnInit {
         this.deliveryData
           .getDeviceLocation(this.latitude, this.longitude)
           .subscribe((data: any) => {
-            this.cityName = data.cityName;
+            this.cityName = data.city_name;
             this.deviceLocation = data.title;
             let currentLocation = {
               cityName : this.cityName,
