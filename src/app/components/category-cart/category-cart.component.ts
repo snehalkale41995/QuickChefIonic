@@ -8,6 +8,8 @@ import { Component, OnInit, Input} from '@angular/core';
 export class CategoryCartComponent implements OnInit {
 
   @Input()  restaurantDetails : {};
+  @Input()  showRider : any;
+  
   constructor() {
    
    }

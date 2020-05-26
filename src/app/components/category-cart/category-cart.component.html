@@ -4,6 +4,9 @@
       <img class="imgClass" src="{{restaurantDetails?.thumb}}">
     </ion-col>
     <ion-col size="7">
+      <p class="riderP" *ngIf="showRider">
+        <ion-text class="ridereClass">Your Rider</ion-text>
+      </p>
       <p class="nameP">
         <ion-text class="nameClass">{{restaurantDetails?.name}}</ion-text>
       </p>
