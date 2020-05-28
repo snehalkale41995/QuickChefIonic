@@ -4,6 +4,7 @@ import { MenuController, Platform, ToastController } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { Storage } from "@ionic/storage";
+import { UserData } from './providers/user-data';
 
 @Component({
   selector: "app-root",
@@ -18,11 +19,11 @@ export class AppComponent implements OnInit {
       url: "/app/tabs/landing",
       icon: "restaurant",
     },
-    {
-      title: "User Profile",
-      url: "/user-profile",
-      icon: "contact",
-    },
+    // {
+    //   title: "User Profile",
+    //   url: "/user-profile",
+    //   icon: "contact",
+    // },
   ];
   loggedIn = false;
   dark = false;
@@ -34,17 +35,53 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private userData: UserData
   ) {
     this.initializeApp();
   }
 
-  async ngOnInit() {}
+  async ngOnInit() {
+    this.checkLoginStatus();
+    this.listenForLoginEvents();
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+    });
+  }
+  
+  checkLoginStatus() {
+    return this.userData.isLoggedIn().then(loggedIn => {
+      return this.updateLoggedInStatus(loggedIn);
+    });
+  }
+
+  updateLoggedInStatus(loggedIn: boolean) {
+    setTimeout(() => {
+      this.loggedIn = loggedIn;
+    }, 300);
+  }
+
+  listenForLoginEvents() {
+    window.addEventListener('user:login', () => {
+      this.updateLoggedInStatus(true);
+    });
+
+    window.addEventListener('user:signup', () => {
+      this.updateLoggedInStatus(true);
+    });
+
+    window.addEventListener('user:logout', () => {
+      this.updateLoggedInStatus(false);
+    });
+  }
+
+  logout() {
+    this.userData.logout().then(() => {
+      return this.router.navigateByUrl('/app/tabs/landing');
     });
   }
 }
