@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MenuCartComponent implements OnInit {
  
-  @Input() menuList : []
+  @Input() menuList : [];
+  @Input() restaurantDetails : {};
 
   countBtnActn = 'add' ;
   constructor() {}
@@ -26,6 +27,14 @@ export class MenuCartComponent implements OnInit {
          menu.count = menu.count - 1;
       }
       })
+  }
+
+  saveCart(){
+    console.log("this.restaurantDetails", this.restaurantDetails)
+    console.log("this.menuList", this.menuList)
+
+    // this.menuList.fill()
+
   }
 
 }
