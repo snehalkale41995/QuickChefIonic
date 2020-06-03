@@ -31,10 +31,10 @@ export class DeliveryData {
 
   getRestaurants(restaurantName: string, cityName: string, category: string) {
     let restaurants = [],
-      apiUrl = `${AppConfig.serverURL}/search?q=pune`;
+      apiUrl = `${AppConfig.zomatoURL}/search?q=pune`;
 
     if (cityName && cityName !== "pune") {
-      apiUrl = `${AppConfig.serverURL}/search?q=${cityName}`;
+      apiUrl = `${AppConfig.zomatoURL}/search?q=${cityName}`;
     }
     if (category) {
       apiUrl = `${apiUrl}&category=${category}`;
@@ -75,22 +75,38 @@ export class DeliveryData {
   getFoodSegments() {
     let iconList = jsonData.categoryIcons;
     let categories = [];
-    const apiUrl = `${AppConfig.serverURL}/categories`;
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/categories`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        let list = data.categories;
-        data.categories.forEach((category, index) => {
+         console.log("cat", data) 
+        data.forEach((category, index) => {
           let categoryDetails = {
-            id: category.categories.id,
-            name: category.categories.name,
-            icon: iconList[index].icon,
+            id: category.Id,
+            name: category.Name,
+            icon: `${AppConfig.serverURL}/${category.Img}`,
+            picture : `${AppConfig.serverURL}/${category.Picture}`
           };
-          if (categoryDetails.id !== 13) categories.push(categoryDetails);
+          categories.push(categoryDetails);
         });
         return categories;
       })
     );
   }
+
+  getImageByCategory(categoryId) {
+    return this.load().pipe(
+      map((data: any) => {
+        let iconData;
+        let iconList = data.categoryIcons;
+        iconData = iconList.filter(function (e) {
+          return e.id === parseInt(categoryId);
+        });
+
+        return iconData[0];
+      })
+    );
+  }
+
 
   getRestaurantList(segment: string) {
     return this.load().pipe(
@@ -119,7 +135,7 @@ export class DeliveryData {
   getMealList() {
     let Cuisines = [];
     let cuisineIds = [270, 30, 25, 100, 40, 143, 164, 50, 1015, 85, 90];
-    const apiUrl = `${AppConfig.serverURL}/cuisines?city_id=5`;
+    const apiUrl = `${AppConfig.zomatoURL}/cuisines?city_id=5`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
         data.cuisines.forEach((cuisine) => {
@@ -132,7 +148,7 @@ export class DeliveryData {
   }
 
   getDeviceLocation(latitude, longitude) {
-    const apiUrl = `${AppConfig.serverURL}/geocode?lat=${latitude}&lon=${longitude}`;
+    const apiUrl = `${AppConfig.zomatoURL}/geocode?lat=${latitude}&lon=${longitude}`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
         // let locatinDetails = {
@@ -144,22 +160,9 @@ export class DeliveryData {
     );
   }
 
-  getImageByCategory(categoryId) {
-    return this.load().pipe(
-      map((data: any) => {
-        let iconData;
-        let iconList = data.categoryIcons;
-        iconData = iconList.filter(function (e) {
-          return e.id === parseInt(categoryId);
-        });
-
-        return iconData[0];
-      })
-    );
-  }
-
+ 
   getRestaurantDetails(id) {
-    const apiUrl = `${AppConfig.serverURL}/restaurant?res_id=${id}`;
+    const apiUrl = `${AppConfig.zomatoURL}/restaurant?res_id=${id}`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
         return {

@@ -33,8 +33,14 @@ export class RestaurantListPage {
     });
     await loading.present();
 
-    this.deliveryData.getImageByCategory(categoryId).subscribe((data: any) => {
-      this.categoryInfo = data;
+    this.deliveryData.getFoodSegments().subscribe((data: any) => {
+     // this.categoryInfo = data;
+     console.log("data", data)
+     let categoryDetails = data.filter(function (e) {
+      return e.id === parseInt(categoryId);
+    });
+    this.categoryInfo = categoryDetails? categoryDetails[0] : {};
+    console.log("categoryInfo", this.categoryInfo)
     });
 
     this.deliveryData
