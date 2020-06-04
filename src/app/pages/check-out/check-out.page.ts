@@ -42,13 +42,12 @@ export class CheckOutPage implements OnInit {
     let coupon = this.couponList.filter(function (e:any) {
       return e.Name === event.detail.value;
     });
-    let discount = this.discountAmount;
-    let total = this.totalAmount
-   
-    discount = (this.totalAmount * coupon[0].Discount)/100
-    total = this.order.total - discount
-    console.log("discount", discount)
-    console.log("total", total)
+  
+    this.order.total = this.totalAmount
+    this.order.discount = this.discountAmount
+
+    let  discount = (this.order.total * coupon[0].Discount)/100
+    let total = this.order.total - discount
     this.order.total = total.toFixed(2);
     this.order.discount = discount.toFixed(2)
   }
@@ -60,7 +59,6 @@ export class CheckOutPage implements OnInit {
     });
     await loading.present();
     this.dataProvider.getCartDetails().subscribe((data: any) => {
-      console.log("this.order", data);
       this.order = data;
       this.totalAmount = data.total;
       this.discountAmount = data.discount;
@@ -68,7 +66,6 @@ export class CheckOutPage implements OnInit {
       loading.dismiss();
     });
     this.dataProvider.getCoupons().subscribe((data: any) => {
-      console.log("this.data", data);
       this.couponList = data;
     //  this.order = data;
       // this.order.restaurantDetails = this.hotel;
