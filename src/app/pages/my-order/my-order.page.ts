@@ -14,7 +14,7 @@ export class MyOrderPage implements OnInit {
   order: any;
   hotelId;
   deliverNote : any;
-  defaultHrefLink = `/app/tabs/restaurants/order-details`;
+  defaultHrefLink = `/app/tabs/restaurants/hotel-details`;
   constructor(
     private dataProvider: DeliveryData,
     private route: ActivatedRoute,

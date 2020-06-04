@@ -54,7 +54,7 @@ export class MenuCartComponent implements OnInit {
         duration: 2000,
       });
       await loading.present();
-      this.deliveryData.addToCart(menuCount).subscribe((data: any) => {
+      this.deliveryData.addToCart(this.menuList).subscribe((data: any) => {
         // this.categoryInfo = data;
         console.log("data", data)
         loading.dismiss();

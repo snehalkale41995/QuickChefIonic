@@ -210,7 +210,17 @@ export class DeliveryData {
         });
         console.log("subTotal", subTotal)
        // return data;
-       return {CartItems : data, subtotal : subTotal , deliveryCost : "Free"}
+       return {CartItems : data, subtotal : subTotal , deliveryCost : "Free", discount : 0 , total: subTotal}
+      })
+    );
+  }
+
+  getCoupons() {
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/coupons`;
+    return this.http.get(apiUrl, httpOptions).pipe(
+      map((data: any) => {
+        console.log("data", data);
+        return data;
       })
     );
   }

@@ -44,17 +44,26 @@
 
   <div class="divRow">
     <ion-row>
-      <ion-col class="divRow">
+      <ion-col class="divRow" size="5">
         <ion-text class="headerText">
-          Enter coupon
+          Apply Coupon
         </ion-text>
       </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-input [value]="couponNote"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      </ion-row>
+      <ion-row>
+        <ion-col >
+          <!-- <ion-item>
+            <ion-input [value]="couponNote"></ion-input>
+          </ion-item> -->
+          <ion-item >
+            <ion-select placeholder="Select One" okText="Okay" cancelText="Dismiss" (ionChange)="checkValue($event)" >
+              <ion-select-option *ngFor="let coupon of couponList" >{{coupon.Name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+   
   </div>
 
   <div class="divRow">
@@ -73,7 +82,7 @@
         <ion-text>Subtotal</ion-text>
       </ion-col>
       <ion-col class="ion-colPrice">
-        <ion-text>{{order?.subtotal}}</ion-text>
+        <ion-text>$&nbsp;{{order?.subtotal}}</ion-text>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -89,7 +98,7 @@
         <ion-text>Discount</ion-text>
       </ion-col>
       <ion-col class="ion-colPrice">
-        <ion-text>{{order?.discount}}</ion-text>
+        <ion-text>$&nbsp;{{order?.discount}}</ion-text>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -97,7 +106,7 @@
         <ion-text>Total</ion-text>
       </ion-col>
       <ion-col class="ion-colPrice">
-        <ion-text>{{order?.total}}</ion-text>
+        <ion-text>$&nbsp;{{order?.total}}</ion-text>
       </ion-col>
     </ion-row>
   </div>
