@@ -19,7 +19,7 @@ let httpOptions = {
 export class DeliveryData {
   data: any;
 
-  constructor(public http: HttpClient, public storage : Storage) {}
+  constructor(public http: HttpClient, public storage: Storage) {}
 
   load(): any {
     if (this.data) {
@@ -78,13 +78,13 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/categories`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-         console.log("cat", data) 
+        console.log("cat", data);
         data.forEach((category, index) => {
           let categoryDetails = {
             id: category.Id,
             name: category.Name,
             icon: `${AppConfig.serverURL}/${category.Img}`,
-            picture : `${AppConfig.serverURL}/${category.Picture}`
+            picture: `${AppConfig.serverURL}/${category.Picture}`,
           };
           categories.push(categoryDetails);
         });
@@ -106,7 +106,6 @@ export class DeliveryData {
       })
     );
   }
-
 
   getRestaurantList(segment: string) {
     return this.load().pipe(
@@ -160,7 +159,6 @@ export class DeliveryData {
     );
   }
 
- 
   getRestaurantDetails(id) {
     const apiUrl = `${AppConfig.zomatoURL}/restaurant?res_id=${id}`;
     return this.http.get(apiUrl, httpOptions).pipe(
@@ -177,41 +175,42 @@ export class DeliveryData {
           votes: data.user_rating.votes,
           cuisines: data.cuisines,
           user_rating: Array(Math.floor(data.user_rating.aggregate_rating)),
-          latitude : data.location.latitude,
-          longitude : data.location.longitude
+          latitude: data.location.latitude,
+          longitude: data.location.longitude,
         };
       })
     );
   }
 
   getMenuListByRestaurant(restaurantId) {
-    // return this.load().pipe(
-    //   map((data: any) => {
-    //     let menuList: any;
-    //     data.menuList.forEach((menu)=>{
-    //       Object.assign(menu, {"count" : 0})
-    //     })
-    //     return data.menuList;
-    //   })
-    //);
-    
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/menuItems`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-         console.log("data", data) 
-         data.forEach((menu)=>{
-             Object.assign(menu, {"Count" : 0})
-             Object.assign(menu, {"menuImage" : `${AppConfig.serverURL}/${menu.Picture}`})
-            })
-         return data;
+        console.log("data", data);
+        data.forEach((menu) => {
+          Object.assign(menu, { Count: 0 });
+          Object.assign(menu, {
+            menuImage: `${AppConfig.serverURL}/${menu.Picture}`,
+          });
+        });
+        return data;
       })
     );
   }
 
-  getOrderDetails(){
-    return this.load().pipe(
+  getCartDetails() {
+    let userId = '41fbdfee-1d5f-4290-bbe4-7271ed59a921'
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart/'${userId}'`;
+    return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        return data.orderDetails;
+        console.log("data", data);
+        let subTotal = 0; 
+        data.forEach(element => {
+          subTotal = subTotal + (element.Price * element.Count)
+        });
+        console.log("subTotal", subTotal)
+       // return data;
+       return {CartItems : data, subtotal : subTotal , deliveryCost : "Free"}
       })
     );
   }
@@ -222,46 +221,61 @@ export class DeliveryData {
     //     return data.map;
     //   })
     // )}
-   
-    let currentLocation
+
+    let currentLocation;
     this.storage.get("currentLocation").then((location) => {
       currentLocation = location;
-    })
-  
-     return this.getRestaurantDetails(restaurantId).pipe(
+    });
+
+    return this.getRestaurantDetails(restaurantId).pipe(
       map((restaurantInfo: any) => {
-      //  return data.map;
-      return [
-        {
-          "name": restaurantInfo.location,
-          "lat":  parseInt(restaurantInfo.latitude),
-          "lng": parseInt(restaurantInfo.longitude),
-          "center": true,
-          "image" : "http://maps.google.com/mapfiles/kml/shapes/motorcycling.png"
-        },
-        {
-          "name": currentLocation.deviceLocation,
-          "lat": parseInt(currentLocation.latitude),
-          "lng": parseInt(currentLocation.longitude),
-          "image" : "http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png"
-        }
-      ]
+        //  return data.map;
+        return [
+          {
+            name: restaurantInfo.location,
+            lat: parseInt(restaurantInfo.latitude),
+            lng: parseInt(restaurantInfo.longitude),
+            center: true,
+            image:
+              "http://maps.google.com/mapfiles/kml/shapes/motorcycling.png",
+          },
+          {
+            name: currentLocation.deviceLocation,
+            lat: parseInt(currentLocation.latitude),
+            lng: parseInt(currentLocation.longitude),
+            image:
+              "http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png",
+          },
+        ];
       })
-    )}
-
-  
-    getRider() {
-      return this.load().pipe(
-        map((data: any) => {
-          return data.riderDetails;
-        })
-      )}
-      
-
+    );
   }
- 
 
+  getRider() {
+    return this.load().pipe(
+      map((data: any) => {
+        return data.riderDetails;
+      })
+    );
+  }
 
-  
-  
+  addToCart(menuList) {
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart`;
+    let menuItems = [];
 
+    menuList.forEach((element) => {
+      menuItems.push({
+        ApplicationUserId: "41fbdfee-1d5f-4290-bbe4-7271ed59a921",
+        MenuItemId: element.Id,
+        Count: element.Count,
+      });
+    });
+    //  ApplicationUserId, MenuItemId, Count
+    return this.http.post(apiUrl, menuItems, httpOptions).pipe(
+      map((data: any) => {
+        console.log("data", data);
+        return data;
+      })
+    );
+  }
+}

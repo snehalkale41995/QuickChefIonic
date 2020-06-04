@@ -23,10 +23,10 @@ export class MyOrderPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getOrderDetails();
+    this.getCartDetails();
   }
 
-  async getOrderDetails() {
+  async getCartDetails() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
       duration: 3000,
@@ -43,7 +43,7 @@ export class MyOrderPage implements OnInit {
           this.hotel = data;
         });
 
-      this.dataProvider.getOrderDetails().subscribe((data: any) => {
+      this.dataProvider.getCartDetails().subscribe((data: any) => {
         console.log("this.order", data);
         this.order = data;
         // this.order.restaurantDetails = this.hotel;

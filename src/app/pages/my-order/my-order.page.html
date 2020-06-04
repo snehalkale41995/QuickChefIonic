@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button [defaultHref]="defaultHrefLink"></ion-back-button>
     </ion-buttons>
-    <ion-title >My Order</ion-title>
+    <ion-title >My Cart</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,10 +16,10 @@
       <ion-list>
         <ion-row>
           <ion-col class="ion-colName">
-            <ion-text>{{item.title}} &nbsp;<ion-icon name="close"></ion-icon>&nbsp;{{item.itemCount}}</ion-text>
+            <ion-text>{{item.Name}} &nbsp;<ion-icon name="close"></ion-icon>&nbsp;{{item.Count}}</ion-text>
           </ion-col>
           <ion-col class="ion-colPrice">
-            <ion-text>{{item.price}}</ion-text>
+            <ion-text>$&nbsp;{{item.Price}}</ion-text>
           </ion-col>
         </ion-row>
   

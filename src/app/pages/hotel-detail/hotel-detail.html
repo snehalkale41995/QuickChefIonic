@@ -63,11 +63,11 @@
     <div class="menuClass">
       <ion-text>Menu</ion-text>
     </div>
-        <app-menu-cart [menuList]="menuList"  [restaurantDetails]="hotel"></app-menu-cart>
+        <app-menu-cart [menuList]="menuList"  [restaurantDetails]="hotel" #appChild></app-menu-cart>
   </div>
 </ion-content>
 
-<div class="cartBtn"  routerLink="/app/tabs/restaurants/order-details">
+<div class="cartBtn"   (click)="appChild.saveCart()">
   <ion-text class="cartTxt"> Add To Cart </ion-text>
 </div>
 

@@ -49,6 +49,17 @@ export class HotelDetailPage {
 
       this.dataProvider.getMenuListByRestaurant(this.hotelId).subscribe((data) => {
         this.menuList = data;
+        this.dataProvider.getCartDetails().subscribe((data: any) => {
+          this.menuList.forEach(menu => {
+            data.CartItems.forEach(cart => {
+                if(menu.Id == cart.MenuItemId){
+                  menu.Count = cart.Count ;
+                }
+            });
+          });
+      });
+        // this.order.restaurantDetails = this.hotel;
+      //  loading.dismiss();
       });
       this.dataProvider.getRestaurantDetails(this.hotelId).subscribe((data: any) => {
         this.hotel = data;

@@ -27,20 +27,20 @@ export class CheckOutPage implements OnInit {
     this.storage.get("currentLocation").then((value)=>{
       this.addressNote = value.deviceLocation  + ", " +value.cityName
     })
-    this.getOrderDetails()
+    this.getCartDetails()
   }
 
   changeAddress(){
     this.textFocus = true;
   }
 
-  async getOrderDetails(){
+  async getCartDetails(){
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
       duration: 3000,
     });
     await loading.present();
-    this.dataProvider.getOrderDetails().subscribe((data: any) => {
+    this.dataProvider.getCartDetails().subscribe((data: any) => {
       console.log("this.order", data);
       this.order = data;
       // this.order.restaurantDetails = this.hotel;
