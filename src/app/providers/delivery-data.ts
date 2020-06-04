@@ -185,13 +185,25 @@ export class DeliveryData {
   }
 
   getMenuListByRestaurant(restaurantId) {
-    return this.load().pipe(
+    // return this.load().pipe(
+    //   map((data: any) => {
+    //     let menuList: any;
+    //     data.menuList.forEach((menu)=>{
+    //       Object.assign(menu, {"count" : 0})
+    //     })
+    //     return data.menuList;
+    //   })
+    //);
+    
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/menuItems`;
+    return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        let menuList: any;
-        data.menuList.forEach((menu)=>{
-          Object.assign(menu, {"count" : 0})
-        })
-        return data.menuList;
+         console.log("data", data) 
+         data.forEach((menu)=>{
+             Object.assign(menu, {"Count" : 0})
+             Object.assign(menu, {"menuImage" : `${AppConfig.serverURL}/${menu.Picture}`})
+            })
+         return data;
       })
     );
   }

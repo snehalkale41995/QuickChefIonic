@@ -3,30 +3,30 @@
 <ion-grid>
   <ion-row>
     <ion-col size="6" class="imgCol">
-      <img src="{{MenuDetails?.thumb}}" class="hotelImg">
+      <img src="{{MenuDetails?.menuImage}}" class="hotelImg">
     </ion-col>
     <ion-col size="3">
       <p>
-        <ion-text>{{MenuDetails?.title}}</ion-text>
+        <ion-text>{{MenuDetails?.Name}}</ion-text>
       </p>
       <!-- <p>
         <ion-badge color="medium">.{{MenuDetails?.foodType}}</ion-badge>
       </p> -->
-      <p><ion-text class="priceText">{{MenuDetails?.price}}</ion-text></p>
+      <p><ion-text class="priceText">$&nbsp;{{MenuDetails?.Price}}</ion-text></p>
     </ion-col>
     <ion-col size="3">
-      <p *ngIf="!MenuDetails?.count"><ion-button color="light" class="addBtn" 
-        (click)="countAction(countBtnActn , MenuDetails?.id)"><ion-text class="addTxt"> Add <ion-text class="plusSign"><b>+</b></ion-text></ion-text></ion-button></p>
+      <p *ngIf="!MenuDetails?.Count"><ion-button color="light" class="addBtn" 
+        (click)="countAction(countBtnActn , MenuDetails?.Id)"><ion-text class="addTxt"> Add <ion-text class="plusSign"><b>+</b></ion-text></ion-text></ion-button></p>
      
-       <div class="count" *ngIf="MenuDetails?.count">
+       <div class="Count" *ngIf="MenuDetails?.Count">
          <ion-row>
-           <ion-col (click)="countAction(remove , MenuDetails?.id)" class="minusCol">
+           <ion-col (click)="countAction(remove , MenuDetails?.Id)" class="minusCol">
             <ion-text class="itemText">_</ion-text> 
            </ion-col>
-           <ion-col class="show-count">
-            {{MenuDetails?.count}}
+           <ion-col class="show-Count">
+            {{MenuDetails?.Count}}
           </ion-col>
-          <ion-col (click)="countAction(countBtnActn , MenuDetails?.id)">
+          <ion-col (click)="countAction(countBtnActn , MenuDetails?.Id)">
             <ion-text class="itemText">+</ion-text> 
           </ion-col>
          </ion-row>

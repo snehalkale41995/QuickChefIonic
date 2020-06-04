@@ -16,15 +16,15 @@ export class MenuCartComponent implements OnInit {
   ngOnInit() {}
 
 
-   countAction(action, id){
-    console.log("id", id)
+   countAction(action, Id){
+    console.log("id", Id)
     this.menuList.forEach((menu:any)=>{
-    //  console.log("menu", menu.id)
-      if(menu && menu.id == id){
+      console.log("menu", menu)
+      if(menu && parseInt(menu.Id) === parseInt(Id)){
         if(action==='add')
-         menu.count = menu.count + 1;
+         menu.Count = menu.Count + 1;
          else
-         menu.count = menu.count - 1;
+         menu.Count = menu.Count - 1;
       }
       })
   }

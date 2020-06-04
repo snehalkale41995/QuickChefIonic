@@ -4,14 +4,14 @@
       <ion-row class="sliderRow">
         <ion-col size="12">
           <span class="spanClass">
-            <img [src]="item.thumb" alt="" class="spanImg">
+            <img [src]="item.menuImage" alt="" class="spanImg">
           </span>
         </ion-col>
         <ion-col size="12" class="textClass">
-          <ion-text class="sliderText">{{item.title}}</ion-text>
+          <ion-text class="sliderText">{{item.Name}}</ion-text>
         </ion-col>
         <ion-col size="12" class="textpriceClass">
-          <ion-text class="priceText">{{item.price}}</ion-text>
+          <ion-text class="priceText">$ {{item.Price}}</ion-text>
         </ion-col>
       </ion-row>
     </ion-slide>
