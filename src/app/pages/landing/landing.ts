@@ -68,7 +68,6 @@ export class LandingPage implements OnInit {
     await this.deliveryData
       .getRestaurants(this.restaurantName, this.cityName, "")
       .subscribe((data: any) => {
-        console.log("data", data)
         if(data && data.length)
         this.restaurantList = [data[0]];
         else

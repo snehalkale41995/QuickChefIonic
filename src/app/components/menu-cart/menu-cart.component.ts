@@ -45,7 +45,6 @@ export class MenuCartComponent implements OnInit {
      this.presentAlert()
      }
      
-     console.log(menuCount)
     // this.menuList.fill()
 
     if(menuCount.length){
@@ -56,7 +55,6 @@ export class MenuCartComponent implements OnInit {
       await loading.present();
       this.deliveryData.addToCart(this.menuList).subscribe((data: any) => {
         // this.categoryInfo = data;
-        console.log("data", data)
         loading.dismiss();
         this.presentToast();
         this.router.navigate(["/app", "tabs", "restaurants", "order-details"]);

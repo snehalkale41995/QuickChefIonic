@@ -78,7 +78,6 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/categories`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        console.log("cat", data);
         data.forEach((category, index) => {
           let categoryDetails = {
             id: category.Id,
@@ -186,7 +185,6 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/menuItems`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data);
         data.forEach((menu) => {
           Object.assign(menu, { Count: 0 });
           Object.assign(menu, {
@@ -203,12 +201,10 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart/'${userId}'`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data);
         let subTotal = 0; 
         data.forEach(element => {
           subTotal = subTotal + (element.Price * element.Count)
         });
-        console.log("subTotal", subTotal)
        // return data;
        return {CartItems : data, subtotal : subTotal , deliveryCost : "Free", discount : 0 , total: subTotal}
       })
@@ -219,7 +215,6 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/coupons`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data);
         return data;
       })
     );
@@ -269,6 +264,38 @@ export class DeliveryData {
     );
   }
 
+  getOrderDetails() {
+    let userId = '41fbdfee-1d5f-4290-bbe4-7271ed59a921'
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/orders/'${userId}'`;
+    return this.http.get(apiUrl, httpOptions).pipe(
+      map((data: any) => {
+        let  orderInfo = data[data.length-1];
+        return {
+          thumb : '../../../assets/img/userImage1.jpg',
+          name : orderInfo.PickUpName,
+          pickUpTime : this.formatAMPM(orderInfo.PickUpTime),
+          phoneNumber : orderInfo.PhoneNumber
+        }
+       
+      })
+    );
+  }
+
+
+   formatAMPM(newDate) {
+    // console.log("date", date)
+     let date = new Date(newDate)
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+  
+
   addToCart(menuList) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart`;
     let menuItems = [];
@@ -283,7 +310,6 @@ export class DeliveryData {
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, menuItems, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data);
         return data;
       })
     );
@@ -295,7 +321,6 @@ export class DeliveryData {
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderHeader, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data);
         return data[0];
       })
     );
@@ -323,7 +348,6 @@ export class DeliveryData {
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderDetails, httpOptions).pipe(
       map((data: any) => {
-        console.log("data", data);
         return data;
       })
     );

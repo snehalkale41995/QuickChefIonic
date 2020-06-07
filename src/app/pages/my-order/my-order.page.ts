@@ -46,7 +46,6 @@ export class MyOrderPage implements OnInit {
         });
 
       this.dataProvider.getCartDetails().subscribe((data: any) => {
-        console.log("this.order", data);
         this.order = data;
         // this.order.restaurantDetails = this.hotel;
         loading.dismiss();
@@ -55,7 +54,6 @@ export class MyOrderPage implements OnInit {
   }
 
   checkOut(){
-    console.log("this.deliverNote", this.deliverNote)
     this.orderProvider.saveInstructionOrderHeader(this.deliverNote);
     this.orderProvider.saveMenuItemOrderDetails(this.order.CartItems)
   }

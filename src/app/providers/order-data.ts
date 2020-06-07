@@ -53,8 +53,6 @@ export class OrderData {
     let orderHeader, orderDetails ;
    await this.storage.get("orderHeader").then((val) => {
       orderHeader = val;
-      console.log("orderHeader", val)
-      
   })
 
 
@@ -63,8 +61,8 @@ export class OrderData {
    orderHeader.CouponCodeDiscount = orderInfo.CouponCodeDiscount;
    orderHeader.OrderTotal = orderInfo.OrderTotal;
    orderHeader.OrderTotalOriginal = orderInfo.OrderTotalOriginal;
-   orderHeader.OrderDate = new Date();
-   orderHeader.PickUpTime = new Date();
+   orderHeader.OrderDate = new Date;
+   orderHeader.PickUpTime = new Date;
 
    this.storage.set("orderHeader", orderHeader);
 

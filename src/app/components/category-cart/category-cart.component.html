@@ -10,6 +10,9 @@
       <p class="nameP">
         <ion-text class="nameClass">{{restaurantDetails?.name}}</ion-text>
       </p>
+      <p class="riderP" *ngIf="showRider">
+        <ion-text class="phoneClass">{{restaurantDetails?.phoneNumber}}</ion-text>
+      </p>
       <p class="detailP" *ngIf="restaurantDetails?.ratings">
         <span>
           <ion-icon name="star" class="rating"></ion-icon>

@@ -23,6 +23,10 @@ export class MapPage implements AfterViewInit {
   async ngAfterViewInit() {
 
     this.deliveryData.getRider().subscribe((data: any) => {
+      //this.rider = data;
+    })
+
+    this.deliveryData.getOrderDetails().subscribe((data: any) => {
       this.rider = data;
     })
 
