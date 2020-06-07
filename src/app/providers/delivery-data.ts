@@ -290,12 +290,25 @@ export class DeliveryData {
   }
 
   addOrderHeader(orderHeader) {
+    
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderHeader`;
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderHeader, httpOptions).pipe(
       map((data: any) => {
         console.log("data", data);
         return data[0];
+      })
+    );
+  }
+
+  deleteUserCart(){
+      let  userId = '41fbdfee-1d5f-4290-bbe4-7271ed59a921'
+    
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/shopping`;
+    //  ApplicationUserId, MenuItemId, Count
+    return this.http.put(apiUrl, httpOptions).pipe(
+      map((data: any) => {
+        return data;
       })
     );
   }

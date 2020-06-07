@@ -7,8 +7,29 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <div class="RestaurantInfo">
+  <div *ngIf = "!order?.CartItems.length"> 
+    <ion-row class="imgRow">
+      <ion-col>
+        <img class="imgRow" src="{{../../../../../assets/img/emptyCart3.png">
+      </ion-col>
+      </ion-row >
+      <ion-row class="emptyCart"> 
+        <ion-col class="emptyCartCol">
+         <ion-text>Empty Cart</ion-text>
+        </ion-col>
+        </ion-row>
+        <ion-row class="emptyCart">
+          <ion-col >
+            <div class="cartBtn" routerLink="/app/tabs/restaurants/hotel-details" (click)="checkOut()">
+              <ion-text class="cartTxt"> Add Menu </ion-text>
+            </div>
+          </ion-col>
+          </ion-row>
+  </div>
+  <div *ngIf = "order?.CartItems.length">
+  <div class="RestaurantInfo" >
     <app-category-cart [restaurantDetails]="hotel"></app-category-cart>
   </div>
   <div>
@@ -54,11 +75,6 @@
     </ion-row>
   </div>
   <div>
-    <!-- <ion-row class="noteRow">
-      <ion-col class="ion-colName" size="6">
-      <ion-badge color="medium">  <ion-text class="noteText">Add Instructions +</ion-text> </ion-badge>
-      </ion-col>
-      </ion-row> -->
       <ion-row class="noteRow"> 
         <ion-col class="noteItem" size="6">
         <ion-item >
@@ -68,8 +84,10 @@
       </ion-col>
       </ion-row>
   </div>
-
+</div>
 </ion-content>
-<div class="cartBtn" routerLink="/app/tabs/restaurants/check-out" (click)="checkOut()">
+
+<div *ngIf = "order?.CartItems.length" class="cartBtn" routerLink="/app/tabs/restaurants/check-out" (click)="checkOut()">
   <ion-text class="cartTxt"> Check Out </ion-text>
 </div>
+

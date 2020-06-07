@@ -12,8 +12,8 @@ import { Storage } from "@ionic/storage";
 export class MapPage implements AfterViewInit {
   @ViewChild('mapCanvas', { static: true }) mapElement: ElementRef;
 
-  defaultHrefLink = ``;
-  rider ;
+  defaultHref = "app/tabs/landing";
+    rider ;
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public deliveryData: DeliveryData,
