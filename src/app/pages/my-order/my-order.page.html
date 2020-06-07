@@ -63,13 +63,13 @@
         <ion-col class="noteItem" size="6">
         <ion-item >
           <ion-label  position="floating" class="noteText">Add Instructions +</ion-label>
-          <ion-input [value]="deliverNote"></ion-input>
+          <ion-input [(ngModel)]="deliverNote" [value]="deliverNote"></ion-input>
         </ion-item>
       </ion-col>
       </ion-row>
   </div>
 
 </ion-content>
-<div class="cartBtn" routerLink="/app/tabs/restaurants/check-out">
+<div class="cartBtn" routerLink="/app/tabs/restaurants/check-out" (click)="checkOut()">
   <ion-text class="cartTxt"> Check Out </ion-text>
 </div>

@@ -288,4 +288,33 @@ export class DeliveryData {
       })
     );
   }
+
+  addOrderHeader(orderHeader) {
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderHeader`;
+    //  ApplicationUserId, MenuItemId, Count
+    return this.http.post(apiUrl, orderHeader, httpOptions).pipe(
+      map((data: any) => {
+        console.log("data", data);
+        return data[0];
+      })
+    );
+  }
+
+  addOrderDetails(orderDetails, orderId) {
+
+    orderDetails.forEach(order => {
+      order.OrderId = orderId ;
+    });
+
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderDetails`;
+    //  ApplicationUserId, MenuItemId, Count
+    return this.http.post(apiUrl, orderDetails, httpOptions).pipe(
+      map((data: any) => {
+        console.log("data", data);
+        return data;
+      })
+    );
+  }
+
+  
 }

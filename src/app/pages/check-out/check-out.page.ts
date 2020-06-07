@@ -4,7 +4,7 @@ import { LoadingController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 import { ModalController } from '@ionic/angular';
 import {ConfirmOrderComponent}  from '../../components/confirm-order/confirm-order.component'
-
+import { OrderData } from '../../providers/order-data'
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.page.html',
@@ -13,16 +13,17 @@ import {ConfirmOrderComponent}  from '../../components/confirm-order/confirm-ord
 export class CheckOutPage implements OnInit {
 
   addressNote ;
-  defaultHrefLink = `/app/tabs/restaurants/hotel-details`;
+  defaultHrefLink = `/app/tabs/restaurants/order-details`;
   textFocus =  false;
   couponNote ;  
   order : any;
   couponList : any;
-  totalAmount ; discountAmount;
+  totalAmount ; discountAmount; couponName = "";
 
   constructor( private dataProvider: DeliveryData,
     public loadingCtrl: LoadingController,
     public storage: Storage,
+    private orderProvider: OrderData,
     public modalCtrl : ModalController) { }
 
   ngOnInit() {
@@ -42,7 +43,7 @@ export class CheckOutPage implements OnInit {
     let coupon = this.couponList.filter(function (e:any) {
       return e.Name === event.detail.value;
     });
-  
+    this.couponName = event.detail.value
     this.order.total = this.totalAmount
     this.order.discount = this.discountAmount
 
@@ -74,6 +75,38 @@ export class CheckOutPage implements OnInit {
   }
    
   async openModal(){
+  let  orderHeader, orderDetails;
+   let OrderInfo = {
+    OrderTotalOriginal : this.totalAmount,
+    OrderTotal : this.order.total,
+    CouponCode : this.couponName,
+    CouponCodeDiscount : this.order.discount,
+    OrderDate : new Date(),
+    PickUpTime : new Date()
+   }
+
+    console.log("OrdeInfo", OrderInfo)
+  await  this.orderProvider.saveTotalOrderHeader(OrderInfo);
+
+  await this.storage.get("orderHeader").then((val) => {
+    orderHeader = val;
+    console.log("orderHeader", val)
+    
+})
+
+await this.storage.get("orderDetails").then((val) => {
+  orderDetails = val;
+  console.log("orderDetails", val)
+  
+})
+
+  this.dataProvider.addOrderHeader(orderHeader).subscribe((data: any) => {
+      let orderId = data.Id
+      this.dataProvider.addOrderDetails(orderDetails, orderId).subscribe((data: any) => {
+       // let orderId = data.Id
+    });
+  });
+
     const modal = await this.modalCtrl.create({
       component: ConfirmOrderComponent,
       cssClass: 'my-custom-modal-css'

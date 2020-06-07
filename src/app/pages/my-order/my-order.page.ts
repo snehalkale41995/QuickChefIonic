@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DeliveryData } from "../../providers/delivery-data";
+import { OrderData } from '../../providers/order-data'
 import { LoadingController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 
@@ -13,10 +14,11 @@ export class MyOrderPage implements OnInit {
   hotel: any;
   order: any;
   hotelId;
-  deliverNote : any;
+  deliverNote : "";
   defaultHrefLink = `/app/tabs/restaurants/hotel-details`;
   constructor(
     private dataProvider: DeliveryData,
+    private orderProvider: OrderData,
     private route: ActivatedRoute,
     public loadingCtrl: LoadingController,
     public storage: Storage
@@ -50,5 +52,11 @@ export class MyOrderPage implements OnInit {
         loading.dismiss();
       });
     });
+  }
+
+  checkOut(){
+    console.log("this.deliverNote", this.deliverNote)
+    this.orderProvider.saveInstructionOrderHeader(this.deliverNote);
+    this.orderProvider.saveMenuItemOrderDetails(this.order.CartItems)
   }
 }
