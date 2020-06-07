@@ -13,6 +13,8 @@ export class OrderData {
 
 
   saveInstructionOrderHeader(Instruction) {
+    
+    this.storage.get("loggedInUserId").then((userId)=>{
     let orderHeader = {
       UserId: "41fbdfee-1d5f-4290-bbe4-7271ed59a921",
       OrderDate: "",
@@ -28,10 +30,11 @@ export class OrderData {
       PhoneNumber: 2147483646,
       TransactionId: "",
     };
-
+   
     orderHeader.Comments = Instruction;
 
     this.storage.set("orderHeader", orderHeader);
+  })
   }
 
   saveMenuItemOrderDetails(cartItems) {

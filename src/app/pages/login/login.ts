@@ -26,8 +26,11 @@ export class LoginPage {
     this.submitted = true;
 
     if (form.valid) {
-      this.userData.login(this.login.username);
-      this.router.navigateByUrl('/app/tabs/landing');
+     // this.userData.login(this.login.username);
+       this.userData.login(this.login.username).subscribe((data: any) => {
+        this.router.navigateByUrl('/app/tabs/landing');
+      });
+     
     }
   }
 

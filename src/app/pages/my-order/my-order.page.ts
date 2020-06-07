@@ -45,12 +45,14 @@ export class MyOrderPage implements OnInit {
           this.hotel = data;
         });
 
-      this.dataProvider.getCartDetails().subscribe((data: any) => {
+     this.storage.get("loggedInUserId").then((userId)=>{
+      this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
         this.order = data;
         // this.order.restaurantDetails = this.hotel;
         loading.dismiss();
       });
     });
+  });
   }
 
   checkOut(){

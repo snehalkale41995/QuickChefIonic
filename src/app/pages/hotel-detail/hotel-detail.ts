@@ -49,7 +49,9 @@ export class HotelDetailPage {
 
       this.dataProvider.getMenuListByRestaurant(this.hotelId).subscribe((data) => {
         this.menuList = data;
-        this.dataProvider.getCartDetails().subscribe((data: any) => {
+        this.storage.get("loggedInUserId").then((userId)=>{
+          console.log("userId", userId)
+        this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
           this.menuList.forEach(menu => {
             data.CartItems.forEach(cart => {
                 if(menu.Id == cart.MenuItemId){
@@ -57,6 +59,7 @@ export class HotelDetailPage {
                 }
             });
           });
+        });
       });
         // this.order.restaurantDetails = this.hotel;
       //  loading.dismiss();

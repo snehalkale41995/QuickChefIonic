@@ -29,6 +29,17 @@ export class DeliveryData {
     }
   }
 
+  async getStorage() {
+    try {
+        const result =  await this.storage.get('loggedInUserId');
+        console.log(result);
+        return result;
+    }
+    catch(e) { console.log(e) }
+}
+
+
+
   getRestaurants(restaurantName: string, cityName: string, category: string) {
     let restaurants = [],
       apiUrl = `${AppConfig.zomatoURL}/search?q=pune`;
@@ -196,17 +207,22 @@ export class DeliveryData {
     );
   }
 
-  getCartDetails() {
-    let userId = '41fbdfee-1d5f-4290-bbe4-7271ed59a921'
+  getCartDetails(userId) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart/'${userId}'`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        let subTotal = 0; 
-        data.forEach(element => {
-          subTotal = subTotal + (element.Price * element.Count)
+        let subTotal = 0;
+        data.forEach((element) => {
+          subTotal = subTotal + element.Price * element.Count;
         });
-       // return data;
-       return {CartItems : data, subtotal : subTotal , deliveryCost : "Free", discount : 0 , total: subTotal}
+        // return data;
+        return {
+          CartItems: data,
+          subtotal: subTotal,
+          deliveryCost: "Free",
+          discount: 0,
+          total: subTotal,
+        };
       })
     );
   }
@@ -264,49 +280,48 @@ export class DeliveryData {
     );
   }
 
-  getOrderDetails() {
-    let userId = '41fbdfee-1d5f-4290-bbe4-7271ed59a921'
+  getOrderDetails(userId) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orders/'${userId}'`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        let  orderInfo = data[data.length-1];
+        let orderInfo = data[data.length - 1];
         return {
-          thumb : '../../../assets/img/userImage1.jpg',
-          name : orderInfo.PickUpName,
-          pickUpTime : this.formatAMPM(orderInfo.PickUpTime),
-          phoneNumber : orderInfo.PhoneNumber
-        }
-       
+          thumb: "../../../assets/img/userImage1.jpg",
+          name: orderInfo.PickUpName,
+          pickUpTime: this.formatAMPM(orderInfo.PickUpTime),
+          phoneNumber: orderInfo.PhoneNumber,
+        };
       })
     );
   }
 
-
-   formatAMPM(newDate) {
+  formatAMPM(newDate) {
     // console.log("date", date)
-     let date = new Date(newDate)
+    let date = new Date(newDate);
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
+    var ampm = hours >= 12 ? "pm" : "am";
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
   }
-  
 
   addToCart(menuList) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart`;
     let menuItems = [];
 
+    this.storage.get("loggedInUserId").then((userId)=>{
+      
     menuList.forEach((element) => {
       menuItems.push({
-        ApplicationUserId: "41fbdfee-1d5f-4290-bbe4-7271ed59a921",
+        ApplicationUserId: userId,
         MenuItemId: element.Id,
         Count: element.Count,
       });
     });
+  });
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, menuItems, httpOptions).pipe(
       map((data: any) => {
@@ -316,7 +331,6 @@ export class DeliveryData {
   }
 
   addOrderHeader(orderHeader) {
-    
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderHeader`;
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderHeader, httpOptions).pipe(
@@ -326,10 +340,10 @@ export class DeliveryData {
     );
   }
 
-  deleteUserCart(){
-      let  userId = '41fbdfee-1d5f-4290-bbe4-7271ed59a921'
-    
-    const apiUrl = `${AppConfig.serverURL}/api/restaurant/shopping`;
+  deleteUserCart(userId) {
+   // let userId = "41fbdfee-1d5f-4290-bbe4-7271ed59a921";
+
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/shopping/'${userId}'`;
     //  ApplicationUserId, MenuItemId, Count
     return this.http.put(apiUrl, httpOptions).pipe(
       map((data: any) => {
@@ -339,9 +353,8 @@ export class DeliveryData {
   }
 
   addOrderDetails(orderDetails, orderId) {
-
-    orderDetails.forEach(order => {
-      order.OrderId = orderId ;
+    orderDetails.forEach((order) => {
+      order.OrderId = orderId;
     });
 
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderDetails`;
@@ -353,5 +366,5 @@ export class DeliveryData {
     );
   }
 
-  
+
 }

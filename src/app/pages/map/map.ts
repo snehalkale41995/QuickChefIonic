@@ -26,9 +26,11 @@ export class MapPage implements AfterViewInit {
       //this.rider = data;
     })
 
-    this.deliveryData.getOrderDetails().subscribe((data: any) => {
+    this.storage.get("loggedInUserId").then((userId)=>{
+    this.deliveryData.getOrderDetails(userId).subscribe((data: any) => {
       this.rider = data;
     })
+  })
 
     const appEl = this.doc.querySelector('ion-app');
     let isDark = false;

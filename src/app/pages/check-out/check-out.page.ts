@@ -60,13 +60,17 @@ export class CheckOutPage implements OnInit {
       duration: 3000,
     });
     await loading.present();
-    this.dataProvider.getCartDetails().subscribe((data: any) => {
-      this.order = data;
-      this.totalAmount = data.total;
-      this.discountAmount = data.discount;
-      // this.order.restaurantDetails = this.hotel;
-      loading.dismiss();
-    });
+    this.storage.get("loggedInUserId").then((userId)=>{
+      console.log("userId", userId)
+      this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
+        this.order = data;
+        this.totalAmount = data.total;
+        this.discountAmount = data.discount;
+        // this.order.restaurantDetails = this.hotel;
+        loading.dismiss();
+      });
+    }) 
+   
     this.dataProvider.getCoupons().subscribe((data: any) => {
       this.couponList = data;
     //  this.order = data;
@@ -100,9 +104,11 @@ await this.storage.get("orderDetails").then((val) => {
   this.dataProvider.addOrderHeader(orderHeader).subscribe((data: any) => {
       let orderId = data.Id
       this.dataProvider.addOrderDetails(orderDetails, orderId).subscribe((data: any) => {
-       this.dataProvider.deleteUserCart().subscribe((data: any) => {
+        this.storage.get("loggedInUserId").then((userId)=>{
+        this.dataProvider.deleteUserCart(userId).subscribe((data: any) => {
      //   this.router.navigate(["/app", "tabs", "restaurants", "track-order"]);
      });
+    });
     });
   });
 
