@@ -27,7 +27,7 @@ export class DeliveryData {
       nodeHttpOptions = {
         headers: new HttpHeaders({
           "Content-Type": "application/json",
-          'x-access-token' : token
+          'x-access-token' : token 
         }),
       };
     })
@@ -200,7 +200,7 @@ export class DeliveryData {
   getMenuListByRestaurant(restaurantId) {
        
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/menuItems`;
-    return this.http.get(apiUrl, nodeHttpOptions).pipe(
+    return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
         data.forEach((menu) => {
           Object.assign(menu, { Count: 0 });
@@ -315,21 +315,7 @@ export class DeliveryData {
 
   addToCart(menuList) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart`;
-    let menuItems = [];
-
-    this.storage.get("loggedInUserId").then((userId)=>{
-      
-    menuList.forEach((element) => {
-      menuItems.push({
-        ApplicationUserId: userId,
-        MenuItemId: element.Id,
-        Count: element.Count,
-      });
-    });
-  });
-  console.log("menuItems", menuItems)
-    //  ApplicationUserId, MenuItemId, Count
-    return this.http.post(apiUrl, menuItems, nodeHttpOptions).pipe(
+    return this.http.post(apiUrl, menuList, nodeHttpOptions).pipe(
       map((data: any) => {
         return data;
       })

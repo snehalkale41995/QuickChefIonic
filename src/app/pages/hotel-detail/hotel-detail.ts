@@ -52,13 +52,16 @@ export class HotelDetailPage {
         this.storage.get("loggedInUserId").then((userId)=>{
         
         this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
-          this.menuList.forEach(menu => {
-            data.CartItems.forEach(cart => {
-                if(menu.Id == cart.MenuItemId){
-                  menu.Count = cart.Count ;
-                }
+          if(data){
+            this.menuList.forEach(menu => {
+              data.CartItems.forEach(cart => {
+                  if(menu.Id == cart.MenuItemId){
+                    menu.Count = cart.Count ;
+                  }
+              });
             });
-          });
+          }
+         
         });
       });
         // this.order.restaurantDetails = this.hotel;

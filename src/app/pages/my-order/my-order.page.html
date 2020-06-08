@@ -87,7 +87,7 @@
 </div>
 </ion-content>
 
-<div *ngIf = "order?.CartItems.length" class="cartBtn" routerLink="/app/tabs/restaurants/check-out" (click)="checkOut()">
+<div *ngIf = "order?.CartItems.length" class="cartBtn" (click)="checkOut()">
   <ion-text class="cartTxt"> Check Out </ion-text>
 </div>
 

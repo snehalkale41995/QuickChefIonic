@@ -34,10 +34,11 @@ export class LoginPage {
        this.userData.login(this.login.username, this.login.password).subscribe((data: any) => {
       
         if(data==undefined){
+          this.presentToast()
           this.router.navigateByUrl('/app/tabs/landing');
         }
        else if(!data.length){
-        this.presentAlert()
+        this.presentAlert();
        }
       });
     }
@@ -59,6 +60,15 @@ export class LoginPage {
       buttons: ['OK']
     });
     await alert.present();
+  }
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Login successful',
+      duration: 1000
+    });
+    toast.present();
+
   }
 
 }

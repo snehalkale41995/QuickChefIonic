@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DeliveryData } from "../../providers/delivery-data";
 import { OrderData } from '../../providers/order-data'
-import { LoadingController } from "@ionic/angular";
+import { LoadingController , AlertController} from "@ionic/angular";
 import { Storage } from "@ionic/storage";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-my-order",
@@ -12,6 +13,7 @@ import { Storage } from "@ionic/storage";
 })
 export class MyOrderPage implements OnInit {
   hotel: any;
+  LoggedInId ;
   order: any;
   hotelId;
   deliverNote : "";
@@ -21,10 +23,15 @@ export class MyOrderPage implements OnInit {
     private orderProvider: OrderData,
     private route: ActivatedRoute,
     public loadingCtrl: LoadingController,
-    public storage: Storage
+    public storage: Storage,
+    public alertpCtrl:  AlertController,
+    public router: Router
   ) {}
 
   ngOnInit() {
+    this.storage.get("loggedInUserId").then((userId)=>{
+      this.LoggedInId = userId;
+    })
     this.getCartDetails();
   }
 
@@ -46,6 +53,7 @@ export class MyOrderPage implements OnInit {
         });
 
      this.storage.get("loggedInUserId").then((userId)=>{
+      
       this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
         this.order = data;
         // this.order.restaurantDetails = this.hotel;
@@ -56,7 +64,26 @@ export class MyOrderPage implements OnInit {
   }
 
   checkOut(){
-    this.orderProvider.saveInstructionOrderHeader(this.deliverNote);
-    this.orderProvider.saveMenuItemOrderDetails(this.order.CartItems)
+    console.log("this.LoggedInId", this.LoggedInId)
+    if(this.LoggedInId){
+      this.orderProvider.saveInstructionOrderHeader(this.deliverNote);
+      this.orderProvider.saveMenuItemOrderDetails(this.order.CartItems)
+      this.router.navigateByUrl('/app/tabs/restaurants/check-out');
+    }
+    else{
+     this.presentAlert()
+    }
+    
+  }
+
+  async presentAlert() {
+    const alert = await this.alertpCtrl.create({
+      cssClass: 'my-custom-class',
+    //  header: 'Invalid Details',
+     // subHeader: 'Subtitle',
+      message: 'Please Login First !',
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 }

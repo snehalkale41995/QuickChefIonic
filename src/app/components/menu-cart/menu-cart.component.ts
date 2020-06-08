@@ -3,7 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { DeliveryData } from '../../providers/delivery-data';
 import { ToastController, LoadingController } from '@ionic/angular';
 import { CanLoad, Router } from "@angular/router";
-
+import { Storage } from "@ionic/storage";
 @Component({
   selector: 'app-menu-cart',
   templateUrl: './menu-cart.component.html',
@@ -13,13 +13,17 @@ export class MenuCartComponent implements OnInit {
  
   @Input() menuList : [];
   @Input() restaurantDetails : {};
-
+  LoggedInId ;
   countBtnActn = 'add' ;
   isCount = false;
-  constructor(public alertController: AlertController,  public deliveryData: DeliveryData,
+  constructor(public storage: Storage, public alertController: AlertController,  public deliveryData: DeliveryData,
     public toastController: ToastController, private router: Router, public loadingCntrl : LoadingController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.storage.get("loggedInUserId").then((userId)=>{
+      this.LoggedInId = userId;
+    })
+  }
 
 
    countAction(action, Id){
@@ -37,7 +41,7 @@ export class MenuCartComponent implements OnInit {
 
  async saveCart(){
   //  routerLink="/app/tabs/restaurants/order-details"
-
+ let menuItems = [];
     let menuCount = this.menuList.filter(function (e:any) {
       return e.Count > 0;
     });
@@ -53,12 +57,28 @@ export class MenuCartComponent implements OnInit {
         duration: 2000,
       });
       await loading.present();
-      this.deliveryData.addToCart(this.menuList).subscribe((data: any) => {
-        // this.categoryInfo = data;
-        loading.dismiss();
-        this.presentToast();
-        this.router.navigate(["/app", "tabs", "restaurants", "order-details"]);
-       });
+     await this.storage.get("loggedInUserId").then((userId)=>{
+       if(userId){
+        this.menuList.forEach((element : any) => {
+          menuItems.push({
+            ApplicationUserId: userId,
+            MenuItemId: element.Id,
+            Count: element.Count,
+          });
+        });
+        this.deliveryData.addToCart(menuItems).subscribe((data: any) => {
+          // this.categoryInfo = data;
+          loading.dismiss();
+          this.presentToast();
+          this.router.navigate(["/app", "tabs", "restaurants", "order-details"]);
+         });
+        }
+       else{
+         this.presentUserAlert();
+       }
+ 
+      });
+    
     }
 
   }
@@ -69,6 +89,18 @@ export class MenuCartComponent implements OnInit {
       header: 'Empty Cart',
      // subHeader: 'Subtitle',
       message: 'Please add Items.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentUserAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+    //  header: 'Empty Cart',
+     // subHeader: 'Subtitle',
+      message: 'Please Login First.',
       buttons: ['OK']
     });
 
