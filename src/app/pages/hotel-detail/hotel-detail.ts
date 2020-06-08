@@ -50,7 +50,7 @@ export class HotelDetailPage {
       this.dataProvider.getMenuListByRestaurant(this.hotelId).subscribe((data) => {
         this.menuList = data;
         this.storage.get("loggedInUserId").then((userId)=>{
-          console.log("userId", userId)
+        
         this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
           this.menuList.forEach(menu => {
             data.CartItems.forEach(cart => {

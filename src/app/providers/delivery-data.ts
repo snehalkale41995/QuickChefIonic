@@ -10,8 +10,11 @@ let httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
     "user-key": AppConfig.userKey,
-  }),
+  })
 };
+
+let nodeHttpOptions ;
+
 
 @Injectable({
   providedIn: "root",
@@ -19,7 +22,16 @@ let httpOptions = {
 export class DeliveryData {
   data: any;
 
-  constructor(public http: HttpClient, public storage: Storage) {}
+  constructor(public http: HttpClient, public storage: Storage) {
+    this.storage.get('userToken').then((token)=>{
+      nodeHttpOptions = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          'x-access-token' : token
+        }),
+      };
+    })
+  }
 
   load(): any {
     if (this.data) {
@@ -28,16 +40,6 @@ export class DeliveryData {
       return this.http.get("assets/data/data.json");
     }
   }
-
-  async getStorage() {
-    try {
-        const result =  await this.storage.get('loggedInUserId');
-        console.log(result);
-        return result;
-    }
-    catch(e) { console.log(e) }
-}
-
 
 
   getRestaurants(restaurantName: string, cityName: string, category: string) {
@@ -192,9 +194,13 @@ export class DeliveryData {
     );
   }
 
+
+
+
   getMenuListByRestaurant(restaurantId) {
+       
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/menuItems`;
-    return this.http.get(apiUrl, httpOptions).pipe(
+    return this.http.get(apiUrl, nodeHttpOptions).pipe(
       map((data: any) => {
         data.forEach((menu) => {
           Object.assign(menu, { Count: 0 });
@@ -209,7 +215,7 @@ export class DeliveryData {
 
   getCartDetails(userId) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCart/'${userId}'`;
-    return this.http.get(apiUrl, httpOptions).pipe(
+    return this.http.get(apiUrl, nodeHttpOptions).pipe(
       map((data: any) => {
         let subTotal = 0;
         data.forEach((element) => {
@@ -229,7 +235,7 @@ export class DeliveryData {
 
   getCoupons() {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/coupons`;
-    return this.http.get(apiUrl, httpOptions).pipe(
+    return this.http.get(apiUrl, nodeHttpOptions).pipe(
       map((data: any) => {
         return data;
       })
@@ -282,7 +288,7 @@ export class DeliveryData {
 
   getOrderDetails(userId) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orders/'${userId}'`;
-    return this.http.get(apiUrl, httpOptions).pipe(
+    return this.http.get(apiUrl, nodeHttpOptions).pipe(
       map((data: any) => {
         let orderInfo = data[data.length - 1];
         return {
@@ -296,7 +302,6 @@ export class DeliveryData {
   }
 
   formatAMPM(newDate) {
-    // console.log("date", date)
     let date = new Date(newDate);
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -322,8 +327,9 @@ export class DeliveryData {
       });
     });
   });
+  console.log("menuItems", menuItems)
     //  ApplicationUserId, MenuItemId, Count
-    return this.http.post(apiUrl, menuItems, httpOptions).pipe(
+    return this.http.post(apiUrl, menuItems, nodeHttpOptions).pipe(
       map((data: any) => {
         return data;
       })
@@ -333,7 +339,7 @@ export class DeliveryData {
   addOrderHeader(orderHeader) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderHeader`;
     //  ApplicationUserId, MenuItemId, Count
-    return this.http.post(apiUrl, orderHeader, httpOptions).pipe(
+    return this.http.post(apiUrl, orderHeader, nodeHttpOptions).pipe(
       map((data: any) => {
         return data[0];
       })
@@ -341,11 +347,8 @@ export class DeliveryData {
   }
 
   deleteUserCart(userId) {
-   // let userId = "41fbdfee-1d5f-4290-bbe4-7271ed59a921";
-
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/shopping/'${userId}'`;
-    //  ApplicationUserId, MenuItemId, Count
-    return this.http.put(apiUrl, httpOptions).pipe(
+    return this.http.put(apiUrl, nodeHttpOptions).pipe(
       map((data: any) => {
         return data;
       })
@@ -359,7 +362,7 @@ export class DeliveryData {
 
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderDetails`;
     //  ApplicationUserId, MenuItemId, Count
-    return this.http.post(apiUrl, orderDetails, httpOptions).pipe(
+    return this.http.post(apiUrl, orderDetails, nodeHttpOptions).pipe(
       map((data: any) => {
         return data;
       })

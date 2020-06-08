@@ -106,7 +106,6 @@ export class LandingPage implements OnInit {
         }
         this.storage.set("cityName", this.cityName);
         this.storage.set("currentLocation", currentLocation)
-        console.log("Error getting location", error);
       });
   }
 

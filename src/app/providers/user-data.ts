@@ -10,7 +10,7 @@ import { Storage } from "@ionic/storage";
 let httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    "user-key": AppConfig.userKey,
+    "user-key": AppConfig.userKey
   }),
 };
 
@@ -28,19 +28,27 @@ export class UserData {
   ) { }
 
 
-  login(username: string){
+  login(username: string, password : string){
+   
     let loginInfo = {
-      "Email": "DevCustomer@dev.com",
-      "Password": "Admin@123"
+      "Email": username,
+      "Password": password
     }
       const apiUrl = `${AppConfig.serverURL}/api/user/login`;
       return this.http.post(apiUrl, loginInfo, httpOptions).pipe(
         map((data: any) => {
-          this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-            console.log("dataid", data.id)
-              this.setUserId(data.id);
-              return window.dispatchEvent(new CustomEvent('user:login'));
-            });
+          if(data.data.length){
+            this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
+              console.log("data.data[0].id", data.data[0].id)
+              this.setUserId(data.data[0].id);
+             this.setToken(data.token)
+             window.dispatchEvent(new CustomEvent('user:login'));
+             return data.data
+              });
+          }
+        else{
+          return data.data
+        }
         })
       );
     
@@ -55,17 +63,23 @@ export class UserData {
 
   logout(): Promise<any> {
     return this.storage.remove(this.HAS_LOGGED_IN).then(() => {
-      return this.storage.remove('loggedInUserId');
+     
+        this.storage.remove('loggedInUserId')
+        this.storage.remove('userToken')
+      
     }).then(() => {
       window.dispatchEvent(new CustomEvent('user:logout'));
     });
   }
 
   setUserId(Id: string): Promise<any> {
-    console.log("dataid", Id)
     return this.storage.set('loggedInUserId', Id);
   }
 
+  setToken(userToken: string): Promise<any> {
+    return this.storage.set('userToken', userToken);
+  }
+  
   getUsername(): Promise<string> {
     return this.storage.get('loggedInUserId').then((value) => {
       return value;

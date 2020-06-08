@@ -61,7 +61,6 @@ export class CheckOutPage implements OnInit {
     });
     await loading.present();
     this.storage.get("loggedInUserId").then((userId)=>{
-      console.log("userId", userId)
       this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
         this.order = data;
         this.totalAmount = data.total;

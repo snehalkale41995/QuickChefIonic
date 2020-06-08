@@ -16,7 +16,7 @@ export class OrderData {
     
     this.storage.get("loggedInUserId").then((userId)=>{
     let orderHeader = {
-      UserId: "41fbdfee-1d5f-4290-bbe4-7271ed59a921",
+      UserId: userId,
       OrderDate: "",
       OrderTotalOriginal: 0,
       OrderTotal: 0,
