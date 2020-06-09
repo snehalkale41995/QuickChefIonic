@@ -37,7 +37,8 @@ export class SignupPage {
   onSignup(form: NgForm) {
     this.submitted = true;
     if (form.valid) {
-      this.userData
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.signup.email)){
+        this.userData
         .signup(this.currentLocation, this.signup)
         .subscribe((data: any) => {
           if (data && data.length) {
@@ -47,6 +48,12 @@ export class SignupPage {
             this.router.navigateByUrl("/login");
           }
         });
+      }
+     else{
+       let description = "Please enter valid email"
+      this.presentAlert(description);
+     }
+    
     }
   }
 
