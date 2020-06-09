@@ -44,8 +44,12 @@ export class SignupPage {
           if (data && data.length) {
             this.presentAlert(data[0].description);
           } else {
+            this.userData
+            .sendEmail(this.signup)
+            .subscribe((data: any) => {
             this.presentToast();
             this.router.navigateByUrl("/login");
+            })
           }
         });
       }

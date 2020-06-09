@@ -77,6 +77,22 @@ export class UserData {
     // });
   }
 
+
+  sendEmail(data){
+    let userInfo = {
+      "name": data.name,
+      "email": data.email,
+      "password": data.password
+    }
+      const apiUrl = `${AppConfig.serverURL}/api/user/sendEmail`;
+      return this.http.post(apiUrl, userInfo, httpOptions).pipe(
+        map((data: any) => {
+         console.log(data)
+          return data;
+        })
+      );
+  }
+
   logout(): Promise<any> {
     return this.storage.remove(this.HAS_LOGGED_IN).then(() => {
      
