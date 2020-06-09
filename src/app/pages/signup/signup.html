@@ -15,10 +15,10 @@
 
   <form #signupForm="ngForm" novalidate>
     <ion-list lines="none">
-     
+
       <ion-item>
         <ion-label position="stacked" class="ionlabel">Name</ion-label>
-        <ion-input [(ngModel)]="signup.name" name="name" type="text" #name="ngModel" required>
+        <ion-input [(ngModel)]="signup.name" name="name" type="text" #name="ngModel" maxlength="25" required>
         </ion-input>
       </ion-item>
       <ion-text color="danger">
@@ -29,7 +29,7 @@
 
       <ion-item>
         <ion-label position="stacked" class="ionlabel">Email</ion-label>
-        <ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" required>
+        <ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" maxlength="25" required>
         </ion-input>
       </ion-item>
       <ion-text color="danger">
@@ -39,19 +39,21 @@
       </ion-text>
 
       <ion-item>
-        <ion-label position="stacked" class="ionlabel">Username</ion-label>
-        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+        <ion-label position="stacked" class="ionlabel">Phone Number</ion-label>
+        <ion-input type="number" [(ngModel)]="signup.phonenumber" name="phonenumber" type="text" #phonenumber="ngModel"
+          maxlength="10" required>
         </ion-input>
       </ion-item>
       <ion-text color="danger">
-        <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
-          Username is required
+        <p [hidden]="phonenumber.valid || submitted == false" class="ion-padding-start">
+          Phone Number is required
         </p>
       </ion-text>
 
       <ion-item>
         <ion-label position="stacked" class="ionlabel">Password</ion-label>
-        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" maxlength="10"
+          required>
         </ion-input>
       </ion-item>
       <ion-text color="danger">

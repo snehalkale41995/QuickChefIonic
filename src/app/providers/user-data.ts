@@ -51,14 +51,30 @@ export class UserData {
         }
         })
       );
-    
   }
 
-  signup(username: string): Promise<any> {
-    return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-      this.setUserId(username);
-      return window.dispatchEvent(new CustomEvent('user:signup'));
-    });
+  signup(deviceLocation , data){
+    let userInfo = {
+      "Name": data.name,
+      "Email": data.email,
+      "PhoneNumber": data.phonenumber,
+      "StreetAddress": deviceLocation.deviceLocation,
+      "State": "mh",
+      "PostalCode": "425544",
+      "Password": data.password,
+      "City": deviceLocation.cityName
+    }
+      const apiUrl = `${AppConfig.serverURL}/api/user/register`;
+      return this.http.post(apiUrl, userInfo, httpOptions).pipe(
+        map((data: any) => {
+         console.log(data)
+          return data;
+        })
+      );
+    // return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
+    //   this.setUserId(username);
+    //   return window.dispatchEvent(new CustomEvent('user:signup'));
+    // });
   }
 
   logout(): Promise<any> {
