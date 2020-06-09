@@ -6,6 +6,8 @@ import { ModalController, AlertController } from "@ionic/angular";
 import { ConfirmOrderComponent } from "../../components/confirm-order/confirm-order.component";
 import { OrderData } from "../../providers/order-data";
 import { CanLoad, Router } from "@angular/router";
+import { Stripe} from '@ionic-native/stripe/ngx';
+import {AppConfig} from '../../appConstants/AppConfig';
 @Component({
   selector: "app-check-out",
   templateUrl: "./check-out.page.html",
@@ -22,6 +24,8 @@ export class CheckOutPage implements OnInit {
   totalAmount;
   discountAmount;
   couponName = "";
+  cardDetails;
+  stripe_key = AppConfig.publishable_key;
 
   constructor(
     private dataProvider: DeliveryData,
@@ -30,7 +34,8 @@ export class CheckOutPage implements OnInit {
     private orderProvider: OrderData,
     public modalCtrl: ModalController,
     public alertCntrl: AlertController,
-    private router: Router
+    private router: Router,
+    public stripe : Stripe
   ) {}
 
   ngOnInit() {
@@ -144,5 +149,33 @@ export class CheckOutPage implements OnInit {
       buttons: ["OK"],
     });
     await alert.present();
+  }
+
+  payWithStripe() {
+    this.stripe.setPublishableKey(this.stripe_key);
+
+    this.cardDetails = {
+      number: '4242424242424242',
+      expMonth: 12,
+      expYear: 2020,
+      cvc: '220'
+    }
+
+
+
+    this.stripe.createCardToken(this.cardDetails)
+      .then(token => {
+        console.log(token);
+       // this.makePayment(token.id);
+       let data = {
+        tokenId : token.id,
+        amount : 250,
+        currency : 'INR'
+       }
+      //  this.dataProvider.makePayment(data).subscribe((data: any) => {
+      //   //   this.router.navigate(["/app", "tabs", "restaurants", "track-order"]);
+      // });
+      })
+      .catch(error => console.error(error));
   }
 }

@@ -15,6 +15,7 @@ import { FormsModule } from "@angular/forms";
 import { OffersPageModule } from "./pages/offers/offers.module";
 import { LandingModule } from "./pages/landing/landing.module";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
+import { Stripe} from '@ionic-native/stripe/ngx'
 
 @NgModule({
   imports: [
@@ -28,7 +29,7 @@ import { Geolocation } from "@ionic-native/geolocation/ngx";
     IonicStorageModule.forRoot(),
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, Geolocation],
+  providers: [InAppBrowser, SplashScreen, StatusBar, Geolocation, Stripe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

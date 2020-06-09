@@ -308,7 +308,7 @@ export class DeliveryData {
     var ampm = hours >= 12 ? "pm" : "am";
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? "0" + minutes : minutes;
+    minutes = minutes < 10 ? 0 + minutes : minutes;
     var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
   }
@@ -349,6 +349,15 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderDetails`;
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderDetails, nodeHttpOptions).pipe(
+      map((data: any) => {
+        return data;
+      })
+    );
+  }
+
+  makePayment(data) {
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/stripePay`;
+    return this.http.post(apiUrl, data, httpOptions).pipe(
       map((data: any) => {
         return data;
       })
