@@ -6,16 +6,16 @@
     <ion-title>Track Your Order</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content >
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
       refreshingSpinner="circles" refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <div class="mainDiv">
+  <div class="mainDiv" *ngIf="isData">
 
-    <div>
+    <div *ngIf="isLoaded" >
       <ion-row>
         <ion-col size="12">
           <ion-row>
@@ -44,8 +44,13 @@
     </div>
   </div>
 
+  <ion-row class="noDataRow" *ngIf="!isData" >
+    <ion-col class="noDataCol">
+   <ion-text class="noDataText"> ....No Data Found  </ion-text>
+  </ion-col>
+  </ion-row>
 
-  <div #mapCanvas class="map-canvas"></div>
+  <div #mapCanvas class="map-canvas" [hidden]="!isData"></div>
 
 
 </ion-content>

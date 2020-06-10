@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { DOCUMENT} from '@angular/common';
 import { darkStyle } from './map-dark-style';
 import { Storage } from "@ionic/storage";
+import { LoadingController} from "@ionic/angular";
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
@@ -16,11 +17,13 @@ export class MapPage implements AfterViewInit {
     rider ;
     statusImg = "assets/img/pending.png";
     isLoaded = false;
+    isData = false
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public deliveryData: DeliveryData,
     public platform: Platform,
-    public storage : Storage) {}
+    public storage : Storage,
+    public loadingCtrl: LoadingController) {}
 
     doRefresh(event) {
       console.log('Begin async operation');
@@ -33,11 +36,25 @@ export class MapPage implements AfterViewInit {
     }
 
 
-    getRiderInfo(){
+   async getRiderInfo(){
+      let loading = await this.loadingCtrl.create({
+        message: "Please wait...",
+        duration: 3000,
+      });
+      await loading.present();
       this.storage.get("loggedInUserId").then((userId)=>{
       this.deliveryData.getOrderDetails(userId).subscribe((data: any) => {
-        this.rider = data;
-        this.statusImg = `assets/img/${data.status}.png`
+        if(Object.keys(data).length != 0){
+          this.rider = data;
+          this.statusImg = `assets/img/${data.status}.png`;
+          this.isData = true;
+        }
+       else{
+         this.rider= {}
+         this.isData = false
+       }
+        loading.dismiss();
+        this.isLoaded = true;
       })
     })
     }
