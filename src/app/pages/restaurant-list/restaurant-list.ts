@@ -44,7 +44,7 @@ export class RestaurantListPage {
     this.deliveryData
       .getRestaurants("", "", categoryId)
       .subscribe((data: any) => {
-        this.cafeList = data;
+        this.cafeList = [data[0]];
         loading.dismiss();
       });
   }

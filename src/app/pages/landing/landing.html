@@ -12,7 +12,7 @@
         <ion-text class="addressText">{{deviceLocation}}</ion-text>
       </ion-button>
     </ion-buttons>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end"  routerLink="/app/tabs/restaurants/order-details">
       <ion-button>
         <span>
           <ion-icon slot="icon-only" name="cart"></ion-icon>
@@ -24,6 +24,7 @@
 
 
 <ion-content fullscreen="true">
+  
   <div>
     <ion-row>
       <ion-col size="9">
@@ -53,9 +54,12 @@
     <div *ngFor="let item of restaurantList" (click)="hotelDetailsNav(item.id)">
       <app-restaurant-card [restaurantItem]="item" [isOffer]="isOffer"></app-restaurant-card>
     </div>
-
+   
   </ion-toolbar>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start" #fab *ngIf="LoggedInId" routerLink="/app/tabs/restaurants/track-order">
+    <ion-fab-button class="fabBtn" color="danger">Track Order</ion-fab-button>
+    </ion-fab>
 </ion-content>
 
 
-//routerLink="/app/tabs/restaurants/hotel-details"

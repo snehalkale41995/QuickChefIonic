@@ -49,9 +49,9 @@ export class DeliveryData {
     if (cityName && cityName !== "pune") {
       apiUrl = `${AppConfig.zomatoURL}/search?q=${cityName}`;
     }
-    if (category) {
-      apiUrl = `${apiUrl}&category=${category}`;
-    }
+    // if (category) {
+    //   apiUrl = `${apiUrl}&category=${category}`;
+    // }
 
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {

@@ -10,7 +10,7 @@ import { LoadingController } from "@ionic/angular";
 export class InitialPagePage implements OnInit {
   constructor(private router: Router, public loadingCtrl: LoadingController) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.naviagteLanding();
   }
 

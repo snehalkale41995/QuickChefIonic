@@ -34,6 +34,7 @@ export class LandingPage implements OnInit {
   segment = "all";
   restaurantList: any = [];
   foodTypeList: any = [];
+  LoggedInId;
 
   constructor(
     public alertCtrl: AlertController,
@@ -46,9 +47,16 @@ export class LandingPage implements OnInit {
     public config: Config,
     private geolocation: Geolocation,
     private storage: Storage
-  ) {}
+  ) {
+    
+   
+  }
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    console.log("ionViewWillEnter")
+    this.storage.get("loggedInUserId").then((userId)=>{
+      this.LoggedInId = userId;
+    })
     this.updateLanding();
     this.getCurrentCoordinates();
     this.ios = this.config.get("mode") === "ios";

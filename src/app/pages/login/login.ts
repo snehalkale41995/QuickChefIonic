@@ -35,7 +35,7 @@ export class LoginPage {
       
         if(data==undefined){
           this.presentToast()
-          this.router.navigateByUrl('/app/tabs/landing');
+          this.router.navigateByUrl('/');
         }
        else if(!data.length){
         this.presentAlert();
