@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { UserProfilePage } from './user-profile.page';
 
+
 const routes: Routes = [
   {
     path: '',

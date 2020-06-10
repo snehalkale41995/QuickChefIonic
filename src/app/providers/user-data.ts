@@ -39,7 +39,7 @@ export class UserData {
         map((data: any) => {
           if(data.data.length){
             this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-              console.log("data.data[0].id", data.data[0].id)
+              this.setUserInfo(data.data[0]);
               this.setUserId(data.data[0].id);
              this.setToken(data.token)
              window.dispatchEvent(new CustomEvent('user:login'));
@@ -106,6 +106,10 @@ export class UserData {
 
   setUserId(Id: string): Promise<any> {
     return this.storage.set('loggedInUserId', Id);
+  }
+
+  setUserInfo(data): Promise<any> {
+    return this.storage.set('loggedInUserInfo', data);
   }
 
   setToken(userToken: string): Promise<any> {
