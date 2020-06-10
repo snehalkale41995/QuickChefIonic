@@ -17,6 +17,7 @@ export class MyOrderPage implements OnInit {
   order: any;
   hotelId;
   deliverNote : "";
+  isLoaded = false;
   defaultHrefLink = `/app/tabs/restaurants/hotel-details`;
   constructor(
     private dataProvider: DeliveryData,
@@ -35,6 +36,14 @@ export class MyOrderPage implements OnInit {
     this.getCartDetails();
   }
 
+  doRefresh(event) {
+    let compRef = this;
+    setTimeout(() => {
+      event.target.complete();
+      compRef.getCartDetails()
+    }, 2000);
+  }
+
   async getCartDetails() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
@@ -50,16 +59,18 @@ export class MyOrderPage implements OnInit {
         .getRestaurantDetails(this.hotelId)
         .subscribe((data: any) => {
           this.hotel = data;
+          this.storage.get("loggedInUserId").then((userId)=>{
+      
+            this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
+              this.order = data;
+              // this.order.restaurantDetails = this.hotel;
+              this.isLoaded = true;
+              loading.dismiss();
+            });
+          });
         });
 
-     this.storage.get("loggedInUserId").then((userId)=>{
-      
-      this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
-        this.order = data;
-        // this.order.restaurantDetails = this.hotel;
-        loading.dismiss();
-      });
-    });
+ 
   });
   }
 

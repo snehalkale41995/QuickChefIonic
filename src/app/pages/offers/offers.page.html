@@ -9,4 +9,9 @@
   <div *ngFor="let item of restaurantList" routerLink="/app/tabs/restaurants/hotel-details">
     <app-restaurant-card [restaurantItem]="item" [isOffer]="isOffer"></app-restaurant-card>
   </div>
+  <ion-row class="noDataRow" *ngIf="!isData">
+    <ion-col class="noDataCol">
+   <ion-text class="noDataText"> ....No Data Found  </ion-text>
+  </ion-col>
+  </ion-row>
 </ion-content>

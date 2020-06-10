@@ -17,6 +17,9 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
   <div class="restaurant-background">
     <img [src]="hotel?.thumb" [alt]="hotel?.name">
@@ -54,18 +57,25 @@
     </ion-row>
     <hr>
 
-    <div class="menuClass">
+    <div class="menuClass" *ngIf="isData">
       <ion-text>Popular Choices</ion-text>
     </div>
     <app-special-menu-cart [menuList]="menuList" [slideOptions]="slideOpts"> </app-special-menu-cart>
     <hr />
 
-    <div class="menuClass">
+    <div class="menuClass" *ngIf="isData">
       <ion-text>Menu</ion-text>
     </div>
         <app-menu-cart [menuList]="menuList"  [restaurantDetails]="hotel" #appChild></app-menu-cart>
   </div>
+  <ion-row class="noDataRow" *ngIf="!isData">
+    <ion-col class="noDataCol">
+   <ion-text class="noDataText"> ....No Data Found  </ion-text>
+  </ion-col>
+  </ion-row>
 </ion-content>
+
+
 
 <div class="cartBtn"   (click)="appChild.saveCart()">
   <ion-text class="cartTxt"> Add To Cart </ion-text>

@@ -13,6 +13,7 @@ import { Storage } from "@ionic/storage";
 export class HotelDetailPage {
   hotel: any;
   menuList: any;
+  isData = false;
   defaultHref = "app/tabs/landing";
   ratings: any;
   hotelId : any;
@@ -36,6 +37,14 @@ export class HotelDetailPage {
     public storage : Storage 
   ) {}
 
+  doRefresh(event) {
+   
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 1000);
+  }
+
   async ionViewWillEnter() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
@@ -46,30 +55,32 @@ export class HotelDetailPage {
 
     this.storage.get("selectedRestaurantId").then((val) => {
       this.hotelId = val;
-
-      this.dataProvider.getMenuListByRestaurant(this.hotelId).subscribe((data) => {
-        this.menuList = data;
-        this.storage.get("loggedInUserId").then((userId)=>{
-        
-        this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
-          if(data){
-            this.menuList.forEach(menu => {
-              data.CartItems.forEach(cart => {
-                  if(menu.Id == cart.MenuItemId){
-                    menu.Count = cart.Count ;
-                  }
-              });
-            });
-          }
-         
-        });
-      });
-        // this.order.restaurantDetails = this.hotel;
-      //  loading.dismiss();
-      });
       this.dataProvider.getRestaurantDetails(this.hotelId).subscribe((data: any) => {
         this.hotel = data;
-        loading.dismiss();
+        this.dataProvider.getMenuListByRestaurant(this.hotelId).subscribe((data) => {
+          this.menuList = data;
+          if(data && data.length){
+            this.isData = true;
+          }
+          else
+          this.isData = false;
+          this.storage.get("loggedInUserId").then((userId)=>{
+          if(userId){
+            this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
+              if(data){
+                this.menuList.forEach(menu => {
+                  data.CartItems.forEach(cart => {
+                      if(menu.Id == cart.MenuItemId){
+                        menu.Count = cart.Count ;
+                      }
+                  });
+                });
+              }
+              loading.dismiss();
+            });
+          }
+        });
+        });
       });
     });
   }

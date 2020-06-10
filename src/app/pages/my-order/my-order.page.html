@@ -8,7 +8,10 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content *ngIf="isLoaded">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div *ngIf = "!order?.CartItems.length"> 
     <ion-row class="imgRow">
       <ion-col>
@@ -22,7 +25,7 @@
         </ion-row>
         <ion-row class="emptyCart">
           <ion-col >
-            <div class="cartBtn" routerLink="/app/tabs/restaurants/hotel-details" (click)="checkOut()">
+            <div class="cartBtn" routerLink="/app/tabs/restaurants/hotel-details" >
               <ion-text class="cartTxt"> Add Menu </ion-text>
             </div>
           </ion-col>

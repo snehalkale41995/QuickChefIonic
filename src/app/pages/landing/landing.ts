@@ -35,6 +35,7 @@ export class LandingPage implements OnInit {
   restaurantList: any = [];
   foodTypeList: any = [];
   LoggedInId;
+  isData = true;
 
   constructor(
     public alertCtrl: AlertController,
@@ -48,8 +49,10 @@ export class LandingPage implements OnInit {
     private geolocation: Geolocation,
     private storage: Storage
   ) {
-    
    
+  }
+
+  ngOnInit(){
   }
 
   ionViewWillEnter() {
@@ -65,23 +68,30 @@ export class LandingPage implements OnInit {
   async updateLanding() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 2000,
+      duration: 3000,
     });
     await loading.present();
 
     await this.deliveryData.getFoodSegments().subscribe((data: any) => {
       this.foodTypeList = data;
-    });
-
-    await this.deliveryData
+       this.deliveryData
       .getRestaurants(this.restaurantName, this.cityName, "")
       .subscribe((data: any) => {
-        if(data && data.length)
-        this.restaurantList = [data[0]];
+        if(data && data.length){
+          this.isData = true;
+          this.restaurantList = [data[0]];
+        }
         else
-        this.restaurantList = []
+        {
+          this.isData = false;
+          this.restaurantList = []
+        }
+        
         loading.dismiss();
       });
+    });
+
+    
   }
 
   async getCurrentCoordinates() {

@@ -54,11 +54,12 @@ export class MenuCartComponent implements OnInit {
     if(menuCount.length){
       let loading = await this.loadingCntrl.create({
         message: "Please wait...",
-        duration: 2000,
+        duration: 3000,
       });
-      await loading.present();
      await this.storage.get("loggedInUserId").then((userId)=>{
        if(userId){
+       
+         loading.present();
         this.menuList.forEach((element : any) => {
           menuItems.push({
             ApplicationUserId: userId,
@@ -66,11 +67,12 @@ export class MenuCartComponent implements OnInit {
             Count: element.Count,
           });
         });
+
         this.deliveryData.addToCart(menuItems).subscribe((data: any) => {
           // this.categoryInfo = data;
+          this.router.navigate(["/app", "tabs", "restaurants", "order-details"]);
           loading.dismiss();
           this.presentToast();
-          this.router.navigate(["/app", "tabs", "restaurants", "order-details"]);
          });
         }
        else{

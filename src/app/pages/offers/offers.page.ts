@@ -13,7 +13,7 @@ export class OffersPage implements OnInit {
   deviceLocation = "aundh";
   restaurantName = "";
   restaurantList;
-
+  isData = true;
   constructor(
     public deliveryData: DeliveryData,
     public loadingCtrl: LoadingController,
@@ -38,7 +38,15 @@ export class OffersPage implements OnInit {
     await this.deliveryData
       .getRestaurants(this.restaurantName, this.cityName, "")
       .subscribe((data: any) => {
-        this.restaurantList = data;
+        if(data && data.length){
+          this.isData = true;
+          this.restaurantList = [data[0]];
+        }
+        else
+        {
+          this.isData = false;
+          this.restaurantList = []
+        }
         loading.dismiss();
       });
   }

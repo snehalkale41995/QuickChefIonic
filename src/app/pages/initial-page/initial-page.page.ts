@@ -7,7 +7,7 @@ import { LoadingController } from "@ionic/angular";
   templateUrl: "./initial-page.page.html",
   styleUrls: ["./initial-page.page.scss"],
 })
-export class InitialPagePage implements OnInit {
+export class InitialPagePage {
   constructor(private router: Router, public loadingCtrl: LoadingController) {}
 
   ionViewWillEnter() {

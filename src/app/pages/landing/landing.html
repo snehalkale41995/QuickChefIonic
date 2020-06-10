@@ -57,6 +57,13 @@
    
   </ion-toolbar>
 
+  <!-- *ngIf="!isData" -->
+  <ion-row class="noDataRow" *ngIf="!isData">
+    <ion-col class="noDataCol">
+   <ion-text class="noDataText"> ....No Data Found  </ion-text>
+  </ion-col>
+  </ion-row>
+
   <ion-fab slot="fixed" vertical="bottom" horizontal="start" #fab *ngIf="LoggedInId" routerLink="/app/tabs/restaurants/track-order">
     <ion-fab-button class="fabBtn" color="danger">Track Order</ion-fab-button>
     </ion-fab>

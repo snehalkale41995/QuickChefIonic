@@ -77,6 +77,24 @@
     border-top-right-radius: 20px ;
  }
 
+.noDataRow{
+    margin-top: 50px;
+}
+
+.noDataCol{
+    text-align: center;
+
+}
+
+.noDataCol{
+    text-align: center;
+
+}
+
+.noDataText{
+    font-size: 16px;
+    color: darkred;
+}
 
 
 @import "./app/app.scss";

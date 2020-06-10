@@ -23,26 +23,27 @@ export class DeliveryData {
   data: any;
 
   constructor(public http: HttpClient, public storage: Storage) {
+    this.setAuthHeader()
+  }
+
+   setAuthHeader(){
+     console.log("in setAuthHeader")
     this.storage.get('userToken').then((token)=>{
-      nodeHttpOptions = {
-        headers: new HttpHeaders({
-          "Content-Type": "application/json",
-          'x-access-token' : token 
-        }),
-      };
+      if(token){
+        nodeHttpOptions = {
+          headers: new HttpHeaders({
+            "Content-Type": "application/json",
+            'x-access-token' : token 
+          }),
+        };
+      }
     })
   }
 
-  load(): any {
-    if (this.data) {
-      return of(this.data);
-    } else {
-      return this.http.get("assets/data/data.json");
-    }
-  }
 
 
   getRestaurants(restaurantName: string, cityName: string, category: string) {
+    this.setAuthHeader()
     let restaurants = [],
       apiUrl = `${AppConfig.zomatoURL}/search?q=pune`;
 

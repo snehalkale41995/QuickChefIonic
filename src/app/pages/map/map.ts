@@ -14,7 +14,8 @@ export class MapPage implements AfterViewInit {
 
   defaultHref = "app/tabs/landing";
     rider ;
-    statusImg = "assets/img/pending.png"
+    statusImg = "assets/img/pending.png";
+    isLoaded = false;
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public deliveryData: DeliveryData,
@@ -33,13 +34,8 @@ export class MapPage implements AfterViewInit {
 
 
     getRiderInfo(){
-      this.deliveryData.getRider().subscribe((data: any) => {
-        //this.rider = data;
-      })
-  
       this.storage.get("loggedInUserId").then((userId)=>{
       this.deliveryData.getOrderDetails(userId).subscribe((data: any) => {
-  
         this.rider = data;
         this.statusImg = `assets/img/${data.status}.png`
       })
