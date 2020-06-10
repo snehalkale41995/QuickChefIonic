@@ -68,4 +68,15 @@
     border-top-right-radius: 20px ;
  }
 
+ .my-pay-modal-css .modal-wrapper {
+    height: 80%;
+    top: 30%;
+    position: absolute; 
+    display: block;  
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px ;
+ }
+
+
+
 @import "./app/app.scss";

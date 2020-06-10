@@ -1,0 +1,40 @@
+
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Card Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <form #stripeForm="ngForm" novalidate>
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="stacked" class="ionlabelClass">Card Number</ion-label>
+        <ion-input [(ngModel)]="stripe.cardNumber" name="cardNumber" type="number" #cardNumber="ngModel" spellcheck="false"
+          maxlength = "16" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" class="ionlabelClass">CVV</ion-label>
+        <ion-input [(ngModel)]="stripe.cvv" name="cvv" maxlength = '6' #cvv="ngModel" type="number" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" class="ionlabelClass">Expiry Date</ion-label>
+        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" name="date" type="date" [(ngModel)]="stripe.date" #date="ngModel"></ion-datetime>
+      </ion-item> 
+    </ion-list>
+  </form>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" (click)="onStripe(stripeForm)" type="submit" expand="block">Confirm Details</ion-button>
+      </ion-col>
+    </ion-row>
+</ion-content>

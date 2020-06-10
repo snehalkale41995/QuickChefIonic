@@ -20,13 +20,13 @@
       <ion-col size="8">
         <ion-item>
           <!-- <ion-label  position="floating" class="noteText">Add Instructions +</ion-label> -->
-          <ion-input [value]="addressNote" #input></ion-input>
+          <ion-input [value]="addressNote" #input disabled></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="4">
-        <ion-button color="light" class="addBtn" (click)="input.setFocus()">
+        <!-- <ion-button color="light" class="addBtn" (click)="input.setFocus()">
           <ion-text class="addTxt"> Change </ion-text>
-        </ion-button>
+        </ion-button> -->
       </ion-col>
     </ion-row>
   </div>
@@ -36,15 +36,16 @@
       <ion-text class="headerText">Payment Method</ion-text>
     </ion-row>
     <ion-row class="rowClass">
-      <ion-col >
-        <ion-icon name="cash"></ion-icon> &nbsp; <ion-text>Cash On Delivery</ion-text>
-      </ion-col>
+          <ion-select value="cod" (ionChange)="checkPayValue($event)" >
+            <ion-select-option value="cod">Cash On Delivery</ion-select-option>
+            <ion-select-option value="stripe">Card Payment</ion-select-option>
+          </ion-select>
     </ion-row>
-    <ion-row class="rowClass">
+    <!-- <ion-row class="rowClass">
       <ion-col >
         <ion-button expand="full" color="success" (click)="payWithStripe()">Pay with Stripe</ion-button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </div>
 
   <div class="divRow">

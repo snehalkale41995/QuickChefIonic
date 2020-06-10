@@ -4,6 +4,7 @@ import { LoadingController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 import { ModalController, AlertController } from "@ionic/angular";
 import { ConfirmOrderComponent } from "../../components/confirm-order/confirm-order.component";
+import { StripePayComponent } from "../../components/stripe-pay/stripe-pay.component";
 import { OrderData } from "../../providers/order-data";
 import { CanLoad, Router } from "@angular/router";
 import { Stripe} from '@ionic-native/stripe/ngx';
@@ -25,6 +26,7 @@ export class CheckOutPage implements OnInit {
   discountAmount;
   couponName = "";
   cardDetails;
+  payValue = "cod"
   stripe_key = AppConfig.publishable_key;
 
   constructor(
@@ -51,6 +53,24 @@ export class CheckOutPage implements OnInit {
   changeAddress() {
     this.textFocus = true;
   }
+
+   async checkPayValue(event){
+     // console.log("event", event.detail.value);
+      this.payValue = event.detail.value
+
+
+      const payModal = await this.modalCtrl.create({
+        component: StripePayComponent,
+        cssClass: "my-pay-modal-css",
+       // backdropDismiss: false,
+      });
+      await payModal.present();
+
+      payModal.onDidDismiss().then(data=>{
+        this.cardDetails = data.data
+        })
+   }
+
 
   checkValue(event) {
     let coupon = this.couponList.filter(function (e: any) {
@@ -93,6 +113,8 @@ export class CheckOutPage implements OnInit {
   async openModal() {
 
     if(this.LoggedInId){
+        let dt = new Date();
+         dt.setHours( dt.getHours() + 1 );
       let orderHeader, orderDetails;
       let OrderInfo = {
         OrderTotalOriginal: this.totalAmount,
@@ -100,7 +122,7 @@ export class CheckOutPage implements OnInit {
         CouponCode: this.couponName,
         CouponCodeDiscount: this.order.discount,
         OrderDate: new Date(),
-        PickUpTime: new Date(),
+        PickUpTime: dt,
       };
   
       await this.orderProvider.saveTotalOrderHeader(OrderInfo);
@@ -120,7 +142,7 @@ export class CheckOutPage implements OnInit {
           .subscribe((data: any) => {
             this.storage.get("loggedInUserId").then((userId) => {
               this.dataProvider.deleteUserCart(userId).subscribe((data: any) => {
-                //   this.router.navigate(["/app", "tabs", "restaurants", "track-order"]);
+               this.payWithStripe();
               });
             });
           });
@@ -133,6 +155,8 @@ export class CheckOutPage implements OnInit {
       });
       await modal.present();
 
+     
+
     }
     else{
       this.presentAlert()
@@ -140,11 +164,11 @@ export class CheckOutPage implements OnInit {
  
   }
 
+  
+
   async presentAlert() {
     const alert = await this.alertCntrl.create({
       cssClass: "my-custom-class",
-      //  header: 'Invalid Details',
-      // subHeader: 'Subtitle',
       message: "Please Login First !",
       buttons: ["OK"],
     });
@@ -161,20 +185,16 @@ export class CheckOutPage implements OnInit {
       cvc: '220'
     }
 
-
-
     this.stripe.createCardToken(this.cardDetails)
       .then(token => {
-        console.log(token);
-       // this.makePayment(token.id);
        let data = {
         tokenId : token.id,
         amount : 250,
         currency : 'INR'
        }
-      //  this.dataProvider.makePayment(data).subscribe((data: any) => {
-      //   //   this.router.navigate(["/app", "tabs", "restaurants", "track-order"]);
-      // });
+       console.log("data", data)
+       this.dataProvider.makePayment(data).subscribe((data: any) => {
+      });
       })
       .catch(error => console.error(error));
   }
