@@ -296,6 +296,7 @@ export class DeliveryData {
           name: orderInfo.PickUpName,
           pickUpTime: this.formatAMPM(orderInfo.PickUpTime),
           phoneNumber: orderInfo.PhoneNumber,
+          status : orderInfo.Status
         };
       })
     );

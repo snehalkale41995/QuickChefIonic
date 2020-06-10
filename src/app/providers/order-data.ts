@@ -58,14 +58,15 @@ export class OrderData {
       orderHeader = val;
   })
 
-
+  let dt = new Date();
+  dt.setHours( dt.getHours() + 1 );
 
    orderHeader.CouponCode = orderInfo.CouponCode;
    orderHeader.CouponCodeDiscount = orderInfo.CouponCodeDiscount;
    orderHeader.OrderTotal = orderInfo.OrderTotal;
    orderHeader.OrderTotalOriginal = orderInfo.OrderTotalOriginal;
    orderHeader.OrderDate = new Date;
-   orderHeader.PickUpTime = new Date;
+   orderHeader.PickUpTime = dt;
 
    this.storage.set("orderHeader", orderHeader);
 

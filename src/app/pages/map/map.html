@@ -7,23 +7,44 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+      refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <div class="mainDiv">
- <div>
-   <ion-row>
-     <ion-col>
-    <ion-text class="delText">Estimated Delivery time</ion-text>
-     </ion-col>
-   </ion-row>
-   <ion-row>
-    <ion-col >
-      <ion-text>{{rider?.pickUpTime}}</ion-text>
-    </ion-col>
-  </ion-row>
- </div>
- <div class="riderDiv">
-  <app-category-cart [restaurantDetails]="rider" [showRider]="true"></app-category-cart>
- </div>
-</div>
+
+    <div>
+      <ion-row>
+        <ion-col size="12">
+          <ion-row>
+            <ion-col>
+              <ion-text class="delText">Delivery time</ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-text>{{rider?.pickUpTime}}</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img src={{statusImg}}>
+
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+    <div class="riderDiv">
+      <app-category-cart [restaurantDetails]="rider" [showRider]="true"></app-category-cart>
+    </div>
+  </div>
+
+
   <div #mapCanvas class="map-canvas"></div>
 
 

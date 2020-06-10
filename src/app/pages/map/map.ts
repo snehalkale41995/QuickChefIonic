@@ -14,23 +14,42 @@ export class MapPage implements AfterViewInit {
 
   defaultHref = "app/tabs/landing";
     rider ;
+    statusImg = "assets/img/pending.png"
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public deliveryData: DeliveryData,
     public platform: Platform,
     public storage : Storage) {}
 
+    doRefresh(event) {
+      console.log('Begin async operation');
+      let compRef = this;
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        event.target.complete();
+        compRef.getRiderInfo()
+      }, 2000);
+    }
+
+
+    getRiderInfo(){
+      this.deliveryData.getRider().subscribe((data: any) => {
+        //this.rider = data;
+      })
+  
+      this.storage.get("loggedInUserId").then((userId)=>{
+      this.deliveryData.getOrderDetails(userId).subscribe((data: any) => {
+  
+        this.rider = data;
+        this.statusImg = `assets/img/${data.status}.png`
+      })
+    })
+    }
+
   async ngAfterViewInit() {
 
-    this.deliveryData.getRider().subscribe((data: any) => {
-      //this.rider = data;
-    })
-
-    this.storage.get("loggedInUserId").then((userId)=>{
-    this.deliveryData.getOrderDetails(userId).subscribe((data: any) => {
-      this.rider = data;
-    })
-  })
+    this.getRiderInfo();
+  
 
     const appEl = this.doc.querySelector('ion-app');
     let isDark = false;
@@ -98,6 +117,8 @@ export class MapPage implements AfterViewInit {
     });
   }
 }
+
+
 
 function getGoogleMaps(apiKey: string): Promise<any> {
   const win = window as any;
