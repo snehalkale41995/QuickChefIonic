@@ -25,7 +25,6 @@ export class UserProfilePage implements OnInit {
        
     })
 
-
     await this.deliveryData.getUserProfileList().subscribe((data: any) => {
       this.itemList = data;
     });

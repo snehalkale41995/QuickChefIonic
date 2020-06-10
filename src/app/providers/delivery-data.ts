@@ -40,7 +40,13 @@ export class DeliveryData {
     })
   }
 
-
+  load(): any {
+    if (this.data) {
+      return of(this.data);
+    } else {
+      return this.http.get("assets/data/data.json");
+    }
+  }
 
   getRestaurants(restaurantName: string, cityName: string, category: string) {
     this.setAuthHeader()
