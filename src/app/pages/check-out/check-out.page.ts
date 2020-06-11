@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DeliveryData } from "../../providers/delivery-data";
 import { LoadingController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
-import { ModalController, AlertController } from "@ionic/angular";
+import { ModalController, AlertController, ToastController } from "@ionic/angular";
 import { ConfirmOrderComponent } from "../../components/confirm-order/confirm-order.component";
 import { StripePayComponent } from "../../components/stripe-pay/stripe-pay.component";
 import { OrderData } from "../../providers/order-data";
@@ -27,6 +27,7 @@ export class CheckOutPage implements OnInit {
   couponName = "";
   cardDetails;
   payValue = "cod"
+  userInfo ;
   stripe_key = AppConfig.publishable_key;
 
   constructor(
@@ -37,7 +38,8 @@ export class CheckOutPage implements OnInit {
     public modalCtrl: ModalController,
     public alertCntrl: AlertController,
     private router: Router,
-    public stripe : Stripe
+    public stripe : Stripe,
+    public toastController : ToastController
   ) {}
 
   ngOnInit() {
@@ -47,6 +49,9 @@ export class CheckOutPage implements OnInit {
     this.storage.get("loggedInUserId").then((userId) => {
       this.LoggedInId = userId;
     });
+    this.storage.get("loggedInUserInfo").then((userInfo) => {
+      this.userInfo = userInfo;
+    });
     this.getCartDetails();
   }
 
@@ -55,7 +60,6 @@ export class CheckOutPage implements OnInit {
   }
 
    async checkPayValue(event){
-     // console.log("event", event.detail.value);
       this.payValue = event.detail.value
 
 
@@ -110,7 +114,7 @@ export class CheckOutPage implements OnInit {
     });
   }
 
-  async openModal() {
+  async checkOut() {
 
     if(this.LoggedInId){
         let dt = new Date();
@@ -135,36 +139,48 @@ export class CheckOutPage implements OnInit {
         orderDetails = val;
       });
   
-      this.dataProvider.addOrderHeader(orderHeader).subscribe((data: any) => {
+      if(this.payValue === "cod"){
+        this.payCod(orderHeader, orderDetails)
+      }
+      else{
+        this.payWithStripe(orderHeader, orderDetails)
+      }
+    }
+    else{
+      this.presentAlert()
+    }
+  }
+
+  payCod(orderHeader, orderDetails){
+    this.dataProvider.addOrderHeader(orderHeader).subscribe((data: any) => {
+      if(data && data.Id){
         let orderId = data.Id;
         this.dataProvider
           .addOrderDetails(orderDetails, orderId)
           .subscribe((data: any) => {
             this.storage.get("loggedInUserId").then((userId) => {
               this.dataProvider.deleteUserCart(userId).subscribe((data: any) => {
-               this.payWithStripe();
+                this.dataProvider.sendOrderConfirmEmail(this.userInfo, orderHeader, orderDetails, orderId).subscribe((data: any) => {
+                  this.openConfirmOrderModal()
+                 }); 
               });
             });
           });
-      });
-  
-      const modal = await this.modalCtrl.create({
-        component: ConfirmOrderComponent,
-        cssClass: "my-custom-modal-css",
-        backdropDismiss: false,
-      });
-      await modal.present();
-
-     
-
-    }
-    else{
-      this.presentAlert()
-    }
- 
+      }
+      else{
+        this.presentToast();
+      }
+    });
   }
 
-  
+ async openConfirmOrderModal(){
+    const modal = await this.modalCtrl.create({
+      component: ConfirmOrderComponent,
+      cssClass: "my-custom-modal-css",
+      backdropDismiss: false,
+    });
+     await modal.present();
+  }
 
   async presentAlert() {
     const alert = await this.alertCntrl.create({
@@ -175,7 +191,7 @@ export class CheckOutPage implements OnInit {
     await alert.present();
   }
 
-  payWithStripe() {
+  payWithStripe(orderHeader, orderDetails) {
     this.stripe.setPublishableKey(this.stripe_key);
 
     this.cardDetails = {
@@ -184,7 +200,6 @@ export class CheckOutPage implements OnInit {
       expYear: 2020,
       cvc: '220'
     }
-
     this.stripe.createCardToken(this.cardDetails)
       .then(token => {
        let data = {
@@ -192,10 +207,32 @@ export class CheckOutPage implements OnInit {
         amount : parseInt(this.order.total)+1000,
         currency : 'INR'
        }
-       console.log("data", data)
+     
        this.dataProvider.makePayment(data).subscribe((data: any) => {
+       
+        if(data.data){
+          orderHeader.TransactionId = data.data;
+          orderHeader.PaymentStatus = "Approved"
+          this.payCod(orderHeader, orderDetails)
+        }
+        else{
+          this.presentToast();
+        }
       });
       })
       .catch(error => console.error(error));
   }
+
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Something went Wrong !',
+      duration: 1000
+    });
+    toast.present();
+
+  }
+
+
+
 }

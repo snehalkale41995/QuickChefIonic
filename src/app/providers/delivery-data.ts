@@ -336,7 +336,7 @@ export class DeliveryData {
     //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderHeader, nodeHttpOptions).pipe(
       map((data: any) => {
-        return data[0];
+        return data.data[0];
       })
     );
   }
@@ -371,6 +371,34 @@ export class DeliveryData {
         return data;
       })
     );
+  }
+
+  sendOrderConfirmEmail(userData, orderHeader, orderDetails, orderId){
+
+    console.log("userData", userData);
+    console.log("orderHeader", orderHeader)
+    console.log("orderDetails", orderDetails)
+    let value = orderHeader.OrderDate;
+    let data = {
+      email : userData.email,
+      userName : userData.name,
+      appName : "Quick Chef",
+      OrderDate: value.getMonth()+1 + "/" + value.getDate() + "/" + value.getYear(),
+      subTotal: orderHeader.OrderTotalOriginal,
+      Discount: orderHeader.CouponCodeDiscount,
+      OrderTotal : orderHeader.OrderTotal,
+      Status: "Pending",
+      orderId : orderId,
+      address : userData.streetAddress + " " + userData.city
+    }
+
+    const apiUrl = `${AppConfig.serverURL}/api/order/confirmOrderMail`;
+    return this.http.post(apiUrl, data, httpOptions).pipe(
+      map((data: any) => {
+        return data;
+      })
+    );
+
   }
 
 
