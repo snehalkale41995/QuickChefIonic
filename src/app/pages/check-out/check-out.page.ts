@@ -138,12 +138,20 @@ export class CheckOutPage implements OnInit {
       await this.storage.get("orderDetails").then((val) => {
         orderDetails = val;
       });
-  
+     
+
+      let loading = await this.loadingCtrl.create({
+        message: "Please wait...",
+        duration: 3000,
+      });
+      await loading.present();
+     
+
       if(this.payValue === "cod"){
-        this.payCod(orderHeader, orderDetails)
+        this.payCod(orderHeader, orderDetails, loading)
       }
       else{
-        this.payWithStripe(orderHeader, orderDetails)
+        this.payWithStripe(orderHeader, orderDetails, loading)
       }
     }
     else{
@@ -151,7 +159,8 @@ export class CheckOutPage implements OnInit {
     }
   }
 
-  payCod(orderHeader, orderDetails){
+ async payCod(orderHeader, orderDetails, loading){
+   
     this.dataProvider.addOrderHeader(orderHeader).subscribe((data: any) => {
       if(data && data.Id){
         let orderId = data.Id;
@@ -162,6 +171,7 @@ export class CheckOutPage implements OnInit {
               this.dataProvider.deleteUserCart(userId).subscribe((data: any) => {
                 this.dataProvider.sendOrderConfirmEmail(this.userInfo, orderHeader, orderDetails, orderId).subscribe((data: any) => {
                   this.openConfirmOrderModal()
+                  loading.dismiss()
                  }); 
               });
             });
@@ -191,7 +201,7 @@ export class CheckOutPage implements OnInit {
     await alert.present();
   }
 
-  payWithStripe(orderHeader, orderDetails) {
+  payWithStripe(orderHeader, orderDetails, loading) {
     this.stripe.setPublishableKey(this.stripe_key);
 
     this.cardDetails = {
@@ -213,7 +223,7 @@ export class CheckOutPage implements OnInit {
         if(data.data){
           orderHeader.TransactionId = data.data;
           orderHeader.PaymentStatus = "Approved"
-          this.payCod(orderHeader, orderDetails)
+          this.payCod(orderHeader, orderDetails, loading)
         }
         else{
           this.presentToast();
