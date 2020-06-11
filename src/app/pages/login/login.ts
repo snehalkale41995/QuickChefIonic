@@ -6,7 +6,8 @@ import { UserData } from '../../providers/user-data';
 import { UserOptions } from '../../interfaces/user-options';
 import {
   AlertController,
-  ToastController
+  ToastController,
+  LoadingController
 } from "@ionic/angular";
 
 
@@ -23,16 +24,22 @@ export class LoginPage {
     public userData: UserData,
     public router: Router,
     public alertCtrl: AlertController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController
   ) { }
 
-  onLogin(form: NgForm) {
+ async onLogin(form: NgForm) {
     this.submitted = true;
+    let loading = await this.loadingCtrl.create({
+      message: "Please wait...",
+      duration: 2000,
+    });
+    await loading.present();
 
     if (form.valid) {
      // this.userData.login(this.login.username);
        this.userData.login(this.login.username, this.login.password).subscribe((data: any) => {
-      
+        loading.dismiss();
         if(data==undefined){
           this.presentToast()
           this.router.navigateByUrl('/');
@@ -41,10 +48,12 @@ export class LoginPage {
         this.presentAlert();
        }
       });
+     
     }
     else{
       this.presentAlert()
     }
+
   }
 
   onSignup() {

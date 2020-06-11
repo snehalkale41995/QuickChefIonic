@@ -189,7 +189,7 @@ export class CheckOutPage implements OnInit {
       .then(token => {
        let data = {
         tokenId : token.id,
-        amount : this.order.total,
+        amount : parseInt(this.order.total)+1000,
         currency : 'INR'
        }
        console.log("data", data)

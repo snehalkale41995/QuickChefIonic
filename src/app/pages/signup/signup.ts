@@ -3,7 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { UserData } from "../../providers/user-data";
 import { UserOptions } from "../../interfaces/user-options";
-import { AlertController, ToastController } from "@ionic/angular";
+import { AlertController, ToastController , LoadingController} from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 
 @Component({
@@ -27,14 +27,21 @@ export class SignupPage {
     public userData: UserData,
     public storage: Storage,
     public alertCtrl: AlertController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController
   ) {
     this.storage.get("currentLocation").then((location) => {
       this.currentLocation = location;
     });
   }
 
-  onSignup(form: NgForm) {
+  async onSignup(form: NgForm) {
+    let loading = await this.loadingCtrl.create({
+      message: "Please wait...",
+      duration: 3000,
+    });
+    await loading.present();
+    
     this.submitted = true;
     if (form.valid) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.signup.email)){
@@ -51,6 +58,7 @@ export class SignupPage {
             this.router.navigateByUrl("/login");
             })
           }
+          loading.dismiss();
         });
       }
      else{
