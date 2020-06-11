@@ -169,6 +169,7 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.zomatoURL}/geocode?lat=${latitude}&lon=${longitude}`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
+        console.log("data.location", data.location)
         // let locatinDetails = {
         //   "locationName" : data.location.title,
         //   "cityName" : data.location.city_name

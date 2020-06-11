@@ -96,7 +96,7 @@ export class MapPage implements AfterViewInit {
             position: markerData,
             map,
           //  icon: image,
-            icon: {url: markerData.image, scaledSize: new googleMaps.Size(40, 40)},
+         //   icon: {url: markerData.image, scaledSize: new googleMaps.Size(40, 40)},
             title: markerData.name
           });
   
