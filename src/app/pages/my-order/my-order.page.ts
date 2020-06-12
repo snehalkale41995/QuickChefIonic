@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: "./my-order.page.html",
   styleUrls: ["./my-order.page.scss"],
 })
-export class MyOrderPage implements OnInit {
+export class MyOrderPage {
   hotel: any;
   LoggedInId ;
   order: any;

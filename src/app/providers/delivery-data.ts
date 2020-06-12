@@ -169,6 +169,7 @@ export class DeliveryData {
   }
 
   getRestaurantDetails(id) {
+    id = '7765';
     const apiUrl = `${AppConfig.zomatoURL}/restaurant?res_id=${id}`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
