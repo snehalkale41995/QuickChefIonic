@@ -29,11 +29,11 @@ export class MyOrderPage implements OnInit {
     public router: Router
   ) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.getCartDetails();
     this.storage.get("loggedInUserId").then((userId)=>{
       this.LoggedInId = userId;
     })
-    this.getCartDetails();
   }
 
   doRefresh(event) {
@@ -60,13 +60,19 @@ export class MyOrderPage implements OnInit {
         .subscribe((data: any) => {
           this.hotel = data;
           this.storage.get("loggedInUserId").then((userId)=>{
-      
-            this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
-              this.order = data;
-              // this.order.restaurantDetails = this.hotel;
+            console.log("userId", userId)
+            if(userId){
+              this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
+                this.order = data;
+                // this.order.restaurantDetails = this.hotel;
+                this.isLoaded = true;
+                loading.dismiss();
+              });
+            }
+            else{
               this.isLoaded = true;
               loading.dismiss();
-            });
+            }
           });
         });
 

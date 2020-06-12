@@ -53,9 +53,11 @@ export class DeliveryData {
     let restaurants = [],
       apiUrl = `${AppConfig.zomatoURL}/search?q=pune`;
 
-    if (cityName && cityName !== "pune") {
-      apiUrl = `${AppConfig.zomatoURL}/search?q=${cityName}`;
-    }
+    /** Important : search by city and category * */
+    // if (cityName && cityName !== "pune") {
+    //   apiUrl = `${AppConfig.zomatoURL}/search?q=${cityName}`;
+    // }
+
     // if (category) {
     //   apiUrl = `${apiUrl}&category=${category}`;
     // }
@@ -93,7 +95,7 @@ export class DeliveryData {
   }
 
   getFoodSegments() {
-    let iconList = jsonData.categoryIcons;
+   
     let categories = [];
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/categories`;
     return this.http.get(apiUrl, httpOptions).pipe(
@@ -112,19 +114,6 @@ export class DeliveryData {
     );
   }
 
-  getImageByCategory(categoryId) {
-    return this.load().pipe(
-      map((data: any) => {
-        let iconData;
-        let iconList = data.categoryIcons;
-        iconData = iconList.filter(function (e) {
-          return e.id === parseInt(categoryId);
-        });
-
-        return iconData[0];
-      })
-    );
-  }
 
   getRestaurantList(segment: string) {
     return this.load().pipe(
