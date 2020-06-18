@@ -372,7 +372,7 @@ export class DeliveryData {
     let data = {
       email : userData.email,
       userName : userData.name,
-      appName : "Quick Chef",
+      appName : "Chef Bites",
       OrderDate: value.getMonth()+1 + "/" + value.getDate() + "/" + value.getYear(),
       subTotal: orderHeader.OrderTotalOriginal,
       Discount: orderHeader.CouponCodeDiscount,
