@@ -40,7 +40,7 @@ export class OffersPage implements OnInit {
       .subscribe((data: any) => {
         if(data && data.length){
           this.isData = true;
-          this.restaurantList = [data[0]];
+          this.restaurantList = data;
         }
         else
         {

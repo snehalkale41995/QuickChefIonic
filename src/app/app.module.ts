@@ -15,7 +15,8 @@ import { FormsModule } from "@angular/forms";
 import { OffersPageModule } from "./pages/offers/offers.module";
 import { LandingModule } from "./pages/landing/landing.module";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
-import { Stripe} from '@ionic-native/stripe/ngx'
+import { Stripe} from '@ionic-native/stripe/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import { Stripe} from '@ionic-native/stripe/ngx'
     IonicStorageModule.forRoot(),
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, Geolocation, Stripe],
+  providers: [InAppBrowser, SplashScreen, StatusBar, Geolocation, Stripe, SocialSharing],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

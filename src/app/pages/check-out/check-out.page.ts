@@ -8,6 +8,7 @@ import { StripePayComponent } from "../../components/stripe-pay/stripe-pay.compo
 import { OrderData } from "../../providers/order-data";
 import { CanLoad, Router } from "@angular/router";
 import { Stripe} from '@ionic-native/stripe/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import {AppConfig} from '../../appConstants/AppConfig';
 @Component({
   selector: "app-check-out",
@@ -39,7 +40,8 @@ export class CheckOutPage implements OnInit {
     public alertCntrl: AlertController,
     private router: Router,
     public stripe : Stripe,
-    public toastController : ToastController
+    public toastController : ToastController,
+    private socialSharing: SocialSharing
   ) {}
 
   ngOnInit() {
@@ -240,9 +242,15 @@ export class CheckOutPage implements OnInit {
       duration: 1000
     });
     toast.present();
-
   }
 
-
+  sendWhatsappMsg(){
+    this.socialSharing.shareViaWhatsAppToReceiver('919689065990', "hey there", '', '').then((response) => {
+      // Success!
+      console.log("sucess response", response)
+     }).catch((error) => {
+      console.log("errore", error)
+     });
+  }
 
 }

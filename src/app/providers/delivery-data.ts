@@ -82,14 +82,14 @@ export class DeliveryData {
         });
 
         if (restaurantName) {
-          let restaurantList = restaurants.filter((restaurant) =>
+          let restaurantList = [restaurants[0]].filter((restaurant) =>
             restaurant.name
               .toLowerCase()
               .startsWith(restaurantName.toLowerCase())
           );
           return restaurantList;
         }
-        return restaurants;
+        return [restaurants[0]];
       })
     );
   }
