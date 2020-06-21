@@ -40,7 +40,6 @@ export class HotelDetailPage {
   doRefresh(event) {
    
     setTimeout(() => {
-      console.log('Async operation has ended');
       event.target.complete();
     }, 1000);
   }

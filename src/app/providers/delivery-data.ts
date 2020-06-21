@@ -27,7 +27,6 @@ export class DeliveryData {
   }
 
    setAuthHeader(){
-     console.log("in setAuthHeader")
     this.storage.get('userToken').then((token)=>{
       if(token){
         nodeHttpOptions = {
@@ -158,11 +157,6 @@ export class DeliveryData {
     const apiUrl = `${AppConfig.zomatoURL}/geocode?lat=${latitude}&lon=${longitude}`;
     return this.http.get(apiUrl, httpOptions).pipe(
       map((data: any) => {
-        console.log("data.location", data.location)
-        // let locatinDetails = {
-        //   "locationName" : data.location.title,
-        //   "cityName" : data.location.city_name
-        // }
         return data.location;
       })
     );
@@ -227,6 +221,15 @@ export class DeliveryData {
           discount: 0,
           total: subTotal,
         };
+      })
+    );
+  }
+
+  getCartCount(userId) {
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/shoppingCartCount/'${userId}'`;
+    return this.http.get(apiUrl, nodeHttpOptions).pipe(
+      map((data: any) => {
+        return data[0].cartCount;
       })
     );
   }
@@ -306,7 +309,7 @@ export class DeliveryData {
     var minutes = date.getMinutes();
     var ampm = hours >= 12 ? "pm" : "am";
     hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
+    hours = hours ? hours : 12; 
     minutes = minutes < 10 ? 0 + minutes : minutes;
     var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
@@ -323,7 +326,6 @@ export class DeliveryData {
 
   addOrderHeader(orderHeader) {
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderHeader`;
-    //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderHeader, nodeHttpOptions).pipe(
       map((data: any) => {
         return data.data[0];
@@ -346,7 +348,6 @@ export class DeliveryData {
     });
 
     const apiUrl = `${AppConfig.serverURL}/api/restaurant/orderDetails`;
-    //  ApplicationUserId, MenuItemId, Count
     return this.http.post(apiUrl, orderDetails, nodeHttpOptions).pipe(
       map((data: any) => {
         return data;
@@ -364,10 +365,6 @@ export class DeliveryData {
   }
 
   sendOrderConfirmEmail(userData, orderHeader, orderDetails, orderId){
-
-    console.log("userData", userData);
-    console.log("orderHeader", orderHeader)
-    console.log("orderDetails", orderDetails)
     let value = orderHeader.OrderDate;
     let data = {
       email : userData.email,
@@ -388,8 +385,6 @@ export class DeliveryData {
         return data;
       })
     );
-
   }
-
 
 }

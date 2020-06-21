@@ -21,7 +21,6 @@ export class StripePayComponent implements OnInit {
 
   onStripe(form: NgForm){
     if (form.valid) {
-    console.log("this.stripe", this.stripe)
     this.modalCtrl.dismiss(this.stripe);
     }
     else{

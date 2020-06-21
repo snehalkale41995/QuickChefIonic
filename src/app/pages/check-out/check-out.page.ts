@@ -64,7 +64,7 @@ export class CheckOutPage implements OnInit {
    async checkPayValue(event){
       this.payValue = event.detail.value
 
-
+     if(this.payValue == "stripe"){
       const payModal = await this.modalCtrl.create({
         component: StripePayComponent,
         cssClass: "my-pay-modal-css",
@@ -75,6 +75,7 @@ export class CheckOutPage implements OnInit {
       payModal.onDidDismiss().then(data=>{
         this.cardDetails = data.data
         })
+     }
    }
 
 
@@ -118,6 +119,12 @@ export class CheckOutPage implements OnInit {
 
   async checkOut() {
 
+    let loading = await this.loadingCtrl.create({
+      message: "Please wait...",
+      duration: 3000,
+    });
+    await loading.present();
+
     if(this.LoggedInId){
         let dt = new Date();
          dt.setHours( dt.getHours() + 1 );
@@ -142,11 +149,7 @@ export class CheckOutPage implements OnInit {
       });
      
 
-      let loading = await this.loadingCtrl.create({
-        message: "Please wait...",
-        duration: 3000,
-      });
-      await loading.present();
+      
      
 
       if(this.payValue === "cod"){
@@ -247,9 +250,8 @@ export class CheckOutPage implements OnInit {
   sendWhatsappMsg(){
     this.socialSharing.shareViaWhatsAppToReceiver('919689065990', "hey there", '', '').then((response) => {
       // Success!
-      console.log("sucess response", response)
      }).catch((error) => {
-      console.log("errore", error)
+    //  console.log("errore", error)
      });
   }
 

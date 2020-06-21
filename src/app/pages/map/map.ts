@@ -26,10 +26,8 @@ export class MapPage implements AfterViewInit {
     public loadingCtrl: LoadingController) {}
 
     doRefresh(event) {
-      console.log('Begin async operation');
       let compRef = this;
       setTimeout(() => {
-        console.log('Async operation has ended');
         event.target.complete();
         compRef.getRiderInfo()
       }, 2000);

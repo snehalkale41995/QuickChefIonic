@@ -149,3 +149,16 @@ $categories: (
  .fabBtn{
    width : 100px
  }
+
+ .notification-icon-button {
+  --overflow: visible;
+
+  ion-badge {
+    position: absolute;
+    background:#CB202D;
+    border-radius: 50%;
+    opacity: 0.9;
+    top: 0.1rem;
+    right: 0.2rem;
+  }
+}

@@ -60,11 +60,9 @@ export class MyOrderPage {
         .subscribe((data: any) => {
           this.hotel = data;
           this.storage.get("loggedInUserId").then((userId)=>{
-            console.log("userId", userId)
             if(userId){
               this.dataProvider.getCartDetails(userId).subscribe((data: any) => {
                 this.order = data;
-                // this.order.restaurantDetails = this.hotel;
                 this.isLoaded = true;
                 loading.dismiss();
               });
@@ -81,7 +79,6 @@ export class MyOrderPage {
   }
 
   checkOut(){
-    console.log("this.LoggedInId", this.LoggedInId)
     if(this.LoggedInId){
       this.orderProvider.saveInstructionOrderHeader(this.deliverNote);
       this.orderProvider.saveMenuItemOrderDetails(this.order.CartItems)

@@ -67,7 +67,6 @@ export class UserData {
       const apiUrl = `${AppConfig.serverURL}/api/user/register`;
       return this.http.post(apiUrl, userInfo, httpOptions).pipe(
         map((data: any) => {
-         console.log(data)
           return data;
         })
       );
@@ -76,7 +75,6 @@ export class UserData {
     //   return window.dispatchEvent(new CustomEvent('user:signup'));
     // });
   }
-
 
   sendEmail(data){
     let userInfo = {
@@ -87,7 +85,6 @@ export class UserData {
       const apiUrl = `${AppConfig.serverURL}/api/user/sendEmail`;
       return this.http.post(apiUrl, userInfo, httpOptions).pipe(
         map((data: any) => {
-         console.log(data)
           return data;
         })
       );
@@ -95,7 +92,6 @@ export class UserData {
 
   logout(): Promise<any> {
     return this.storage.remove(this.HAS_LOGGED_IN).then(() => {
-     
         this.storage.remove('loggedInUserId')
         this.storage.remove('userToken')
       

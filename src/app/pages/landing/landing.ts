@@ -36,6 +36,7 @@ export class LandingPage implements OnInit {
   foodTypeList: any = [];
   LoggedInId;
   isData = true;
+  cartCount = 0;
 
   constructor(
     public alertCtrl: AlertController,
@@ -56,7 +57,6 @@ export class LandingPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    console.log("ionViewWillEnter")
     this.storage.get("loggedInUserId").then((userId)=>{
       this.LoggedInId = userId;
     })
@@ -80,14 +80,16 @@ export class LandingPage implements OnInit {
         if(data && data.length){
           this.isData = true;
           this.restaurantList = data;
+          loading.dismiss();
         }
         else
         {
           this.isData = false;
           this.restaurantList = []
+          loading.dismiss();
         }
+        this.getCartCount();
         
-        loading.dismiss();
       });
     });
 
@@ -127,6 +129,11 @@ export class LandingPage implements OnInit {
       });
   }
 
+  getCartCount(){
+    this.deliveryData.getCartCount(this.LoggedInId).subscribe((data: any) => {
+      this.cartCount = data;
+    })
+    }
 
   hotelDetailsNav(restaurantId){
     this.router.navigate(["/app", "tabs", "restaurants", "hotel-details"]);
