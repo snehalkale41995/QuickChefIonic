@@ -387,7 +387,7 @@ export class DeliveryData {
     );
   }
 
-  sendOrderConfirmEmail(userData, orderHeader, orderDetails, orderId){
+  sendOrderConfirmEmail(userData, orderHeader, orderDetails, orderId, address){
     let value = orderHeader.OrderDate;
     let data = {
       email : userData.email,
@@ -399,7 +399,7 @@ export class DeliveryData {
       OrderTotal : orderHeader.OrderTotal,
       Status: "Pending",
       orderId : orderId,
-      address : userData.streetAddress + " " + userData.city
+      address : address
     }
 
     const apiUrl = `${AppConfig.serverURL}/api/order/confirmOrderMail`;

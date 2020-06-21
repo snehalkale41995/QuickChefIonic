@@ -96,7 +96,7 @@ export class CheckOutPage implements OnInit {
   async getCartDetails() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 3000,
+     // duration: 3000,
     });
     await loading.present();
     this.storage.get("loggedInUserId").then((userId) => {
@@ -121,7 +121,7 @@ export class CheckOutPage implements OnInit {
 
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 3000,
+     // duration: 3000,
     });
     await loading.present();
 
@@ -174,7 +174,7 @@ export class CheckOutPage implements OnInit {
           .subscribe((data: any) => {
             this.storage.get("loggedInUserId").then((userId) => {
               this.dataProvider.deleteUserCart(userId).subscribe((data: any) => {
-                this.dataProvider.sendOrderConfirmEmail(this.userInfo, orderHeader, orderDetails, orderId).subscribe((data: any) => {
+                this.dataProvider.sendOrderConfirmEmail(this.userInfo, orderHeader, orderDetails, orderId, this.addressNote).subscribe((data: any) => {
                   this.openConfirmOrderModal()
                   loading.dismiss()
                  }); 

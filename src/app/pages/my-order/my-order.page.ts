@@ -47,7 +47,7 @@ export class MyOrderPage {
   async getCartDetails() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 3000,
+     // duration: 3000,
     });
     await loading.present();
     this.hotelId = this.route.snapshot.paramMap.get("hotelId");

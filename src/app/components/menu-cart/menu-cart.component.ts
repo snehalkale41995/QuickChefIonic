@@ -54,7 +54,7 @@ export class MenuCartComponent implements OnInit {
     if(menuCount.length){
       let loading = await this.loadingCntrl.create({
         message: "Please wait...",
-        duration: 3000,
+       // duration: 3000,
       });
      await this.storage.get("loggedInUserId").then((userId)=>{
        if(userId){

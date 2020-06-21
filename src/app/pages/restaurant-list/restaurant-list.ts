@@ -29,7 +29,7 @@ export class RestaurantListPage {
 
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 3000,
+     // duration: 3000,
     });
     await loading.present();
 
@@ -39,13 +39,15 @@ export class RestaurantListPage {
       return e.id === parseInt(categoryId);
     });
     this.categoryInfo = categoryDetails? categoryDetails[0] : {};
+    this.deliveryData
+    .getRestaurants("", "", categoryId)
+    .subscribe((data: any) => {
+      this.cafeList = data;
+      loading.dismiss();
+    });
+    
     });
 
-    this.deliveryData
-      .getRestaurants("", "", categoryId)
-      .subscribe((data: any) => {
-        this.cafeList = data;
-        loading.dismiss();
-      });
+  
   }
 }

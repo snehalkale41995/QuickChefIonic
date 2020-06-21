@@ -68,7 +68,7 @@ export class LandingPage implements OnInit {
   async updateLanding() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 3000,
+     // duration: 3000,
     });
     await loading.present();
 

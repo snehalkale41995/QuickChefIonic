@@ -37,7 +37,7 @@ export class MapPage implements AfterViewInit {
    async getRiderInfo(){
       let loading = await this.loadingCtrl.create({
         message: "Please wait...",
-        duration: 3000,
+       // duration: 3000,
       });
       await loading.present();
       this.storage.get("loggedInUserId").then((userId)=>{

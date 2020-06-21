@@ -47,7 +47,7 @@ export class HotelDetailPage {
   async ionViewWillEnter() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
-      duration: 3000,
+     // duration: 3000,
     });
     await loading.present();
    // const hotelId = this.route.snapshot.paramMap.get("hotelId");
