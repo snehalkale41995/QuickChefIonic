@@ -303,6 +303,29 @@ export class DeliveryData {
     );
   }
 
+
+  getMyorders(userId, hotel) {
+    const apiUrl = `${AppConfig.serverURL}/api/restaurant/myOrders/'${userId}'`;
+    return this.http.get(apiUrl, nodeHttpOptions).pipe(
+      map((data: any) => {
+    let orderList = []
+        data.forEach((order) => {
+          let value = new Date(order.OrderDate) ;
+          let orderDetails = {
+            restaurantName : hotel.name,
+            orderId : order.Id,
+            orderDate :  value.getDate() + value.getMonth()+1 + "/"  + "/" + value.getFullYear() + " at " + " " + this.formatAMPM(value),
+            orderTotal : order.OrderTotal,
+            status  : order.Status
+          }
+          orderList.push(orderDetails);
+        });
+
+        return orderList;
+      })
+    );
+  }
+
   formatAMPM(newDate) {
     let date = new Date(newDate);
     var hours = date.getHours();

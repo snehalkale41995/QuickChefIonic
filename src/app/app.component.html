@@ -29,6 +29,15 @@
           </ion-menu-toggle>
 
           <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/order-history" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="ios-restaurant"></ion-icon>
+              <ion-label>
+                My Orders
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
             <ion-item button (click)="logout()" detail="false">
               <ion-icon slot="start" name="log-out"></ion-icon>
               <ion-label>
