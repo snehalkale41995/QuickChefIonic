@@ -314,7 +314,7 @@ export class DeliveryData {
           let orderDetails = {
             restaurantName : hotel.name,
             orderId : order.Id,
-            orderDate :  value.getDate() + value.getMonth()+1 + "/"  + "/" + value.getFullYear() + " at " + " " + this.formatAMPM(value),
+            orderDate : value.getMonth()+1 + "/" + value.getDate() + "/" + value.getFullYear() + " at " + " " + this.formatAMPM(value),
             orderTotal : order.OrderTotal,
             status  : order.Status
           }

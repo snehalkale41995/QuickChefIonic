@@ -7,7 +7,7 @@ import { Storage } from "@ionic/storage";
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-order-history',
+  selector: 'app-order-history-page',
   templateUrl: './order-history.page.html',
   styleUrls: ['./order-history.page.scss'],
 })
@@ -30,7 +30,7 @@ export class OrderHistoryPage {
   ) {}
 
   ionViewWillEnter() {
-    this.getCartDetails();
+    this.getOrderList();
     this.storage.get("loggedInUserId").then((userId)=>{
       this.LoggedInId = userId;
     })
@@ -40,11 +40,11 @@ export class OrderHistoryPage {
     let compRef = this;
     setTimeout(() => {
       event.target.complete();
-      compRef.getCartDetails()
+      compRef.getOrderList()
     }, 2000);
   }
 
-  async getCartDetails() {
+  async getOrderList() {
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
       duration: 3000,
