@@ -5,7 +5,7 @@ import { InitialPagePage } from "./pages/initial-page/initial-page.page";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "/initial-page",
+    redirectTo: "app",
     pathMatch: "full",
   },
   {
@@ -44,7 +44,8 @@ const routes: Routes = [
     path: "signup",
     loadChildren: () =>
       import("./pages/signup/signup.module").then((m) => m.SignUpModule),
-  },  { path: 'order-history', loadChildren: './pages/order-history/order-history.module#OrderHistoryPageModule' },
+  },
+  { path: 'order-history', loadChildren: './pages/order-history/order-history.module#OrderHistoryPageModule' },
 
 ];
 

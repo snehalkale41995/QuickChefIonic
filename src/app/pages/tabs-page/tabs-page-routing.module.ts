@@ -48,15 +48,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'about',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../about/about.module').then(m => m.AboutModule)
-          }
-        ]
-      },
-      {
         path: 'offers',
         children: [
           {
@@ -64,14 +55,14 @@ const routes: Routes = [
             loadChildren: () => import('../offers/offers.module').then(m => m.OffersPageModule)
           }
         ]
-      },
+      }
+    ]
+  },
       {
         path: '',
         redirectTo: '/app/tabs/landing',
         pathMatch: 'full'
       }
-    ]
-  }
 ];
 
 @NgModule({

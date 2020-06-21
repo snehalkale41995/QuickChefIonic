@@ -4,8 +4,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
-
-import { AboutModule } from '../about/about.module';
 import { LandingModule } from '../landing/landing.module';
 import { HotelDetailModule } from '../hotel-detail/hotel-detail.module';
 import { RestaurantDetailModule } from '../restaurant-detail/restaurant-detail.module';
@@ -14,7 +12,7 @@ import { MealDetailPageModule } from '../meal-detail/meal-detail.module'
 import { OffersPageModule } from '../offers/offers.module'
 @NgModule({
   imports: [
-    AboutModule,
+    TabsPageRoutingModule,
     CommonModule,
     IonicModule,
     LandingModule,
@@ -22,7 +20,6 @@ import { OffersPageModule } from '../offers/offers.module'
     MealDetailPageModule,
     RestaurantDetailModule,
     RestaurantListModule,
-    TabsPageRoutingModule,
     OffersPageModule
   ],
   declarations: [
