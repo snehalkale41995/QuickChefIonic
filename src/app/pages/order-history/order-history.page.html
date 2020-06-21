@@ -11,7 +11,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-card *ngFor="let item of order">
+  <ion-card *ngFor="let item of order" class="cardClass">
     <app-order-history [order]="item"></app-order-history>
   </ion-card>
 

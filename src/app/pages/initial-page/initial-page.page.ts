@@ -15,11 +15,11 @@ export class InitialPagePage {
   }
 
   async naviagteLanding() {
-    let loading = await this.loadingCtrl.create({
-      duration: 2000,
-    });
-    await loading.present();
+    // let loading = await this.loadingCtrl.create({
+    //   duration: 2000,
+    // });
+  //  await loading.present();
     this.router.navigate(["/app", "tabs", "landing"]);
-    loading.dismiss();
+  //  loading.dismiss();
   }
 }
