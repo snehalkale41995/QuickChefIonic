@@ -248,7 +248,7 @@ export class CheckOutPage implements OnInit {
   }
 
   sendWhatsappMsg(){
-    this.socialSharing.shareViaWhatsAppToReceiver('919689065990', "hey there", '', '').then((response) => {
+    this.socialSharing.shareViaWhatsAppToReceiver('918500456787', "hey there", '', '').then((response) => {
       // Success!
      }).catch((error) => {
     //  console.log("errore", error)
