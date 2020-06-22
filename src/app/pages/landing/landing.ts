@@ -50,7 +50,10 @@ export class LandingPage implements OnInit {
     private geolocation: Geolocation,
     private storage: Storage
   ) {
-   
+    this.storage.get("currentLocation").then((value) => {
+      if(value && value.deviceLocation)
+      this.deviceLocation = value.deviceLocation;
+    });
   }
 
   ngOnInit(){
@@ -61,7 +64,7 @@ export class LandingPage implements OnInit {
       this.LoggedInId = userId;
     })
     this.updateLanding();
-    this.getCurrentCoordinates();
+    
     this.ios = this.config.get("mode") === "ios";
   }
 
@@ -80,15 +83,16 @@ export class LandingPage implements OnInit {
         if(data && data.length){
           this.isData = true;
           this.restaurantList = data;
-          loading.dismiss();
+         // loading.dismiss();
         }
         else
         {
           this.isData = false;
           this.restaurantList = []
-          loading.dismiss();
+         // loading.dismiss();
         }
-        this.getCartCount();
+       // this.getCartCount();
+        this.getCurrentCoordinates(loading);
         
       });
     });
@@ -96,7 +100,7 @@ export class LandingPage implements OnInit {
     
   }
 
-  async getCurrentCoordinates() {
+  async getCurrentCoordinates(loading) {
     this.geolocation
       .getCurrentPosition()
       .then((resp) => {
@@ -126,12 +130,19 @@ export class LandingPage implements OnInit {
         }
         this.storage.set("cityName", this.cityName);
         this.storage.set("currentLocation", currentLocation)
+       
       });
+      if(this.LoggedInId)
+      this.getCartCount(loading)
+      else
+      loading.dismiss()
   }
 
-  getCartCount(){
+  getCartCount(loading){
     this.deliveryData.getCartCount(this.LoggedInId).subscribe((data: any) => {
+      
       this.cartCount = data;
+      loading.dismiss();
     })
     }
 

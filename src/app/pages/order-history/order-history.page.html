@@ -15,4 +15,10 @@
     <app-order-history [order]="item"></app-order-history>
   </ion-card>
 
+  <ion-row class="noDataRow" *ngIf="isLoaded && !isData">
+    <ion-col class="noDataCol">
+   <ion-text class="noDataText"> ....No Data Found  </ion-text>
+  </ion-col>
+  </ion-row>
+
 </ion-content>

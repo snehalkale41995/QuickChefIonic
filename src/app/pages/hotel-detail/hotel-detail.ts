@@ -75,9 +75,9 @@ export class HotelDetailPage {
                   });
                 });
               }
-              loading.dismiss();
             });
           }
+          loading.dismiss();
         });
         });
       });

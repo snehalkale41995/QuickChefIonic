@@ -18,6 +18,7 @@ export class OrderHistoryPage {
   hotelId;
   deliverNote : "";
   isLoaded = false;
+  isData = false;
 //  defaultHrefLink = `/app/tabs/restaurants/hotel-details`;
   constructor(
     private dataProvider: DeliveryData,
@@ -63,11 +64,16 @@ export class OrderHistoryPage {
             if(userId){
               this.dataProvider.getMyorders(userId, this.hotel).subscribe((data: any) => {
                 this.order = data;
+                if(data && data.length)
+                this.isData = true; 
+                else
+                this.isData = false;
                 this.isLoaded = true;
                 loading.dismiss();
               });
             }
             else{
+              this.isData = false;
               this.isLoaded = true;
               loading.dismiss();
             }
