@@ -39,14 +39,14 @@
       </ion-text>
 
       <ion-item>
-        <ion-label position="stacked" class="ionlabel">Phone Number</ion-label>
+        <ion-label position="stacked" class="ionlabel">Mobile Number</ion-label>
         <ion-input type="number" [(ngModel)]="signup.phonenumber" name="phonenumber" type="text" #phonenumber="ngModel"
           maxlength="10" required>
         </ion-input>
       </ion-item>
       <ion-text color="danger">
         <p [hidden]="phonenumber.valid || submitted == false" class="ion-padding-start">
-          Phone Number is required
+          Mobile Number is required
         </p>
       </ion-text>
 

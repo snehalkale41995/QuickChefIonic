@@ -401,11 +401,26 @@ export class DeliveryData {
       orderId : orderId,
       address : address
     }
-
     const apiUrl = `${AppConfig.serverURL}/api/order/confirmOrderMail`;
     return this.http.post(apiUrl, data, httpOptions).pipe(
       map((data: any) => {
-        return data;
+       return data;
+      })
+    );
+  }
+
+sendMessage(userData, orderHeader){
+    let whatsappData = {
+      RestaurantName : "Chef Bites", 
+      deliveryTime : this.formatAMPM(orderHeader.PickUpTime), 
+      deliveryPerson : orderHeader.PickUpName, 
+      deliveryContact : orderHeader.PhoneNumber, 
+      mobileNumber : userData.phoneNumber
+    }
+    const sendMsgUrl = `${AppConfig.serverURL}/api/user/sendWhatsAppSms`;
+        return this.http.post(sendMsgUrl, whatsappData, httpOptions).pipe(
+          map((data: any) => {
+            return data;
       })
     );
   }

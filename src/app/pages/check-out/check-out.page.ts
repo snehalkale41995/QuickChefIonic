@@ -177,6 +177,7 @@ export class CheckOutPage implements OnInit {
                 this.dataProvider.sendOrderConfirmEmail(this.userInfo, orderHeader, orderDetails, orderId, this.addressNote).subscribe((data: any) => {
                   this.openConfirmOrderModal()
                   loading.dismiss()
+                  this.dataProvider.sendMessage(this.userInfo, orderHeader).subscribe((data: any) => {}); 
                  }); 
               });
             });
