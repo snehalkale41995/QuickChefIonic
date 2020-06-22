@@ -16,8 +16,15 @@ export class MenuCartComponent implements OnInit {
   LoggedInId ;
   countBtnActn = 'add' ;
   isCount = false;
+  loggedInUserId ;
   constructor(public storage: Storage, public alertController: AlertController,  public deliveryData: DeliveryData,
-    public toastController: ToastController, private router: Router, public loadingCntrl : LoadingController) {}
+    public toastController: ToastController, private router: Router, public loadingCntrl : LoadingController) {
+      this.storage.get("loggedInUserId").then((userId)=>{
+        if(userId){
+          this.loggedInUserId = userId
+        }
+      })
+    }
 
   ngOnInit() {
     this.storage.get("loggedInUserId").then((userId)=>{
@@ -26,17 +33,23 @@ export class MenuCartComponent implements OnInit {
   }
 
 
-   countAction(action, Id){
-  
-    this.menuList.forEach((menu:any)=>{
+   async countAction(action, Id){
     
-      if(menu && parseInt(menu.Id) === parseInt(Id)){
-        if(action==='add')
-         menu.Count = menu.Count + 1;
-         else
-         menu.Count = menu.Count - 1;
-      }
-      })
+     await this.storage.get("loggedInUserId").then((userId)=>{
+      if(userId){
+      this.menuList.forEach((menu:any)=>{
+        if(menu && parseInt(menu.Id) === parseInt(Id)){
+          if(action==='add')
+           menu.Count = menu.Count + 1;
+           else
+           menu.Count = menu.Count - 1;
+        }
+        })
+    }
+    else{
+      this.presentUserAlert()
+    }
+  })
   }
 
  async saveCart(){
@@ -103,7 +116,21 @@ export class MenuCartComponent implements OnInit {
     //  header: 'Empty Cart',
      // subHeader: 'Subtitle',
       message: 'Please Login First.',
-      buttons: ['OK']
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            this.router.navigateByUrl('/login/1');
+          }
+        }
+      ]
     });
 
     await alert.present();

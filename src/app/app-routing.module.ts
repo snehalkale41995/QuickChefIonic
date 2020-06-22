@@ -36,7 +36,7 @@ const routes: Routes = [
       import("./pages/map/map.module").then((m) => m.MapModule),
   },
   {
-    path: "login",
+    path: "login/:id",
     loadChildren: () =>
       import("./pages/login/login.module").then((m) => m.LoginModule),
   },

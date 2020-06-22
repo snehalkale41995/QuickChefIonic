@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { ActivatedRoute} from "@angular/router";
 import { UserData } from '../../providers/user-data';
 import { UserOptions } from '../../interfaces/user-options';
 import {
@@ -25,10 +25,13 @@ export class LoginPage {
     public router: Router,
     public alertCtrl: AlertController,
     public toastCtrl: ToastController,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private route: ActivatedRoute
   ) { }
 
  async onLogin(form: NgForm) {
+  const id = this.route.snapshot.paramMap.get("id");
+  
     this.submitted = true;
     let loading = await this.loadingCtrl.create({
       message: "Please wait...",
@@ -42,7 +45,14 @@ export class LoginPage {
         loading.dismiss();
         if(data==undefined){
           this.presentToast()
+          if(id == '2')
           this.router.navigateByUrl('/');
+          else{
+            setTimeout(() => {
+              this.router.navigateByUrl('/app/tabs/restaurants/hotel-details');
+            }, 1000);
+          }
+          
         }
        else if(!data.length){
         this.presentAlert();

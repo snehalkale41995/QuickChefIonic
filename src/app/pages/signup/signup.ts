@@ -55,7 +55,7 @@ export class SignupPage {
             .sendEmail(this.signup)
             .subscribe((data: any) => {
             this.presentToast();
-            this.router.navigateByUrl("/login");
+            this.router.navigateByUrl("/login/2");
             })
           }
           loading.dismiss();
